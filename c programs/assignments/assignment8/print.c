@@ -30,8 +30,11 @@ int main()
 } */
 
 /* // 3. Write a program to print the first N natural numbers in reverse order
+<<<<<<< HEAD
 // ! approch 1 - only use variable n and print n and then n--
 // !approch 2 below
+=======
+>>>>>>> ffc4d3b3fa45a90efa511b74bfcb22d9d9fd7f60
 #include <stdio.h>
 int main()
 {
@@ -60,8 +63,11 @@ int main()
 } */
 
 /* // 5. Write a program to print the first N odd natural numbers in reverse order.
+<<<<<<< HEAD
 // ! approch 1 - use only n variable  use 2*n-1 and then n--
 // ! approch 2 below
+=======
+>>>>>>> ffc4d3b3fa45a90efa511b74bfcb22d9d9fd7f60
 #include <stdio.h>
 int main()
 {
@@ -90,8 +96,11 @@ int main()
 } */
 
 /* // 7. Write a program to print the first N even natural numbers in reverse order
+<<<<<<< HEAD
 // ! approch 1 - use only n variable  use 2*n and then n--
 // ! approch 2 below
+=======
+>>>>>>> ffc4d3b3fa45a90efa511b74bfcb22d9d9fd7f60
 #include <stdio.h>
 int main()
 {
