@@ -54,7 +54,7 @@ int main(){
   return 0;
 } */
 
-/* // 8. Write a program to calculate square of a given number. Number is entered by the user. 
+/* // 8. Write a program to calculate square of a given number. Number is entered by the user.
 #include<stdio.h>
 int main(){
  int a,b;
@@ -66,13 +66,16 @@ int main(){
 } */
 
 /* // 9. Write a program to calculate area of a rectangle. Input appropriate data from the user.
-#include<stdio.h>
-int main(){
- int a,b,area;
-  printf("Enter length and width");
-  scanf("%d %d",&a,&b);
-  area=a*b;
-  printf("area of rectangle is %d", area );
+#include <stdio.h>
+int main()
+{
+  int a, b, area;
+  printf("Enter length: \n");
+  scanf("%d", &a);
+  printf("Enter width: \n");
+  scanf("%d", &b);
+  area = a * b;
+  printf("area of rectangle is %d", area);
   return 0;
 } */
 
@@ -80,7 +83,7 @@ int main(){
 #include<stdio.h>
 int main(){
  int r;
- float a; 
+ float a;
  //IMP- bcz area point m aa skta h na isiliye float use kiya
   printf("Enter radius for circle");
   scanf("%d",&r);
