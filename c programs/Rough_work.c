@@ -267,3 +267,139 @@ int main()
   }
   return 0;
 } */
+
+//! Recursion
+/* #include <stdio.h>
+void f1();
+int main()
+{
+  f1();
+  return 0;
+}
+void f1()
+{
+  int a;
+  printf("enter a number: ");
+  scanf("%d", &a);
+  if (a > 0)
+    f1();
+  printf("%d ", a);
+} */
+
+/* //! Recursion Tree
+#include <stdio.h>
+int f1(int);
+int main()
+{
+  int k;
+  k = f1(3);
+  printf("%d", k);
+  return 0;
+}
+int f1(int n)
+{
+  int s;
+  if (n == 1)
+    return (1);
+  s = n + f1(n - 1);
+  return (s);
+} */
+
+/* //! write a recursive function to calculate factorial of n.
+#include <stdio.h>
+int main(){
+ int a, sum = 1;
+ printf("Enter a number: ");
+ scanf("%d", &a);
+ for (int i = 1; a >= 1; i++)
+ {
+   sum *= a;
+   a--;
+ }
+ printf("factorial is %d", sum);
+ return 0;
+}
+*/
+//? this is only a function so we cant run it ok
+//? we are not making any program here ... we just write a function
+/* int fact(int n)
+{
+  if (n == 0)
+    return 1; // bcz factorial of 0 is 1
+  return (n * fact(n - 1));
+} */
+
+/* //! write a recursive function to print first n natural numbers.
+//? we are making function not program ok
+void first(int n) // void bcz we are printing here , if we are calculating something like above question then we use int
+{
+  if (n > 0)
+  {
+    first(n - 1);
+    printf(" %d", n);
+  }
+} */
+
+/* // TODO: let run this program
+#include <stdio.h>
+void first(int);
+int main()
+{
+  first(15);
+  return 0;
+}
+void first(int n)
+{
+  if (n > 0)
+  {
+    first(n - 1);
+    printf(" %d", n);
+  }
+}
+ */
+
+/* //! print n number in reverse order
+#include <stdio.h>
+void printN(int);
+int main()
+{
+  printN(15);
+  return 0;
+}
+void printN(int n)
+{
+  if (n <= 0)
+    // Base condition: stop recursion when n becomes 0 or negative
+
+    return;
+  // The error 'return' with no value occurs because the function printN is declared as returning an int, but it tries to return void
+
+  printf(" %d", n); // Print the current number
+  printN(n - 1);
+} */
+
+/* //! write a recursive function to print first n natural numbers with user input.
+#include <stdio.h>
+// Recursive function to print first n numbers
+void printNumbers(int n) {
+    if (n <= 0) {
+        return; // Base case: stop recursion when n is 0 or negative
+    }
+    printNumbers(n - 1); // Recursive call to print numbers before n
+    printf("%d ", n); // Print the current number
+}
+
+int main() {
+    int n;
+
+    // Get user input
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Print the first n numbers
+    printf("First %d numbers are: ", n);
+    printNumbers(n);
+
+    return 0;
+}
+ */
