@@ -1289,7 +1289,7 @@ int main()
   return 0;
 } */
 
-/* //? 95. Write a program to check whether two given numbers are co-prime.
+/* //? 95 IMP. Write a program to check whether two given numbers are co-prime.
 //? Hint: If the HCF is 1, the numbers are co-prime.
 #include <stdio.h>
 int main()
@@ -1308,7 +1308,7 @@ int main()
   return 0;
 } */
 
-/* //? 96. Write a program to print all prime numbers under 100.
+/* //? 96 IMP. Write a program to print all prime numbers under 100.
 #include <stdio.h>
 int main()
 {
@@ -1333,8 +1333,28 @@ int main()
   }
   return 0;
 } */
+// __________________________________________
+// approch 2
+/* #include <stdio.h>
+int main()
+{
+  int l = 2, u = 100, x, i;
+  for (x = l; x <= u; x++)
+  {
+    for (i = 2; i < x; i++)
+    {
+      if (x % i == 0)
+      {
+        break;
+      }
+    }
+    if (i == x)
+      printf("%d ", x);
+  }
+  return 0;
+ }*/
 
-/* //? 97. Write a program to print all prime numbers between two given numbers.
+/* //? 97 IMP. Write a program to print all prime numbers between two given numbers.
 #include <stdio.h>
 int main()
 {
@@ -1368,7 +1388,6 @@ int main()
 // _______________________________________________
 /* //Approch 2
 #include <stdio.h>
-
 int main() {
     int a, i, b, c;
     printf("Enter two numbers: ");
@@ -1382,7 +1401,152 @@ int main() {
         for (i = 2; i <= a / 2 && a % i != 0; i++);
         if (i > a / 2) printf("%d\n", a); // Print if prime
     }
-
     return 0;
 } */
+// _______________________________________________
+// Approch 3
+/* #include <stdio.h>
+int main()
+{
+  int a, b, x, i;
+  printf("Enter two numbers: ");
+  scanf("%d %d", &a, &b);
+  for (x = a; x <= b; x++)
+  {
+    for (i = 2; i < x; i++)
+    {
+      if (x % i == 0)
+      {
+        break;
+      }
+    }
+    if (i == x)
+      printf("%d ", x);
+  }
+  return 0;
+} */
 
+/* //? 98 IMP. Write a program to find the next prime number of a given number.
+#include <stdio.h>
+int main()
+{
+  int a, i, num;
+  printf("Enter a number: ");
+  scanf("%d", &a);
+  for (num = a + 1;; num++)
+  {
+    int is_prime = 1;
+    for (i = 2; i <= num / 2; i++)
+    {
+      if (num % i == 0)
+      {
+        is_prime = 0;
+        break;
+      }
+    }
+    if (is_prime)
+    {
+      printf("Next prime number is %d\n", num);
+      break;
+    }
+  }
+  return 0;
+} */
+// ____________________________________________
+/* // Approch 2
+#include <stdio.h>
+int main()
+{
+  int a, x, i;
+  printf("Enter a number: ");
+  scanf("%d", &a);
+  for (x = a + 1;; x++)
+  {
+    for (i = 2; i < x; i++)
+    {
+      if (x % i == 0)
+      {
+        break;
+      }
+    }
+    if (i == x) // means it is prime
+    {
+      printf("next prime number is %d ", x);
+      break;
+    }
+  }
+
+  return 0;
+} */
+
+/* //? 99. Write a program to check whether a given number is an Armstrong number.
+#include <stdio.h>
+int main()
+{
+  int num, TempNum, sum = 0, digit, power = 1, n = 0, i;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+
+  // Preserve the original number for comparison
+  TempNum = num;
+
+  // Count the number of digits
+  for (n = 0; TempNum; n++)
+    TempNum /= 10;
+
+  // Reset TempNum to the original number
+  // TempNum ko dubara original number pe set kiya gaya taaki hum firse use digit-by-digit process kar sakein
+  TempNum = num;
+
+  // Calculate the sum of powers of digits
+  for (TempNum = num; TempNum; TempNum /= 10)
+  {
+    digit = TempNum % 10;
+    power = 1; // Reset power for each digit
+
+    // Calculate the digit raised to the power of 'n'
+    for (i = 1; i <= n; i++)
+      power *= digit;
+
+    sum += power;
+  }
+
+  // Check if the number is an Armstrong number
+  if (sum == num)
+    printf("%d is an Armstrong number.\n", num);
+  else
+    printf("%d is not an Armstrong number.\n", num);
+
+  return 0;
+} */
+
+/* //? 100. Write a program to print all Armstrong numbers under 1000.
+#include <stdio.h>
+int main()
+{
+  int num, TempNum, sum = 0, digit, power = 1, n = 0, i;
+  for (num = 1; num <= 1000; num++) // here i made changes
+  {
+    TempNum = num;
+    n = 0; // here is made changes  n=0
+    for (n = 0; TempNum; n++)
+      TempNum /= 10;
+    TempNum = num;
+
+    for (TempNum = num, sum = 0; TempNum; TempNum /= 10) // here is made changes sum=0
+    {
+      digit = TempNum % 10;
+      power = 1;
+
+      for (i = 1; i <= n; i++)
+        power *= digit;
+
+      sum += power;
+    }
+
+    if (sum == num)
+      printf("%d is an Armstrong number.\n", num);
+  }
+
+  return 0;
+} */
