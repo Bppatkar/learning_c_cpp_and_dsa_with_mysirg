@@ -1,0 +1,130 @@
+// TODO: **Assignment 1: Input and Output in C Language**
+//? 1. Write a program to print Hello Students on the screen.
+//? 2. Write a program to print "Hello Students" on the first line and "Students" on the second line.
+//? 3. Write a program to print "MySirG" on the screen.
+//? 4. Write a program to print '\n' on the screen.
+//? 5. Write a program to print '\r' on the screen.
+//? 6. Write a program to print "Teacher's Day" on the screen.
+//? 7. Write a program to calculate the sum of two integers.
+//? 8. Write a program to calculate the square of a given number.
+//? 9. Write a program to calculate the area of a rectangle.
+//? 10. Write a program to find the area of a circle.
+__________________________________________
+// TODO: **Assignment 2: More on printf and scanf**
+//? 11. Write a program to calculate the average of three integers.
+//? 12. Write a program to calculate the circumference of a circle.
+//? 13. Write a program to calculate simple interest.
+//? 14. Write a program to calculate the volume of a cuboid.
+//? 15. Write a program to ask the user about the cost price and selling price of bananas per dozen. Calculate the profit or loss earned upon selling 25 bananas.
+//? 16. Write a program to input a character from the user and print its ASCII code.
+//? 17. Write a program to input an ASCII code from the user and print its corresponding character.
+//? 18. Write a program to input three characters from the user and display the characters with their corresponding ASCII codes.
+//? 19. Write a program to take date as an input in below given format and convert the date format and display the result as given below. User Input date format - "DD/MM/YYYY" (27/11/2022) Output format - "Day - DD, Month - MM, Year - YYYY" (Day-27, Month - 07, Year - 2022)
+//? 20. Write a program to take time as input in below given format and convert the time format and display the result as given below. User Input date format - "HH:MM" Output format - "HH hour and MM Minute"
+__________________________________________
+
+// TODO: **Assignment 3: Operators in C Language**
+//? 21. Write a program to calculate the size of a character constant.
+//? 22. Write a program to calculate the size of a real constant.
+//? 23. Write a program with one char type variable. Assign 'A' in the variable. Now change the value of variable from 'A' to 'B' using increment operator.
+//? 24. Write a program to print the unit digit of a given number. [unit digit means right most digit]
+//? 25. Write a program to print a given number without its last digit.
+//? 26. Write a program to swap the values of two int variables.
+//? 27. Write a program to swap the values of two int variables without using a third variable.
+//? 28. Write a program to swap values of two int variables without using third variable and without using +, - operators. [Note: that this can cause issues if b is zero]
+//? 29. Write a program to swap the values of two int variables without using a third variable and without using arithmetic operators.
+//? 30. Write a program to swap the values of two int variables using a single-line arithmetic expression.
+__________________________________________
+
+// TODO: **Assignment 4: More on Operators in C Language**
+//? 31. Write a program to input a three-digit number and display the sum of the digits.
+//? 32. Write a program to find the ASCII code of the character '+'.
+//? 33. Write a program to print the size of an int, a float, a char, and a double type variable.
+//? 34. Write a program to make the last digit of a number zero. (Example: if x=2345 then make it x=2340)
+//? 35. Write a program to input a number from the user and also input a digit. Append a digit in the number and print the resulting number. (Example - number=234 and digit=9 then the resulting number is 2349)
+//? 36. Assume price of 1 USD is INR 84.23. Write a program to take the amount in INR and convert it into USD.
+//? 37. Write a program to take a three-digit number from the user and rotate its digits by one position towards the right. [Example - 472 --> 247]
+//? 38. Evaluate an expression involving operators. What will be the value stored in the variable x after executing the following statement: x=10>8>4;
+//? 39. What will be the value stored in the variable x after executing the following statement: x=!2>-2;
+//? 40. What will be the value stored in the variable x after executing the following statement: x= 3 < 0 && 5 > 0;
+__________________________________________
+
+// TODO: **Assignment 5: Decision Control Statements**
+
+//?41.Write a program to check whether a given number is positive or non-positive.
+//?42.Write a program to check whether a given number is divisible by 5 or not.
+//?43.Write a program to check whether a given number is an even number or an odd number.
+//?44.Write a program to check whether a given number is an even number or an odd number without using % operator.
+//?45.Write a program to check whether the given number is even or odd using a bitwise operator.
+//?46.Write a program to check whether a given number is a three-digit number or not.
+//?47.Write a program to print greater between two numbers. Print one number if both are the same.
+//?48.Write a program to check whether roots of a given quadratic equation are real & distinct, real & equal or imaginary roots.
+//?49.Write a program to check whether a given year is a leap year or not.
+//?50.Write a program to find the greatest among three given numbers. Print the number once if the greatest number appears two or three times.
+__________________________________________
+// TODO: **Assignment 6: More on Decision Control Statements**
+
+//?51.Write a program to check whether a given number is a three-digit number or not.
+//?52.Write a program which takes the cost price and selling price of a product from the user. Now calculate and print profit or loss percentage.
+//?53.Write a program to take marks of 5 subjects from the user. Assume marks are given out of 100 and passing marks is 33. Now display whether the candidate passed the examination or failed.
+//?54.Write a program to check whether a given alphabet is in uppercase or lowercase.
+//?55.Write a program to check whether a given number is divisible by 3 and divisible by 2.
+//?56.Write a program to check whether a given number is divisible by 7 or divisible by 3.
+//?57.Write a program to check whether a given number is positive, negative or zero.
+//?58.Write a program to check whether a given character is an alphabet (uppercase), an alphabet (lower case), a digit or a special character.
+//?59.Write a program which takes the length of the sides of a triangle as an input. Display whether the triangle is valid or not.
+//?60.Write a program which takes the month number as an input and display number of days in that month.
+
+__________________________________________
+// TODO: **Assignment 7: Iterative Control Statements**
+
+//?61.Write a program to print MySirG 5 times on the screen.
+//?62.Write a program to print the first 10 natural numbers.
+//?63.Write a program to print the first 10 natural numbers in reverse order.
+//?64.Write a program to print the first 10 odd natural numbers.
+//?65.Write a program to print the first 10 odd natural numbers in reverse order.
+//?66.Write a program to print the first 10 even natural numbers.
+//?67.Write a program to print the first 10 even natural numbers in reverse order.
+//?68.Write a program to print squares of the first 10 natural numbers.
+//?69.Write a program to print cubes of the first 10 natural numbers.
+//?70.Write a program to print a table of 5.
+__________________________________________
+// TODO: **Assignment 8: More on Iterative Control Statements**
+
+//?71.Write a program to print MySirG N times on the screen.
+//?72.Write a program to print the first N natural numbers.
+//?73.Write a program to print the first N natural numbers in reverse order.
+//?74.Write a program to print the first N odd natural numbers.
+//?75.Write a program to print the first N odd natural numbers in reverse order.
+//?76.Write a program to print the first N even natural numbers.
+//?77.Write a program to print the first N even natural numbers in reverse order.
+//?78.Write a program to print squares of the first N natural numbers.
+//?79.Write a program to print cubes of the first N natural numbers.
+//?80.Write a program to print a table of N.
+__________________________________________
+// TODO: **Assignment 9: Use any loop**
+
+//?81.Write a program to calculate sum of first N natural numbers.
+//?82.Write a program to calculate sum of first N even natural numbers.
+//?83.Write a program to calculate sum of first N odd natural numbers.
+//?84.Write a program to calculate sum of squares of first N natural numbers.
+//?85.Write a program to calculate sum of cubes of first N natural numbers.
+//?86.Write a program to calculate factorial of a number.
+//?87.Write a program to count digits in a given number.
+//?88.Write a program to check whether a given number is a Prime number or not.
+//?89.Write a program to calculate LCM of two numbers.
+//?90.Write a program to reverse a given number.
+__________________________________________
+// TODO: **Assignment 10: Level up with loops**
+
+//?91.Write a program to find the Nth term of the Fibonacci series.
+//?92.Write a program to print first N terms of Fibonacci series.
+//?93.Write a program to check whether a given number is there in the Fibonacci series or not.
+//?94.Write a program to calculate HCF of two numbers.
+//?95.Write a program to check whether two given numbers are co-prime numbers or not.
+//?96.Write a program to print all Prime numbers under 100.
+//?97.Write a program to print all Prime numbers between two given numbers.
+//?98.Write a program to find next Prime number of a given number.
+//?99.Write a program to check whether a given number is an Armstrong number or not.
+//?100.Write a program to print all Armstrong numbers under 1000.
+__________________________________________
