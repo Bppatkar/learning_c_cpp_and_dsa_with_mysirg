@@ -34,7 +34,7 @@ int i,j,k;
       for(j=1;j<=7;j++){
         if(j>=5-i && j<=3+i){
           if(k)
-          printf("* "); 
+          printf("* ");
           else
           printf("  ");
         k=1-k;
@@ -65,7 +65,7 @@ int i,j,k;
 } */
 /* void f5()
 {
-  int k;
+  char k;
   for (int i = 1; i <= 4; i++)
   {
     k = 'A';
@@ -170,7 +170,7 @@ int i,j,k;
 } */
 /* void f10()
 {
-  int k;
+  char k;
   for (int i = 1; i <= 4; i++)
   {
     k = 'A';
