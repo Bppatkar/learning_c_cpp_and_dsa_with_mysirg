@@ -91,11 +91,11 @@ int main()
 
 //! 6. Write a function to calculate the factorial of a number. (TSRS)
 /* #include <stdio.h>
-int calcFact(int n)
+long long int calcFact(int n)
 {
   if (n == 0)
     return 1;
-  int result = 1;
+  long long int result = 1;
   for (int i = 1; i <= n; i++)
   {
     result *= i;
@@ -109,13 +109,38 @@ int main()
   printf("Enter number: ");
   scanf("%d", &num);
 
-  int result = calcFact(num);
   if (num < 0)
     printf("you are using negative value\n");
   else
-    printf("Factorial is %d\n", result);
+  {
+    long long int result = calcFact(num);
+    printf("Factorial is %lld\n", result);
+  }
+  // lld means long long int
+  // llu means unsigned long long
+  // long m % nahi %ld , long sirf int or double k sath hota h char aur float k sath nhi or short sirf int k sath
+
   return 0;
 } */
+
+/*The issue you're encountering is that the factorial of 18 is a very large number (6.4023737e+15), exceeding the capacity of a long int data type in many C implementations. This leads to integer overflow, where the result exceeds the maximum representable value for that data type, causing unexpected behavior like negative values.
+
+ Here's how you can fix it:
+
+ Use a Larger Data Type:
+ Consider using long long int or unsigned long long int if your compiler supports them. These data types can typically hold larger integer values.*/
+
+// TODO: Below 2 questions are from Permutation and Combination
+//? Permutation = all possible arrangements [n!/(n-r)!]
+//  A,B,C,D arrange 2 element from 4 -
+/* AB, AC, AD, BC, BD, CD
+   BA, CA, DA, CB, DB, DC
+ */
+//? Combination = all possible selections not arrangements [n!/(r! * (n-r)!)]
+// A,B,C,D arrange 2 element from 4 - AB and BA are same here so
+/* AB, AC, AD,
+   BC, BD, CD
+ */
 
 //! 7. Write a function to calculate the number of combinations one can make from n items and r selected at a time. (TSRS)
 /* #include <stdio.h>
@@ -214,8 +239,7 @@ int main()
 } */
 
 //! 10. Write a function to print all prime factors of a given number. For example, if the number is 36 then your result should be 2, 2, 3, 3. (TSRN)
-
-#include <stdio.h>
+/* #include <stdio.h>
 void primeFactor(int n)
 {
   if (n <= 1)
@@ -239,4 +263,4 @@ int main()
   printf("Prime Factors of %d are: \n", num);
   primeFactor(num);
   return 0;
-}
+} */
