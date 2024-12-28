@@ -159,6 +159,7 @@ int combinationCount(int n, int r)
   if (r > n)
     return 0;
   int nFact = factorial(n);
+  // here we use 6th question directly for better reuseability but we wrie code again for factorial but u can use
   int rFact = factorial(r);
   int diff = factorial(n - r);
   return nFact / (rFact * diff);

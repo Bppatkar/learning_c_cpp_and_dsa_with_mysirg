@@ -140,6 +140,39 @@ int main()
   }
   return 0;
  }*/
+// _______________________________________
+// new approch
+/* #include <stdio.h>
+int main()
+{
+  int a, i, l = 2, u = 100;
+  for (a = l; a <= u; a++)
+  {
+    for (i = 2; i <= a / 2; i++)
+    {
+      if (a % i == 0)
+        break;
+    }
+    if (i > a / 2)
+      printf("%d\n", a);
+  }
+  return 0;
+} */
+// _______________________________________
+// new approch
+/* int l = 2, u = 100, a, i;
+  for (a = l; a <= u; x++)
+  {
+    for (i = 2; i*i <= a; i++)
+    {
+      if (a % i == 0)
+      {
+        break;
+      }
+    }
+    if (i*i >a)
+      printf("%d\n ", x);
+  } */
 
 /* //? 97 IMP. Write a program to print all prime numbers between two given numbers.
 #include <stdio.h>
@@ -265,6 +298,30 @@ int main()
 
   return 0;
 } */
+// _______________________________________
+// new approch
+/* #include <stdio.h>
+int main()
+{
+  int a;
+  printf("Enter a number: ");
+  scanf("%d", &a);
+  for (int num = a + 1;; num++)
+  {
+    int i;
+    for (i = 2; i <= num / 2; i++)
+    {
+      if (num % i == 0)
+        break;
+    }
+    if (i > num / 2)
+    {
+      printf("%d", num);
+      break;
+    }
+  }
+  return 0;
+} */
 
 /* //? 99. Write a program to check whether a given number is an Armstrong number.
 #include <stdio.h>
@@ -306,9 +363,70 @@ int main()
 
   return 0;
 } */
+// __________________________________
+// simply written
+/* #include <stdio.h>
+int main()
+{
+  int num, i, tempNum, digit, remainder, sum, power;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+  tempNum = num;
+  for (digit = 0; num > 0; num /= 10)
+    digit++;
+
+  num = tempNum;
+  for (sum = 0; num > 0; num /= 10)
+  {
+    remainder = num % 10;
+    power = 1;
+    for (i = 0; i < digit; i++)
+    {
+      power *= remainder;
+    }
+    sum += power;
+  }
+  if (sum == tempNum)
+    printf("Armstrong");
+  else
+    printf("Not armstrong");
+  return 0;
+} */
 
 /* //? 100. Write a program to print all Armstrong numbers under 1000.
+//? if u use same above code
 #include <stdio.h>
+int main()
+{
+  int a, num, i, tempNum, digit, remainder, sum, power;
+  for (a = 1; a < 1000; a++) // here i made changes
+  {
+    num = a; // here i made changes
+    tempNum = num;
+
+    for (digit = 0; num > 0; num /= 10)
+      digit++;
+
+    num = a; // here i made changes
+    //  Restore 'num' to its original value
+
+    for (sum = 0; num > 0; num /= 10)
+    {
+      remainder = num % 10;
+      power = 1;
+      for (i = 0; i < digit; i++)
+      {
+        power *= remainder;
+      }
+      sum += power;
+    }
+    if (sum == tempNum)
+      printf("%d\n", a);
+  }
+  return 0;
+}*/
+// ________________________________
+/* #include <stdio.h>
 int main()
 {
   int num, TempNum, sum = 0, digit, power = 1, n = 0, i;
