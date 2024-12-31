@@ -426,6 +426,7 @@ int main()
   return 0;
 }*/
 // ________________________________
+// old approch
 /* #include <stdio.h>
 int main()
 {
