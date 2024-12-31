@@ -406,7 +406,7 @@ int main() {
 
 //! Array
 //! write a program to calculate average of 100 numbers.
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
   int a[100], i, sum = 0;
@@ -418,5 +418,216 @@ int main()
     sum += a[i];
   avg = sum / 100.0;
   printf("Average is %f", avg);
+  return 0;
+} */
+
+//! String
+//? Initializing char array during declaration
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = {'B', 'H', 'O', 'P', 'A', 'L'};
+  int i;
+  for (i = 0; i <= 9; i++)
+  // here 4 spaces will print bcz of null char which is waste of time u can check on one compillar website
+  {
+    printf("%c", str[i]);
+  }
+  printf("hello");
+  return 0;
+} */
+//? doing the same without print 4 blacnkspace
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = {'B', 'H', 'O', 'P', 'A', 'L'};
+  int i;
+  for (i = 0; str[i] != 0; i++)
+  {
+    printf("%c", str[i]);
+  }
+  return 0;
+} */
+//? when it goes up to 6 then it finds that str[6]=0 means conditin false then why are we writting str[i]!=0;  -- see here
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = {'B', 'H', 'O', 'P', 'A', 'L'};
+  int i;
+  for (i = 0; str[i]; i++)
+  {
+    printf("%c", str[i]);
+  }
+  return 0;
+} */
+
+//?without using loop -- using %s
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = {'B', 'H', 'O', 'P', 'A', 'L'};
+  printf("%s", str);
+  return 0;
+} */
+
+//! WAP to calculate the length of string
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = "BHOPAL";
+  int count = 0;
+  for (int i = 0; i <= str[i]; i++)
+  {
+    count++;
+  }
+  printf("%d", count);
+  return 0;
+} */
+//? simple way
+/* #include <stdio.h>
+int main()
+{
+  char str[10] = "BHOPAL";
+  int i;
+  for (i = 0; str[i]; i++)
+    ;
+  printf("%d", i);
+  return 0;
+} */
+
+//? taking input from user
+/* #include <stdio.h>
+int main()
+{
+  char str[50];
+  // bcz we dont know how much length of string user enterees
+  printf("Enter your name: ");
+  scanf("%s", str); // we use %s ok for complete string
+  printf("%s", str);
+  return 0;
+} */
+
+//! using gets()
+/* #include <stdio.h>
+int main()
+{
+  char str[20];
+  // bcz we dont know how much length of string user enterees
+  printf("Enter your name: ");
+  fgets(str, 20, stdin); // we use %s ok for complete string
+  printf("%s", str);
+  return 0;
+} */
+
+//! printing length of string
+/* #include <stdio.h>
+int main()
+{
+  char str[20];
+  printf("Enter your name: ");
+  fgets(str, 20, stdin);
+  int i;
+  for (i = 0; str[i]; i++)
+    ;
+  printf("Length of %s is %d", str, i);
+  return 0;
+} */
+
+//! STRING FUNCTION
+//? we get ans 6 by entering name BHANU means it is adding newline character at the end and then null character so what should we do -- write func again
+
+/* #include <stdio.h>
+int main()
+{
+  char str[20];
+  printf("Enter your name: ");
+  fgets(str, 20, stdin);
+  int i;
+  for (i = 0; str[i]; i++)
+    ;
+  str[i - 1] = '\0';
+  //?fgets() - BHANU ko 0 s 6 tk to count krega pr last m ek newline char or null '\0' char likh dega to wo counting 5 and 6 hogi pr hme to 5 chahiye na bhanu m to isiliye hme newline char ki jagah null char le aayege -1 krke jisse string end ho jayega isiliye 1 subtract kiya h
+//? 0 1 2 3 4  5  6
+//? B H A N U \n \0
+  //? and again using for loop jisse pata chale ki null character kaha h bcz
+  //! null character jaha pr milega wahi string ki length hoti h
+  for (i = 0; str[i]; i++)
+    ;
+  printf("Length of %s is %d", str, i);
+  return 0;
+} */
+
+/* so total 3 step h
+for (i = 0; str[i]; i++);
+  str[i - 1] = '\0';
+for (i = 0; str[i]; i++);
+ */
+
+//! by using String Function
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+  char str[20];
+  printf("Enter your name: ");
+  fgets(str, 20, stdin);
+  // ****
+  str[strlen(str) - 1] = '\0'; //? strlen(str) itna likhne s length 6 aayegi, [strlen(str)-1] likne s index aayega ab , index kiska str ka to likho str[strlen(str)-1] pr isko use krne #include<string.h> use karna hoga
+  int i;
+  for (i = 0; str[i]; i++)
+    ;
+  // ****
+  printf("Length of %s is %d", str, i);
+  return 0;
+} */
+
+//? jahan par for (i = 0; str[i]; i++); likh rahe wo v strlen s kr skte h dekho
+
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+  char str[20];
+  printf("Enter your name: ");
+  fgets(str, 20, stdin);
+  // ****
+  str[strlen(str) - 1] = '\0';
+  int i;
+  // for (i = 0; str[i]; i++)
+  i = strlen(str);
+  // ****
+  printf("Length of %s is %d", str, i);
+  return 0;
+} */
+
+//! WAP to find last character of the string
+//?  i am using above code
+
+#include <stdio.h>
+#include <string.h>
+// The lastCharacter function returns the last character of a string.
+// It receives an array in the parameter (str), which is accessed using the alias 's' (not a new array, just a different name for the same array).
+// that lastCharacter function return value and recieve array in parameter which is 'str' passes by argu and that str array we access by s name (not creating new array we access same array by diff name)
+int lastCharacter(char s[])
+{
+  // strlen(s)-1 gives the index of the last character in the string.
+  // Returning s[strlen(s)-1] retrieves the last character, not its length.
+  // strlen(s)-1 means we get lenth of last character but we want last character not length so we do
+
+  return s[strlen(s) - 1];
+}
+
+int main()
+{
+  char ch, str[20]; // Initialize variables to store the string and the last character. // here i initialize variable
+  printf("Enter your string or name: ");
+  fgets(str, 20, stdin);       // Read input from the user (up to 19 characters + null terminator).
+  str[strlen(str) - 1] = '\0'; // Remove the newline character ('\n') added by fgets, if present.
+
+  // ********
+  ch = lastCharacter(str); // we make function and passed string as a argu
+  // ********
+  // Print the last character of the string stored in 'ch'.
+  printf("last character of string is %c", ch);
   return 0;
 }
