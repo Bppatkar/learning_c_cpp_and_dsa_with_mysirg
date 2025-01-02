@@ -1,0 +1,1 @@
+printf("sum of square of first %d natural numbers is %d", n, sum);

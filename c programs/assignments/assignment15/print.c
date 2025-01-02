@@ -37,7 +37,7 @@ int checkPrime(int a)
   return 1;
 }
  */
-//? new approch
+//? new approach
 /* int checkPrime(int n)
 {
   int i;
@@ -65,7 +65,7 @@ int calcNextPrime(int a)
       return num;
   }
 } */
-//? new approch we use 3rd Q. soln here
+//? new approach we use 3rd Q. soln here
 // bcz above we checked number is prime or not so we directly used that function for complete func u have to use above checkPrime function and then below calcNextPrime func ok
 
 /* int calcNextPrime(int a)
@@ -96,7 +96,7 @@ void printNPrime(int a)
     }
   }
 } */
-//? new approch we use again checkPrime func
+//? new approach we use again checkPrime func
 /* void printNPrime(int a)
 {
   int x = 2;
@@ -111,7 +111,7 @@ void printNPrime(int a)
   }
 }
  */
-//? new approch we can use Q.4 calcNextPrime func and checkPrime func
+//? new approach we can use Q.4 calcNextPrime func and checkPrime func
 /* void printNPrime(int a)
 {
   int x = 2;
@@ -188,7 +188,7 @@ int main()
     printf("No prime numbers found in the range.");
   }
 } */
-// new approch again we use checkPrime func here
+// new approach again we use checkPrime func here
 /*  void calPrintBTWPrime(int a, int b)
 {
   int x;
@@ -212,7 +212,7 @@ void calNFibo(int n)
     b = c;
   }
 } */
-//? new approch
+//? new approach
 /*void calNFibo(int n)
 {
   int a = -1, b = 1, c;

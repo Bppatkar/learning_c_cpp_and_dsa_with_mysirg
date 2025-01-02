@@ -73,7 +73,7 @@ int main(){
 
 // 7. Write a program to take a three-digit number from the user and rotate its digits by one position towards the right. [Example - 472 --> 247]
 
-//approch 
+// approach
 
 /* #include<stdio.h>
 int main(){
@@ -88,7 +88,7 @@ int main(){
   return 0;
 } */
 
-//approch 2
+// approach 2
 
 /* #include<stdio.h>
 int main(){
@@ -98,8 +98,7 @@ int main(){
   a=a%10*100+a/10;
   printf("after reverse %d", a);
   return 0;
-} */ 
-
+} */
 
 // 8. What will be the value stored in the variable x after executing the following statement: x=10>8>4;
 // x = 10>8>4;
@@ -108,13 +107,8 @@ int main(){
 // so ans is 0;
 
 // 9. What will be the value stored in the variable x after executing the following statement: x=!2>-2;
-// ans  is 1 (true) !2 is 0 and 0 > -2 
+// ans  is 1 (true) !2 is 0 and 0 > -2
 
-// 10. What will be the value stored in the variable x after executing the following statement: 
+// 10. What will be the value stored in the variable x after executing the following statement:
 // x= 3 < 0 && 5 > 0;
 // first condition is false then second condition will not check then ans is 0
-
-
-
-
-

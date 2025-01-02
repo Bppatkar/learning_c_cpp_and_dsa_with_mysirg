@@ -121,7 +121,7 @@ int main()
   return 0;
 } */
 // __________________________________________
-// approch 2
+// approach 2
 /* #include <stdio.h>
 int main()
 {
@@ -141,7 +141,7 @@ int main()
   return 0;
  }*/
 // _______________________________________
-// new approch
+// new approach
 /* #include <stdio.h>
 int main()
 {
@@ -159,7 +159,7 @@ int main()
   return 0;
 } */
 // _______________________________________
-// new approch
+// new approach
 /* int l = 2, u = 100, a, i;
   for (a = l; a <= u; x++)
   {
@@ -206,7 +206,7 @@ int main()
   return 0;
 } */
 // _______________________________________________
-/* //Approch 2
+/* //approach 2
 #include <stdio.h>
 int main() {
     int a, i, b, c;
@@ -224,7 +224,7 @@ int main() {
     return 0;
 } */
 // _______________________________________________
-// Approch 3
+// approach 3
 /* #include <stdio.h>
 int main()
 {
@@ -273,7 +273,7 @@ int main()
   return 0;
 } */
 // ____________________________________________
-/* // Approch 2
+/* // approach 2
 #include <stdio.h>
 int main()
 {
@@ -299,7 +299,7 @@ int main()
   return 0;
 } */
 // _______________________________________
-// new approch
+// new approach
 /* #include <stdio.h>
 int main()
 {
@@ -426,7 +426,7 @@ int main()
   return 0;
 }*/
 // ________________________________
-// old approch
+// old approach
 /* #include <stdio.h>
 int main()
 {

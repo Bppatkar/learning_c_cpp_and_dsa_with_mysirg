@@ -201,7 +201,7 @@ int main()
   return 0;
 } */
 
-//! approch 2
+//! approach 2
 /* int i, num;
 for (i = 1; i <= 3; i++) {
     printf("Enter an even number: ");

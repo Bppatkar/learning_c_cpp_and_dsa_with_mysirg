@@ -436,7 +436,7 @@ int main()
   scanf("%d", &a);
   a = a % 10 * 100 + a / 10;
   printf("after reverse %d", a);
-  //BUG: new approch- a%10*100=200 + direct 47
+  //BUG: new approach- a%10*100=200 + direct 47
   return 0;
 } */
 
@@ -1334,7 +1334,7 @@ int main()
   return 0;
 } */
 // __________________________________________
-// approch 2
+// approach 2
 /* #include <stdio.h>
 int main()
 {
@@ -1386,7 +1386,7 @@ int main()
   return 0;
 } */
 // _______________________________________________
-/* //Approch 2
+/* //approach 2
 #include <stdio.h>
 int main() {
     int a, i, b, c;
@@ -1404,7 +1404,7 @@ int main() {
     return 0;
 } */
 // _______________________________________________
-// Approch 3
+// approach 3
 /* #include <stdio.h>
 int main()
 {
@@ -1453,7 +1453,7 @@ int main()
   return 0;
 } */
 // ____________________________________________
-/* // Approch 2
+/* // approach 2
 #include <stdio.h>
 int main()
 {

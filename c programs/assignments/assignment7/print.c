@@ -46,7 +46,7 @@ int main()
 
 /* // 5. Write a program to print the first 10 odd natural numbers in reverse order.
 
-! 3 approches
+! 3 approaches
 ! 1. i =19 ; i>=1 ; i =i-2; printf("%d",i);
 ! 2. i =10 ; i>=1 ; i--; printf("%d",2*i-1);
  20-(2*i-1) => 20-2*i+1 => 21-2*i

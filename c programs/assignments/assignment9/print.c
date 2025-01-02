@@ -80,7 +80,7 @@ int main()
 } */
 
 // 6. Write a program to calculate factorial of a number
-//! approch 1
+//! approach 1
 /* #include <stdio.h>
 int main()
 {
@@ -92,7 +92,7 @@ int main()
   printf("Factorial is %d\n", sum);
   return 0;
 } */
-//! approch 2
+//! approach 2
 /* #include <stdio.h>
 int main()
 {
@@ -115,8 +115,8 @@ int main()
   int n, sum;
   printf("Enter a number: ");
   scanf("%d", &n);
-  //! approch 1 while(n){n/=10;sum++;}
-  //! approch 2
+  //! approach 1 while(n){n/=10;sum++;}
+  //! approach 2
   for (sum = 0; n; n /= 10,sum++);
   printf(" count is %d", sum);
   return 0;
@@ -150,7 +150,7 @@ int main()
  */
 
 // 9. Write a program to calculate LCM of two numbers
-//! approch 1
+//! approach 1
 /* #include <stdio.h>
 int main()
 {
@@ -181,7 +181,7 @@ int main()
   return 0;
 } */
 
-//! approch 2
+//! approach 2
 /* #include <stdio.h>
 int main()
 {
