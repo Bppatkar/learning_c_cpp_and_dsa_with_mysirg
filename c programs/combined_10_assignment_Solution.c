@@ -942,10 +942,11 @@ int main()
   int i = 1, n;
   printf("Enter a number: ");
   scanf("%d", &n);
-  while (i <= n)
+  while (n)
   {
     printf("%d ", i);
     i += 2;
+    n--;
   }
   return 0;
 } */
@@ -954,13 +955,13 @@ int main()
 #include <stdio.h>
 int main()
 {
-  int i;
+  int n;
   printf("Enter a number: ");
-  scanf("%d", &i);
-  while (i >= 1)
+  scanf("%d", &n);
+  while (n)
   {
-    printf("%d ", i);
-    i -= 2;
+    printf("%d ", 2 * n - 1);
+    n--;
   }
   return 0;
 } */
@@ -972,10 +973,11 @@ int main()
   int i = 2, n;
   printf("Enter a number: ");
   scanf("%d", &n);
-  while (i <= n)
+  while (n)
   {
     printf("%d ", i);
     i += 2;
+    n--;
   }
   return 0;
 } */
@@ -984,13 +986,13 @@ int main()
 #include <stdio.h>
 int main()
 {
-  int i;
+  int n;
   printf("Enter a number: ");
-  scanf("%d", &i);
-  while (i >= 2)
+  scanf("%d", &n);
+  while (n)
   {
-    printf("%d ", i);
-    i -= 2;
+    printf("%d ", 2 * n);
+    n--;
   }
   return 0;
 } */

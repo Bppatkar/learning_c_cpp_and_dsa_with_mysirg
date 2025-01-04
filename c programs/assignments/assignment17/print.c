@@ -1,5 +1,5 @@
 // TODO: Assignment-17: More on Recursion
-//?FIXME: mostly questions are asking to "calculate"  so i dont use void  ok
+//?FIXME: mostly questions are asking to "calculate" so i dont use "void"  ok
 
 /* //! 1. Write a recursive function to calculate sum of first N natural numbers
 #include <stdio.h>

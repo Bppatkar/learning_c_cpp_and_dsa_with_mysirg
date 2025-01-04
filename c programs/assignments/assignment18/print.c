@@ -83,6 +83,21 @@ int main()
  */
 
 //! 4. Write a program to find the greatest number stored in an array of size 10. Take array values from the user.
+#include <stdio.h>
+int find_greatest_number(int newArr[], int n)
+{
+  int i;
+  printf("Enter 10 numbers: ");
+  for (i = 0; i < n; i++)
+    scanf("%d", &newArr[i]);
+}
+int main()
+{
+  int arr[10];
+  int find = find_greatest_number(arr, 10);
+  printf("greatest number in array is %d", find);
+  return 0;
+}
 
 //! 5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user.
 

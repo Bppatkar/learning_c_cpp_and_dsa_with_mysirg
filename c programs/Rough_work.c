@@ -603,7 +603,7 @@ int main()
 //! WAP to find last character of the string
 //?  i am using above code
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 // The lastCharacter function returns the last character of a string.
 // It receives an array in the parameter (str), which is accessed using the alias 's' (not a new array, just a different name for the same array).
@@ -629,5 +629,26 @@ int main()
   // ********
   // Print the last character of the string stored in 'ch'.
   printf("last character of string is %c", ch);
+  return 0;
+} */
+
+//! arithmatic pointer
+// swapping assignment
+
+#include <stdio.h>
+void swappingValue(int a, int b)
+{
+  a = a * b;
+  b = a / b;
+  a = a / b;
+}
+int main()
+{
+  int a, b;
+  printf("Enter two numbers: ");
+  scanf("%d %d", &a, &b);
+  printf("entered value a=%d b=%d\n", a, b);
+  swappingValue(a, b);
+  printf("after swapping a=%d b=%d\n", a, b);
   return 0;
 }
