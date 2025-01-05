@@ -64,14 +64,118 @@ Welcome to the collection of C Programming Assignments! This repository contains
 - **Topics Covered**:
   - Fibonacci series, HCF, co-prime numbers, Armstrong numbers, and prime number challenges.
 
-## How to Use
+### Assignment 11: Star Printing
+
+Focus: Pattern printing using nested loops.
+
+### Assignment 12: Star Printing
+
+Focus: Advanced pattern printing techniques.
+
+### Assignment 13: Switch Case Control
+
+Focus: Using switch-case statements for decision making.
+
+Topics covered:
+1. Displaying days in a month
+2. Menu-driven calculator
+3. Day-specific greetings
+4. Triangle type checker
+5. Converting if-else to switch-case
+6. Grade calculator
+7. Menu-driven math operations
+8. Character type checker
+9. Vowel/Consonant checker
+10. Advanced menu-driven program
+
+### Assignment 14: Functions
+
+Focus: Basic function implementation and usage.
+
+Topics covered:
+1. Area of a circle
+2. Simple interest calculation
+3. Even/Odd checker
+4. Printing natural numbers
+5. Printing odd natural numbers
+6. Factorial calculation
+7. Combination calculator
+8. Permutation calculator
+9. Digit presence checker
+10. Prime factor printer
+
+### Assignment 15: More on Functions
+
+Focus: Advanced function implementations.
+
+Topics covered:
+1. LCM calculator
+2. HCF calculator
+3. Prime number checker
+4. Next prime number finder
+5. N prime numbers printer
+6. Prime numbers in a range
+7. Fibonacci series printer
+8. Pascal's Triangle printer
+9. Armstrong numbers printer
+10. Series sum calculator
+
+### Assignment 16: Recursion
+
+Focus: Basic recursive function implementations.
+
+Topics covered:
+1. Print N natural numbers
+2. Print N natural numbers in reverse
+3. Print N odd natural numbers
+4. Print N odd natural numbers in reverse
+5. Print N even natural numbers
+6. Print N even natural numbers in reverse
+7. Print squares of N natural numbers
+8. Decimal to binary conversion
+9. Decimal to octal conversion
+10. Reverse a number
+
+### Assignment 17: More on Recursion
+
+Focus: Advanced recursive function implementations.
+
+Topics covered:
+1. Sum of N natural numbers
+2. Sum of N odd natural numbers
+3. Sum of N even natural numbers
+4. Sum of squares of N natural numbers
+5. Sum of digits
+6. Factorial calculation
+7. HCF calculation
+8. Fibonacci series
+9. Digit count
+10. Power calculation
+
+### Assignment 18: Arrays
+
+Focus: Basic array operations and manipulations.
+
+Topics covered:
+1. Sum of array elements
+2. Average of array elements
+3. Sum of even and odd numbers in array
+4. Find greatest number in array
+5. Find smallest number in array
+6. Sort array elements
+7. Find second largest number
+8. Find second smallest number
+9. Sort array in descending order
+10. Copy elements to another array
+
+### How to Use
 
 1. **Start Small**: Begin with Assignment 1 and gradually move to advanced assignments.
 2. **Write Code**: Solve each question by writing and testing code in your favorite C compiler (e.g., GCC, Turbo C).
 3. **Debug and Practice**: Test edge cases, improve your logic, and ensure you understand each solution.
 4. **Track Progress**: Mark questions as completed to stay organized.
 
-## Prerequisites
+### Prerequisites
 
 To complete these assignments, you need a basic understanding of:
 
@@ -81,7 +185,7 @@ To complete these assignments, you need a basic understanding of:
 - Operators (arithmetic, relational, bitwise)
 - Conditional statements and loops
 
-## Goals
+### Goals
 
 By completing these assignments, you will:
 
@@ -89,12 +193,12 @@ By completing these assignments, you will:
 - Build a strong foundation for solving programming problems.
 - Improve logical thinking and debugging skills.
 
-## Recommended Tools
+### Recommended Tools
 
 - **Compiler**: GCC, Turbo C, or any modern C compiler.
 - **IDE/Text Editors**: Visual Studio Code, Code::Blocks, Dev C++, or Sublime Text.
 
-## Author
+### Author
 
 Questions from - Saurabh Shukla Sir and Solving by BHANU PRATAP PATKAR. Specially Designed for students and beginners to improve their C programming skills.
 
