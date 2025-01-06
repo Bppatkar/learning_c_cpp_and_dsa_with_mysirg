@@ -655,7 +655,7 @@ int main()
   // a,b both are vanished in above function so what value u r swapping here...?? that is a main prblm
   return 0;
 } */
-//! solution of above code
+/* //! solution of above code
 #include <stdio.h>
 void swappingValue(int *a, int *b)
 {
@@ -672,5 +672,123 @@ int main()
   printf("entered value a=%d b=%d\n", a, b);
   swappingValue(&a, &b);
   printf("after swapping a=%d b=%d\n", a, b);
+  return 0;
+} */
+
+//! pointers in array
+// yaha hm pointer padh rhe h isiliye waha s array bhejne par pointer reciever kr rha
+// agr array padh rhe hote to array bhejne pr empty array recieve krta ya fir use bhi pointer s hi recieve kr lete..... pointer wala use krna wo jyada sahi rhta h
+// agr above line smjh nahi aae to assignment 18 ka 1st question k both solution dekho
+
+/* #include <stdio.h>
+void input(int *p, int size)
+ // waha s array bheja hai to yaha pointer recieve krega na to *p ya fir *a likh lo , ab waha (a, 10) likha h, a mtlb array ka naam , or array ka naam likhna mtlb uske phle block ka address hai.
+{
+  int i;
+  printf("Enter %d numbers", size);
+  for (i = 0; i < size; i++)
+  {
+    scanf("%d", p + i);   //p+0 mtlb , 'a' array k phle block ka address hai ab i++ to p+1....till size
+    // scanf("%d", &p[i]);   ✅
+    // scanf("%d", p[i]);    ❌  bcz
+    // you cannot write scanf("%d", p[i]); because p[i] represents the value stored at the i-th position, not its address. The scanf function requires a pointer (memory address) as an argument to store the input.
+    //? p + i and &p[i] both give the memory address of the i-th element.
+    //? p[i] gives the value at the i-th position, which is why it cannot be used directly with scanf.
+  }
+}
+int main()
+{
+  int a[10];
+  input(a, 10); // yefunc user s 10 value ka input lega or a naam k array m rakh dega
+  return 0;
+} */
+
+//! now adding one more function to display the input from user, so i am going to write same code again but without comment
+/* #include <stdio.h>
+void input(int *p, int size)
+{
+  int i;
+  printf("Enter %d numbers: ", size);
+  for (i = 0; i < size; i++)
+  {
+    scanf("%d", p + i);
+  }
+}
+void display(int *p, int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("%d ", *(p + i));
+  }
+}
+int main()
+{
+  int a[10];
+  input(a, 10);   // yefunc user s 10 value ka input lega or a naam k array m rakh dega
+  display(a, 10); // ye us input ko print krega
+  return 0;
+} */
+
+//! pointers and strings
+// calculating the length of string give making seperate function for it
+
+/* #include <stdio.h>
+int length(char *p)
+{
+  int i;
+  for (i = 0; *(p + i); i++)
+    ;
+  return i;
+}
+int main()
+{
+  int l;
+  char str[10];
+  fgets(str, 10, stdin);
+  l = length(str);
+  printf("Length of the string: %d\n", l);
+  return 0;
+}
+ */
+
+//! array of pointers
+#include <stdio.h>
+void display(int *p, int size)
+{
+  int i;
+  printf("\n");
+  for (i = 0; i < size; i++)
+    printf("%d ", *(p + i));
+}
+void input(int **q, int n, int size[])
+{
+  int i, j;
+  for (i = 0; i < n; i++)
+  {
+    printf("\nEnter %d numbers: ", size[i]);
+    for (j = 0; j < size[i]; j++)
+      scanf("%d", *(q + i) + j);
+  }
+}
+int main()
+{
+  int a[5], b[6], c[3], d[8];
+  int *p[4], i;
+  int size[] = {5, 6, 3, 8};
+  // p[0] = &a[0];
+  // or
+  p[0] = a;
+  p[1] = b;
+  p[2] = c;
+  p[3] = d;
+  // in charon array m data input kaise krwau
+  // input nam ka func banate hai
+  input(p, 4, size);
+  // input ho gya ab display krwate hai to for loop lagate h or p pr chala denge
+  // iske liye ek i variable banayenge *p[4] k side m hi likh diya h
+  for (i = 0; i < 4; i++)
+    display(p[i], size[i]); // display ek func h new func
+  // p[i] s p k andr 4 array h sequence m print honge or unka size size nam k arr s pta chl jayega
   return 0;
 }

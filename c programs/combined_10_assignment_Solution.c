@@ -1240,7 +1240,7 @@ int main()
   int a, b, i, c, num;
   printf("Enter a Number: ");
   scanf("%d", &num);
-  for (i = 0, a = -1, b = 1; i <= num; i++)
+  for (i = 0, a = -1, b = 1; num; i++, num--)
   {
     c = a + b;
     a = b;
@@ -1257,7 +1257,7 @@ int main()
   int a, b, i, c, num;
   printf("Enter a Number: ");
   scanf("%d", &num);
-  for (i = 0, a = -1, b = 1; i <= num; i++)
+  for (i = 0, a = -1, b = 1; num; i++, num--)
   {
     c = a + b;
     printf("%d ", c);
@@ -1271,10 +1271,10 @@ int main()
 #include <stdio.h>
 int main()
 {
-  int a, b, i, c, num;
+  int a = -1, b = 1, c, num;
   printf("Enter a Number: ");
   scanf("%d", &num);
-  for (i = 0, a = -1, b = 1; i <= num; i++)
+  for (;;)
   {
     c = a + b;
     if (c == num)
@@ -1282,7 +1282,7 @@ int main()
       printf("Present\n");
       break;
     }
-    else
+    else if (c > num)
     {
       printf("Not Present\n");
       break;

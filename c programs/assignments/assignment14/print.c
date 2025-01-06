@@ -74,8 +74,8 @@ int main(){
 /* #include <stdio.h>
 void printOddNumbers(int n)
 {
-  int count = 1;
-  for (int i = 1; count <= n; i += 2, count++)
+
+  for (int i = 1, count = 1; count <= n; i += 2, count++)
   {
     printf("%d\n", i);
   }
