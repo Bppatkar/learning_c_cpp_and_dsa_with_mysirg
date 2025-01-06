@@ -635,13 +635,15 @@ int main()
 //! arithmatic pointer
 // swapping assignment
 
-#include <stdio.h>
+/* #include <stdio.h>
 void swappingValue(int a, int b)
 {
-  a = a * b;
-  b = a / b;
-  a = a / b;
+  int c;
+  c=a;
+  a=b;
+  b=c;
 }
+// after this function ended a,b is vanished bcz of local variable
 int main()
 {
   int a, b;
@@ -649,6 +651,26 @@ int main()
   scanf("%d %d", &a, &b);
   printf("entered value a=%d b=%d\n", a, b);
   swappingValue(a, b);
+  printf("after swapping a=%d b=%d\n", a, b);
+  // a,b both are vanished in above function so what value u r swapping here...?? that is a main prblm
+  return 0;
+} */
+//! solution of above code
+#include <stdio.h>
+void swappingValue(int *a, int *b)
+{
+  int c;
+  c = *a;
+  *a = *b;
+  *b = c;
+}
+int main()
+{
+  int a, b;
+  printf("Enter two numbers: ");
+  scanf("%d %d", &a, &b);
+  printf("entered value a=%d b=%d\n", a, b);
+  swappingValue(&a, &b);
   printf("after swapping a=%d b=%d\n", a, b);
   return 0;
 }

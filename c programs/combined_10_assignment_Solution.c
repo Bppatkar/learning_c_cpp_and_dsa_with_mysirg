@@ -1176,6 +1176,24 @@ int main()
   printf("Prime");
   return 0;
 } */
+// new approach
+/* #include <stdio.h>
+int main()
+{
+    int n, i;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n-1; i++)
+    {
+        if (n % i == 0)
+           break;
+    }
+    if(i==n)
+    printf("Prime number");
+    else
+    printf("Not a prime number");
+    return 0;
+} */
 
 /* //? 89 MIMP. Write a program to calculate the LCM of two numbers.
 #include <stdio.h>
