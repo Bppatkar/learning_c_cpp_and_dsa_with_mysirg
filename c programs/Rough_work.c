@@ -632,6 +632,71 @@ int main()
   return 0;
 } */
 
+// **************************************
+//! learning pointer
+/* #include <stdio.h>
+int main()
+{
+  int a[3] = {1, 2, 3};
+  int b[3] = {4, 5, 6};
+  int *q[2]; // Array of pointers
+
+  q[0] = a; // q[0] points to array 'a'
+  q[1] = b; // q[1] points to array 'b'
+
+  // Printing addresses
+  printf("q[0]: %p, q[1]: %p\n", q[0], q[1]);                 // Starting addresses of a and b
+  printf("*(q + 0): %p, *(q + 1): %p\n", *(q + 0), *(q + 1)); // Same as q[0] and q[1]
+
+  // Accessing values
+  printf("q[0][1]: %d\n", q[0][1]);         // Value at index 1 of array 'a' (2)
+  printf("*(q[0] + 1): %d\n", *(q[0] + 1)); // Same as q[0][1] (2)
+
+  printf("q[1][2]: %d\n", q[1][2]);         // Value at index 2 of array 'b' (6)
+  printf("*(q[1] + 2): %d\n", *(q[1] + 2)); // Same as q[1][2] (6)
+
+  return 0;
+}
+ */
+// ______________________________________
+//! learning pointer in deep
+/* #include <stdio.h>
+int main()
+{
+  int a[3], b[3];
+  int *q[2]; // Array of pointers
+  q[0] = a;  // q[0] points to array 'a'
+  q[1] = b;  // q[1] points to array 'b'
+
+  // Taking input for both arrays
+  printf("Enter 3 numbers for array a: ");
+  for (int i = 0; i < 3; i++)
+  {
+    scanf("%d", (*(q + 0) + i)); // Input for array 'a'
+  }
+
+  printf("Enter 3 numbers for array b: ");
+  for (int i = 0; i < 3; i++)
+  {
+    scanf("%d", (*(q + 1) + i)); // Input for array 'b'
+  }
+
+  // Displaying values
+  printf("Array a: ");
+  for (int i = 0; i < 3; i++)
+  {
+    printf("%d ", *(*(q + 0) + i)); // Print values of array 'a'
+  }
+
+  printf("\nArray b: ");
+  for (int i = 0; i < 3; i++)
+  {
+    printf("%d ", *(*(q + 1) + i)); // Print values of array 'b'
+  }
+  return 0;
+} */
+// **************************************
+
 //! arithmatic pointer
 // swapping assignment
 
@@ -711,7 +776,8 @@ void input(int *p, int size)
   printf("Enter %d numbers: ", size);
   for (i = 0; i < size; i++)
   {
-    scanf("%d", p + i);
+   scanf("%d ", (p + i));
+    // scanf("%d ", &p[i]);
   }
 }
 void display(int *p, int size)
@@ -753,13 +819,13 @@ int main()
  */
 
 //! array of pointers
-#include <stdio.h>
-void display(int *p, int size)
+/* #include <stdio.h>
+void display(int *q, int size)
 {
   int i;
   printf("\n");
   for (i = 0; i < size; i++)
-    printf("%d ", *(p + i));
+    printf("%d ", *(q + i));
 }
 void input(int **q, int n, int size[])
 {
@@ -768,7 +834,7 @@ void input(int **q, int n, int size[])
   {
     printf("\nEnter %d numbers: ", size[i]);
     for (j = 0; j < size[i]; j++)
-      scanf("%d", *(q + i) + j);
+      scanf("%d", (*(q + i) + j));
   }
 }
 int main()
@@ -791,4 +857,6 @@ int main()
     display(p[i], size[i]); // display ek func h new func
   // p[i] s p k andr 4 array h sequence m print honge or unka size size nam k arr s pta chl jayega
   return 0;
-}
+} */
+
+//! pointers to array
