@@ -25,8 +25,8 @@ int main()
 // that function will return something so we store in a variable in main function and print it
 int print_sum_n_odd_number(int n, int count)
 {
-  if (n == 0)
-    return 0;
+  if (n == 1)
+    return 1;
   return count + print_sum_n_odd_number(n - 1, count + 2); // here i use +2 bcz of odd start with 1
 }
 int main()
@@ -44,8 +44,8 @@ int main()
 #include <stdio.h>
 int print_sum_n_even_number(int n, int count)
 {
-  if (n == 0)
-    return 0;
+  if (n == 1)
+    return 2;
   return count + print_sum_n_even_number(n - 1, count + 2);  // here i use +2 bcz of even start with 1
 }
 int main()
@@ -63,8 +63,8 @@ int main()
 #include <stdio.h>
 int print_square_sum_of_number(int n)
 {
-  if (n == 0)
-    return 0;
+  if (n == 1)
+    return 1;
   return (n * n) + print_square_sum_of_number(n - 1);
 }
 int main()
@@ -91,8 +91,8 @@ int main()
   printf("Enter a number: ");
   scanf("%d", &n);
   int sum = print_sum_of_digit_of_number(n, 0); // Initialize total as 0
-  printf("sum of square of first %d natural numbers is %d", n, sum);
-   // i use 2 times %d %d ok and 2 bcz even start with 2
+  printf("sum of %d digits is %d", n, sum);
+  // i use 2 times %d %d ok and 2 bcz even start with 2
   return 0;
 } */
 
@@ -113,11 +113,16 @@ int main(){
 } */
 
 /* //! 7. Write a recursive function to calculate HCF of two numbers
+//?The Euclidean Algorithm is an efficient way to compute the GCD of two numbers
+// Steps of the Euclidean Algorithm:
+// Divide a by b, and get the remainder r = a % b.
+// Replace a with b and b with r.
+// Repeat steps 1 and 2 until b becomes 0.
+// The GCD is the last non-zero value of a.
+
 #include <stdio.h>
 int print_HCF_of_two_numbers(int a, int b){
-  if (b == 0)
-    return a;
-  return print_HCF_of_two_numbers(b, a % b);
+  return (b == 0) ? a : print_HCF_of_two_numbers(b, a % b);
 }
 int main(){
   int a, b;
@@ -131,6 +136,33 @@ int main(){
 /* //! 8. Write a recursive function to print first N terms of Fibonacci series
 //? that says print so i use void ok
 #include <stdio.h>
+int fibFunc(int n)
+{
+  if (n == 0 || n == 1)
+    return n;
+  return fibFunc(n - 1) + fibFunc(n - 2);
+}
+
+void print_n_term_of_fibbonacci(int n)
+{
+  if (n == 0)
+    printf("%d ", n);
+  else
+  {
+    print_n_term_of_fibbonacci(n - 1);
+    printf("%d ", fibFunc(n));
+  }
+}
+int main()
+{
+  int a;
+  printf("Enter a number: ");
+  scanf("%d", &a);
+  print_n_term_of_fibbonacci(a);
+  return 0;
+} */
+// new approach
+/* #include <stdio.h>
 void print_n_term_of_fibbonacci(int a, int m, int n){
   if (a == 0)
     return;
@@ -145,8 +177,20 @@ int main(){
   return 0;
 } */
 
-/* //! 9. Write a recursive function to count the digits of a given number.
-#include <stdio.h>
+//! 9. Write a recursive function to count the digits of a given number.
+/* #include <stdio.h>
+int countDigit(int x)
+{
+  if (x == 0)
+    return 0;
+  return countDigit(x / 10) + 1;
+}
+int main()
+{
+  printf("%d", countDigit(1234543));
+} */
+//? new approach
+/*#include <stdio.h>
 int print_digit_count_of_number(int a, int total)
 {
   if (a == 0)
@@ -166,22 +210,27 @@ int main(){
 
 /* //! 10. Write a recursive function to calculate the power of any number.
 #include <stdio.h>
-int print_power_of_number(int a, int b){
+float print_power_of_number(float a, float b)
+{
   if (b == 0)
     return 1;
-  return a * print_power_of_number(a, b - 1); // Recursive case: a^b = a * a^(b-1)
+  if (b > 0)
+    return a * print_power_of_number(a, b - 1);
+  if (b < 0)
+    return print_power_of_number(a, b + 1) / a;
 }
-int main(){
+int main()
+{
   int a, b;
   printf("Enter two number: ");
   scanf("%d %d", &a, &b);
-  int power = print_power_of_number(a, b);
-  printf("%d raised to the power of %d is: %d\n", a, b, power);
+  float power = print_power_of_number(a, b);
+  printf("%d raised to the power of %d is: %f\n", a, b, power);
   return 0;
 } */
 
 //! for checking code
-#include <stdio.h>
+/* #include <stdio.h>
 // ****************************
 // that function will return something so we store in a variable in main function and print it
 int print_power_of_number(int a, int b)
@@ -205,4 +254,4 @@ int main()
   int power = print_power_of_number(a, b);
   printf("%d raised to the power of %d is: %d\n", a, b, power);
   return 0;
-}
+} */

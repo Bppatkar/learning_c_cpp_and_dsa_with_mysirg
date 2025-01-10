@@ -429,14 +429,14 @@ int main()
   char str[10] = {'B', 'H', 'O', 'P', 'A', 'L'};
   int i;
   for (i = 0; i <= 9; i++)
-  // here 4 spaces will print bcz of null char which is waste of time u can check on one compillar website
+  // here 4 spaces will print bcz of null char which is waste of time u can check on one compiler website
   {
     printf("%c", str[i]);
   }
   printf("hello");
   return 0;
 } */
-//? doing the same without print 4 blacnkspace
+//? doing the same without print 4 blackspace
 /* #include <stdio.h>
 int main()
 {
@@ -448,7 +448,7 @@ int main()
   }
   return 0;
 } */
-//? when it goes up to 6 then it finds that str[6]=0 means conditin false then why are we writting str[i]!=0;  -- see here
+//? when it goes up to 6 then it finds that str[6]=0 means condition false then why are we writing str[i]!=0;  -- see here
 /* #include <stdio.h>
 int main()
 {
@@ -500,7 +500,7 @@ int main()
 int main()
 {
   char str[50];
-  // bcz we dont know how much length of string user enterees
+  // bcz we don't know how much length of string user enters
   printf("Enter your name: ");
   scanf("%s", str); // we use %s ok for complete string
   printf("%s", str);
@@ -512,7 +512,7 @@ int main()
 int main()
 {
   char str[20];
-  // bcz we dont know how much length of string user enterees
+  // bcz we don't know how much length of string user enters
   printf("Enter your name: ");
   fgets(str, 20, stdin); // we use %s ok for complete string
   printf("%s", str);
@@ -834,7 +834,11 @@ void input(int **q, int n, int size[])
   {
     printf("\nEnter %d numbers: ", size[i]);
     for (j = 0; j < size[i]; j++)
+      // Both expressions are equivalent
       scanf("%d", (*(q + i) + j));
+      // Using (*(q + i) + j)
+      // scanf("%d", (q[i] + j));
+      // Using q[i] + j
   }
 }
 int main()
@@ -859,4 +863,59 @@ int main()
   return 0;
 } */
 
+//! now making 2d array and recieving in function without pointer using same above code
+#include <stdio.h>
+/* void display(int *q, int size)
+{
+  int i;
+  printf("\n");
+  for (i = 0; i < size; i++)
+    printf("%d ", *(q + i));
+} */
+/* void input(int **q, int n, int size[])
+{
+  int i, j;
+  for (i = 0; i < n; i++)
+  {
+    printf("\nEnter %d numbers: ", size[i]);
+    for (j = 0; j < size[i]; j++)
+      scanf("%d", (*(q + i) + j));
+  }
+} */
+void f1(int y[][4], int row)
+{
+  // we cant leave [][] both array empty, atleast we have to fill coloum block
+  //? we can leave row array empty but not column
+  // if we have 3d array [][][] we cant leave 3 empty array we have to fill last 2
+  //? now we have to print those value from int x[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  int i, j;
+  for (i = 0; i < row; i++)
+  {
+    for (j = 0; j < 4; j++)
+    {
+      printf("%d ", y[i][j]);
+    }
+    printf("\n");
+  }
+}
+int main()
+{
+  int a[5], b[6], c[3], d[8];
+  int *p[4], i;
+  int size[] = {5, 6, 3, 8};
+  // ********** here i made changes ok
+  int x[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  f1(x, 3); //? we want to pass above 2d array in that f1 function
+  // **********
+  /*p[0] = a;
+  p[1] = b;
+  p[2] = c;
+  p[3] = d;
+  input(p, 4, size);
+  for (i = 0; i < 4; i++)
+    display(p[i], size[i]); */
+  return 0;
+}
+
 //! pointers to array
+//? means pointer that stores array's of address

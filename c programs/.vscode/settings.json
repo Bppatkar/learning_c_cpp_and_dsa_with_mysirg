@@ -3,5 +3,6 @@
     "*.jsx": "javascriptreact",
     "SuggestionVideoCard,js": "javascriptreact",
     "stdio.h": "c"
-  }
+  },
+  "cSpell.words": ["BHANU", "krega"]
 }

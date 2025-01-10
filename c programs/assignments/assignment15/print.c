@@ -375,10 +375,27 @@ int sumOfSeries(int n)
   }
   return totalSum;
 } */
+//? new approach
+//? use factorial function for that
+/* int fact(int n)
+{
+  if (n == 0)
+    return 1;
+  return n * fact(n - 1);
+}
+int sumOfSeries(int n)
+{
+  int sum = 0;
+  while (n)
+  {
+    sum = sum + fact(n) / n;
+    n--;
+  }
+  return sum;
+} */
 
 // code for checking function
-#include <stdio.h>
-
+/* #include <stdio.h>
 int main()
 {
   // int a, b;
@@ -388,8 +405,8 @@ int main()
   int n;
   printf("Enter a number: ");
   scanf("%d", &n);
-  // printf("First %d prime numbers");
+  int result = sumOfSeries(n);
+  printf("result is %d", result);
 
-  printPascal(n);
   return 0;
-}
+} */
