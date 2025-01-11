@@ -882,7 +882,7 @@ int main()
       scanf("%d", (*(q + i) + j));
   }
 } */
-void f1(int y[][4], int row)
+/* void f1(int y[][4], int row)
 {
   // we cant leave [][] both array empty, atleast we have to fill coloum block
   //? we can leave row array empty but not column
@@ -898,7 +898,7 @@ void f1(int y[][4], int row)
     printf("\n");
   }
 }
-int main()
+ int main()
 {
   int a[5], b[6], c[3], d[8];
   int *p[4], i;
@@ -907,15 +907,188 @@ int main()
   int x[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
   f1(x, 3); //? we want to pass above 2d array in that f1 function
   // **********
-  /*p[0] = a;
-  p[1] = b;
-  p[2] = c;
-  p[3] = d;
-  input(p, 4, size);
+  // ___________________
+  // p[0] = a;
+  // p[1] = b;
+  // p[2] = c;
+  // p[3] = d;
+  // ___________________
+
+ input(p, 4, size);
   for (i = 0; i < 4; i++)
-    display(p[i], size[i]); */
+    display(p[i], size[i]);
   return 0;
-}
+}*/
 
 //! pointers to array
 //? means pointer that stores array's of address
+
+//! structure
+/* ///? it means we declare structure in global variable
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+}; */
+
+//? defining in local variable-- now this structure always stay under function we cant access from outside
+/* int f1()
+{
+  struct Book
+  {
+    int bookid;
+    char title[20];
+    float price;
+  };
+} */
+
+//! initializing """"""""structure variable"""""" during declaration
+/* #include <stdio.h>
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+};
+int main()
+{
+  struct Book b1 = {1, "C in depth", 350.0};
+  return 0;
+} */
+
+//! initializing structure """"""""member variable"""""" **after** declaration
+//? using above code and making new variable b2 and initializing it
+/* #include <stdio.h>
+#include<string.h>
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+};
+int main()
+{
+  struct Book b1 = {1, "C in depth", 350.0};
+  struct Book b2;
+  b2.bookid = 2;
+  // b2.title = "C++ in depth";  aise nahi likhe skte ho strcpy lagao ot string.h include kiya
+  strcpy(b2.title,"java");
+  b2.price = 322.5;
+  return 0;
+} */
+
+//! how to take input from user
+//? example - i want bookid, title and price from user
+//? printf("Enter bookid, title and price");
+
+/* #include <stdio.h>
+#include <string.h>
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+} b1, b2, b3;
+int main()
+{
+  printf("Enter bookid, title and price: ");
+  scanf("%d", &b3.bookid); // ye bs aise hi bna liye qki bookid khali ni likh skte
+  fgets(b3.title, 20, stdin);
+  scanf("%f", &b3.price);
+  struct Book b1 = {1, "c in depth", 340.0};
+  struct Book b2;
+  b2.bookid = 2;
+  strcpy(b2.title, "java");
+  b2.price = 350.0;
+  return 0;
+} */
+
+//! function returning structure
+//? In C, a function can return a structure. The syntax for a function returning a structure is
+
+/* struct StructName FunctionName(arguments)
+{
+    struct StructName variable;
+    // Initialize members of the structure
+    // Perform operations
+    return variable; // Return the structure
+} */
+
+//! writting code for func returning structure
+//? using above code
+/* #include <stdio.h>
+#include <string.h>
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+} b1, b2, b3;
+struct Book input()
+{
+  struct Book b;
+  printf("Enter bookid, title and price: ");
+  scanf("%d", &b.bookid);
+  fgets(b.title, 20, stdin);
+  scanf("%f", &b.price);
+  return b;
+};
+
+int main()
+{
+  struct Book b1 = {1, "c in depth", 340.0};
+  struct Book b2;
+  b2.bookid = 2;
+  strcpy(b2.title, "java");
+  b2.price = 350.0;
+  b3 = input();
+  // "Whatever the input function returns directly goes into b3 because b3 is of type 'Book,' and the input function returns b, which is also of type 'Book.' Therefore, the data will be copied."
+  return 0;
+} */
+
+//! function call by passing structure
+//? jab bhi string input krwao to while (getchar() != '\n'); use krlena, ye buffer ko clear kr dega
+/* #include <stdio.h>
+#include <string.h>
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+};
+struct Book input()
+{
+  struct Book b;
+  printf("Enter bookid, title and price: ");
+  scanf("%d", &b.bookid);
+  // fflush(stdin); // ye kab lagate h jab input buffer poora bhar jata hai wo backend ni ho rha tha isliye fgets apna kaam ni kr rha tha isiliye ye use kiya... is line ko uncomment krke dekh lo smjh jaoge pr ye depriciate ho gya h to soln-- ye getchar use kro
+  while (getchar() != '\n')
+    ; // Clear buffer
+  fgets(b.title, 20, stdin);
+  // fgets newline character bhi le rha h usi ko thk krna h ab
+  b.title[strlen(b.title) - 1] = '\0';
+  scanf("%f", &b.price);
+  return b;
+};
+// *************
+void display(struct Book b)
+{
+  printf("\n%d %s %f", b.bookid, b.title, b.price);
+}
+// *************
+int main()
+{
+  struct Book b1 = {1, "c in depth", 340.0};
+  struct Book b2, b3;
+  b2.bookid = 2;
+  strcpy(b2.title, "java");
+  b2.price = 350.0;
+  b3 = input();
+  // **********
+  display(b1);
+  display(b2);
+  display(b3);
+  // **********
+  return 0;
+} */

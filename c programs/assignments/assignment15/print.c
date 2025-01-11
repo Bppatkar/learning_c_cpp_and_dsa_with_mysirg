@@ -188,7 +188,7 @@ int main()
     printf("No prime numbers found in the range.");
   }
 } */
-// new approach again we use checkPrime func here
+//? new approach again we use checkPrime func here
 /*  void calPrintBTWPrime(int a, int b)
 {
   int x;
@@ -240,32 +240,78 @@ void calNFibo(int n)
  */
 
 /* // ! 8. Write a function to print PASCAL Triangle. (TSRN)
-int calcFact(int n)
+//? using 12 assignment 7th question as it is with some changes
+#include <stdio.h>
+void printPascalTriangle(int n)
+// void printPascalTriangle()
 {
-  int fact = 1;
-  for (int x = 1; x <= n; x++)
+  int i, j, k, x, val;
+  for (i = 1; i <= n; i++)
   {
-    fact *= x;
+    k = 1;
+    x = 1;
+    val = 1; // Initialize the first value in each row
+    for (j = 1; j <= 2 * n - 1; j++)
+    {
+      if (j >= n + 1 - i && j <= n - 1 + i)
+      {
+        if (k)
+        {
+          printf("%2d ", val); // Print the current value
+
+          // Calculate the next value in the row
+          val = val * (i - x) / x;
+          x++;
+        }
+        else
+        {
+          printf("   "); // Space between numbers
+        }
+        k = 1 - k; // Toggle between number and space
+      }
+      else
+      {
+        printf("   "); // Leading or trailing spaces
+      }
+    }
+    printf("\n");
   }
-  return fact;
+}
+int main()
+{
+  int n;
+  printf("Enter a number: ");
+  scanf("%d", &n);
+  printPascalTriangle(n);
+  return 0;
+} */
+//? new approach
+/* int calcFact(int n)
+{
+ int fact = 1;
+ for (int x = 1; x <= n; x++)
+ {
+   fact *= x;
+ }
+ return fact;
 }
 // ______________________________________
 void printPascal(int n)
 { int i,j,result;
-  for ( i = 0; i < n; i++)
-  {
-    for (j = 0; j < n - i - 1; j++)
-      printf("  ");  //adding 2 space
+ for ( i = 0; i < n; i++)
+ {
+   for (j = 0; j < n - i - 1; j++)
+     printf("  ");  //adding 2 space
 
-    for (j = 0; j <= i; j++)
-    {
-      result = calcFact(i) / (calcFact(j) * calcFact(i - j));
-      printf("%2d  ", result);
-      //after d added 2 space and for 2 digit number use %2d
-      // if it has 3 digit so we use %3d
-    }
-    printf("\n");
-  }
+   for (j = 0; j <= i; j++)
+   {
+     result = calcFact(i) / (calcFact(j) * calcFact(i - j));
+     printf("%2d  ", result);
+     //after d added 2 space and for 2 digit number use %2d
+     // if it has 3 digit so we use %3d
+   }
+   printf("\n");
+ }
 } */
 //? we can use star pattern solution from assignment 12 Q.3
 //? and factorial func with combinationCount for calc permutaion

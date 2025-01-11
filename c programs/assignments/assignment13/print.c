@@ -227,6 +227,8 @@ int main()
     else
       printf("Invalid choice. Please enter a number between 1 and 4.\n");
   }
+
+  return 0;
 } */
 
 //! Q5. Convert the following if-else-if construct into switch case:
@@ -398,22 +400,27 @@ int main(){
 
 //! Q8. Write a program to check whether a given character is an uppercase alphabet, lowercase alphabet, or some other special character, using a switch case statement.
 /* #include <stdio.h>
-void classifyCharacter(char ch)
+void classifyCharacter(int a)
 {
-  if (ch >= 'A' && ch <= 'Z')
-    printf("The character is an uppercase alphabet.\n");
-  else if (ch >= 'a' && ch <= 'z')
-    printf("The character is a lowercase alphabet.\n");
-  else
-    printf("The character is a special character.\n");
+  switch (a)
+  {
+  case 'A' ... 'Z':
+    printf("uppercase");
+    break;
+  case 'a' ... 'z':
+    printf("lowercase");
+    break;
+  default:
+    printf("Digit or Special Character");
+    break;
+  }
 }
-
 int main()
 {
-  char ch;
-  printf("Enter a character: ");
-  scanf(" %c", &ch);
-  classifyCharacter(ch);
+  char a;
+  printf("Enter character: ");
+  scanf("%c", &a);
+  classifyCharacter(a);
   return 0;
 } */
 

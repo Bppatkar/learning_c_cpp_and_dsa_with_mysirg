@@ -322,6 +322,30 @@ int main()
   }
   return 0;
 } */
+// new approach
+/* #include <stdio.h>
+int main()
+{
+  int i, n;
+  printf("Enter a number: ");
+  scanf("%d", &n);
+
+  while (n)
+  {
+    for (i = 2; i <= n + 1; i++)
+    {
+      if ((n + 1) % i == 0)
+        break;
+    }
+    if (i == n + 1)
+    {
+      printf("%d ", i);
+      break;
+    }
+    n++;
+  }
+  return 0;
+} */
 
 /* //? 99. Write a program to check whether a given number is an Armstrong number.
 #include <stdio.h>
