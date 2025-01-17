@@ -176,6 +176,27 @@ int main(){
   print_n_term_of_fibbonacci(a, 0, 1);
   return 0;
 } */
+// ___________New Approach___________________
+/* #include <stdio.h>
+void print_n_term_of_fibbonacci(int n, int a, int b, int c)
+{
+  if (n == 0)
+    return;
+
+  printf("%d ", c);
+  a = b;
+  b = c;
+  c = a + b;
+  print_n_term_of_fibbonacci(n - 1, a, b, c);
+}
+int main()
+{
+  int n, a = -1, b = 1, c = a + b;
+  printf("Enter a number: ");
+  scanf("%d", &n);
+  print_n_term_of_fibbonacci(n, a, b, c);
+  return 0;
+} */
 
 //! 9. Write a recursive function to count the digits of a given number.
 /* #include <stdio.h>
@@ -210,6 +231,24 @@ int main(){
 
 /* //! 10. Write a recursive function to calculate the power of any number.
 #include <stdio.h>
+int print_power_of_number(int number, int power)
+{
+
+  if (power == 0)
+    return 1;
+  return (number * print_power_of_number(number, power - 1));
+}
+int main()
+{
+  int number, power;
+  printf("Enter number and power: ");
+  scanf("%d %d", &number, &power);
+  int result = print_power_of_number(number, power);
+  printf("%d ", result);
+  return 0;
+} */
+//_____________new approach___________
+/* #include <stdio.h>
 float print_power_of_number(float a, float b)
 {
   if (b == 0)

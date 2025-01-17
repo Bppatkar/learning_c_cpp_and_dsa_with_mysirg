@@ -2,7 +2,8 @@
   "files.associations": {
     "*.jsx": "javascriptreact",
     "SuggestionVideoCard,js": "javascriptreact",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "random": "c"
   },
   "cSpell.words": ["BHANU", "krega"]
 }
