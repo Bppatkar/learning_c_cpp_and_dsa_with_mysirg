@@ -1,14 +1,179 @@
 // TODO: Assignment-19: Arrays and Functions
 
-//! 1. Write a function to find the greatest number from the given array of any size. (TSRS)
+/* //! 1. Write a function to find the greatest number from the given array of any size. (TSRS)
+#include <stdio.h>
+int findGreatestNumber(int a[], int n)
+{
+  int i, j, temp;
+  for (i = 0; i < n; i++)
+  {
+    for (j = i + 1; j < n; j++)
+    {
+      if (a[i] > a[j])
+      {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+  return a[n - 1];
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  // Declare the array after getting the size
+  int a[n];
+  printf("Enter %d numbers for array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  int num = findGreatestNumber(a, n);
+  printf("Finally Found.. %d is a Greatest Number", num);
+  return 0;
+} */
 
-//! 2. Write a function to find the smallest number from the given array of any size. (TSRS)
+/* //! 2. Write a function to find the smallest number from the given array of any size. (TSRS)
+#include <stdio.h>
+int findSmallestNumber(int a[], int n)
+{
+  int i, j, temp;
+  for (i = 0; i < n; i++)
+  {
+    for (j = i + 1; j < n; j++)
+    {
+      if (a[i] > a[j])
+      {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+  return a[0];
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  // Declare the array after getting the size
+  int a[n];
+  printf("Enter %d numbers for array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  int num = findSmallestNumber(a, n);
+  printf("Finally Found.. %d is a Smallest Number", num);
+  return 0;
+} */
 
-//! 3. Write a function to sort an array of any size. (TSRN)
+/* //! 3. Write a function to sort an array of any size. (TSRN)
+#include <stdio.h>
+void sortingArr(int a[], int n)
+{
+  int i, j, temp;
+  for (i = 0; i < n; i++)
+  {
+    for (j = i + 1; j < n; j++)
+    {
+      if (a[i] > a[j])
+      {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+  // printing sorted array
+  for (i = 0; i < n; i++)
+    printf("%d ", a[i]);
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  // Declare the array after getting the size
+  int a[n];
+  printf("Enter %d numbers for array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  sortingArr(a, n);
 
-//! 4. Write a function to rotate an array by n position in d direction.
+  return 0;
+} */
+
+/* //! 4. Write a function to rotate an array by n position in d direction.
 // The d is an indicative value for left or right.
 // For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29].
+#include <stdio.h>
+void rotatingWithDiractionArray(int a[], int n, int m, int dir)
+{
+  int temp[m]; // Temporary array to store elements during rotation
+  int i;
+
+  if (dir == 1)
+  {
+    for (i = 0; i < m; i++)
+      temp[i] = a[i]; // Store the first m elements in temp
+
+    for (i = 0; i < n - m; i++)
+      a[i] = a[i + m]; // Shift the remaining elements to the left
+
+    for (i = 0; i < m; i++)
+      a[n - m + i] = temp[i]; // Copy temp elements to the end of the array
+  }
+  else if (dir == 2)
+  {
+    for (i = 0; i < m; i++)
+      temp[i] = a[n - m + i]; // Store the last m elements in temp
+
+    for (i = n - 1; i >= m; i--)
+      a[i] = a[i - m]; // Shift the remaining elements to the left
+
+    for (i = 0; i < m; i++)
+      a[i] = temp[i]; // Copy temp elements to the beginning of the array
+  }
+  else
+  {
+    printf("Invalid direction! Use 1 for left and 2 for right.\n");
+    return;
+  }
+
+  // Print the rotated array
+  printf("Rotated array: ");
+  for (i = 0; i < n; i++)
+    printf("%d ", a[i]);
+  printf("\n");
+}
+
+int main()
+{
+  int n, m, dir;
+  printf("Enter the size of the array: ");
+  scanf("%d", &n);
+
+  int a[n];
+
+  printf("Enter %d elements of the array: ", n);
+  for (int i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+
+  printf("How many times do you want to rotate the array? ");
+  scanf("%d", &m);
+
+  // Handle cases where rotations exceed the array size
+  m = m % n;
+
+  // Input direction of rotation
+  printf("Enter 1 for left rotation or 2 for right rotation: ");
+  scanf("%d", &dir);
+
+  // Call the rotation function
+  rotatingWithDiractionArray(a, n, m, dir);
+  return 0;
+} */
 
 //! 5. Write a function to find the first occurrence of adjacent duplicate values in the array.
 // Function has to return the value of the element.
