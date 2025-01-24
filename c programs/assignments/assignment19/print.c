@@ -371,6 +371,84 @@ int main()
   return 0;
 } */
 
-//! 9. Write a function to merge two arrays of the same size sorted in descending order.
+/* //! 9. Write a function to merge two arrays of the same size sorted in descending order.
+#include <stdio.h>
+void mergingSortedArray(int a[], int b[], int n)
+{
+  int i, j, temp, result[n + n];
+  for (i = 0; i < n; i++)
+    result[i] = a[i];
+  for (i = 0; i < n; i++)
+    result[n + i] = b[i];
 
-//! 10. Write a function to count the frequency of each element of an array.
+  // sorting in descending order
+  for (i = 0; i < n + n; i++)
+  {
+    for (j = i + 1; j < n + n; j++)
+    {
+      if (result[i] < result[j])
+      {
+        temp = result[i];
+        result[i] = result[j];
+        result[j] = temp;
+      }
+    }
+  }
+  printf("Merged and sorted array in descending order:\n");
+  for (i = 0; i < n + n; i++)
+    printf("%d ", result[i]);
+  printf("\n");
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  int a[n], b[n];
+  printf("Enter %d numbers for 1st array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  printf("Enter %d numbers for 2nd array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &b[i]);
+  mergingSortedArray(a, b, n);
+  return 0;
+} */
+
+/* //! 10. Write a function to count the frequency of each element of an array.
+#include <stdio.h>
+void arrayFrequencyCounter(int a[], int n)
+{
+  int i, j, count;
+  for (i = 0; i < n; i++)
+  {
+    if (a[i] == -1)
+      continue;
+    count = 0;
+    for (j = 0; j < n; j++)
+    {
+      if (a[i] == a[j])
+      {
+        count++;    // Increment count if a match is found
+        if (i != j) // Mark duplicate elements as processed
+          a[j] = -1;
+      }
+    }
+    printf("\n Element %d - Frequence %d", a[i], count);
+  }
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  int a[n];
+  printf("Enter %d numbers for array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  printf("You Entered: ");
+  for (i = 0; i < n; i++)
+    printf("%d ", a[i]);
+  arrayFrequencyCounter(a, n);
+  return 0;
+} */
