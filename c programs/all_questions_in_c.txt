@@ -1,0 +1,617 @@
+// TODO: **Assignment 1: Input and Output in C Language**
+//? 1. Write a program to print Hello Students on the screen.
+//? 2. Write a program to print "Hello Students" on the first line and "Students" on the second line.
+//? 3. Write a program to print "MySirG" on the screen.
+//? 4. Write a program to print '\n' on the screen.
+//? 5. Write a program to print '\r' on the screen.
+//? 6. Write a program to print "Teacher's Day" on the screen.
+//? 7. Write a program to calculate the sum of two integers.
+//? 8. Write a program to calculate the square of a given number.
+//? 9. Write a program to calculate the area of a rectangle.
+//? 10. Write a program to find the area of a circle.
+__________________________________________
+// TODO: **Assignment 2: More on printf and scanf**
+//? 11. Write a program to calculate the average of three integers.
+//? 12. Write a program to calculate the circumference of a circle.
+//? 13. Write a program to calculate simple interest.
+//? 14. Write a program to calculate the volume of a cuboid.
+//? 15. Write a program to ask the user about the cost price and selling price of bananas per dozen. Calculate the profit or loss earned upon selling 25 bananas.
+//? 16. Write a program to input a character from the user and print its ASCII code.
+//? 17. Write a program to input an ASCII code from the user and print its corresponding character.
+//? 18. Write a program to input three characters from the user and display the characters with their corresponding ASCII codes.
+//? 19. Write a program to take date as an input in below given format and convert the date format and display the result as given below. User Input date format - "DD/MM/YYYY" (27/11/2022) Output format - "Day - DD, Month - MM, Year - YYYY" (Day-27, Month - 07, Year - 2022)
+//? 20. Write a program to take time as input in below given format and convert the time format and display the result as given below. User Input date format - "HH:MM" Output format - "HH hour and MM Minute"
+__________________________________________
+
+// TODO: **Assignment 3: Operators in C Language**
+//? 21. Write a program to calculate the size of a character constant.
+//? 22. Write a program to calculate the size of a real constant.
+//? 23. Write a program with one char type variable. Assign 'A' in the variable. Now change the value of variable from 'A' to 'B' using increment operator.
+//? 24. Write a program to print the unit digit of a given number. [unit digit means right most digit]
+//? 25. Write a program to print a given number without its last digit.
+//? 26. Write a program to swap the values of two int variables.
+//? 27. Write a program to swap the values of two int variables without using a third variable.
+//? 28. Write a program to swap values of two int variables without using third variable and without using +, - operators. [Note: that this can cause issues if b is zero]
+//? 29. Write a program to swap the values of two int variables without using a third variable and without using arithmetic operators.
+//? 30. Write a program to swap the values of two int variables using a single-line arithmetic expression.
+__________________________________________
+
+// TODO: **Assignment 4: More on Operators in C Language**
+//? 31. Write a program to input a three-digit number and display the sum of the digits.
+//? 32. Write a program to find the ASCII code of the character '+'.
+//? 33. Write a program to print the size of an int, a float, a char, and a double type variable.
+//? 34. Write a program to make the last digit of a number zero. (Example: if x=2345 then make it x=2340)
+//? 35. Write a program to input a number from the user and also input a digit. Append a digit in the number and print the resulting number. (Example - number=234 and digit=9 then the resulting number is 2349)
+//? 36. Assume price of 1 USD is INR 84.23. Write a program to take the amount in INR and convert it into USD.
+//? 37. Write a program to take a three-digit number from the user and rotate its digits by one position towards the right. [Example - 472 --> 247]
+//? 38. Evaluate an expression involving operators. What will be the value stored in the variable x after executing the following statement: x=10>8>4;
+//? 39. What will be the value stored in the variable x after executing the following statement: x=!2>-2;
+//? 40. What will be the value stored in the variable x after executing the following statement: x= 3 < 0 && 5 > 0;
+__________________________________________
+
+// TODO: **Assignment 5: Decision Control Statements**
+
+//?41.Write a program to check whether a given number is positive or non-positive.
+//?42.Write a program to check whether a given number is divisible by 5 or not.
+//?43.Write a program to check whether a given number is an even number or an odd number.
+//?44.Write a program to check whether a given number is an even number or an odd number without using % operator.
+//?45.Write a program to check whether the given number is even or odd using a bitwise operator.
+//?46.Write a program to check whether a given number is a three-digit number or not.
+//?47.Write a program to print greater between two numbers. Print one number if both are the same.
+//?48.Write a program to check whether roots of a given quadratic equation are real & distinct, real & equal or imaginary roots.
+//?49.Write a program to check whether a given year is a leap year or not.
+//?50.Write a program to find the greatest among three given numbers. Print the number once if the greatest number appears two or three times.
+__________________________________________
+// TODO: **Assignment 6: More on Decision Control Statements**
+
+//?51.Write a program to check whether a given number is a three-digit number or not.
+//?52.Write a program which takes the cost price and selling price of a product from the user. Now calculate and print profit or loss percentage.
+//?53.Write a program to take marks of 5 subjects from the user. Assume marks are given out of 100 and passing marks is 33. Now display whether the candidate passed the examination or failed.
+//?54.Write a program to check whether a given alphabet is in uppercase or lowercase.
+//?55.Write a program to check whether a given number is divisible by 3 and divisible by 2.
+//?56.Write a program to check whether a given number is divisible by 7 or divisible by 3.
+//?57.Write a program to check whether a given number is positive, negative or zero.
+//?58.Write a program to check whether a given character is an alphabet (uppercase), an alphabet (lower case), a digit or a special character.
+//?59.Write a program which takes the length of the sides of a triangle as an input. Display whether the triangle is valid or not.
+//?60.Write a program which takes the month number as an input and display number of days in that month.
+
+__________________________________________
+// TODO: **Assignment 7: Iterative Control Statements**
+
+//?61.Write a program to print MySirG 5 times on the screen.
+//?62.Write a program to print the first 10 natural numbers.
+//?63.Write a program to print the first 10 natural numbers in reverse order.
+//?64.Write a program to print the first 10 odd natural numbers.
+//?65.Write a program to print the first 10 odd natural numbers in reverse order.
+//?66.Write a program to print the first 10 even natural numbers.
+//?67.Write a program to print the first 10 even natural numbers in reverse order.
+//?68.Write a program to print squares of the first 10 natural numbers.
+//?69.Write a program to print cubes of the first 10 natural numbers.
+//?70.Write a program to print a table of 5.
+__________________________________________
+// TODO: **Assignment 8: More on Iterative Control Statements**
+
+//?71.Write a program to print MySirG N times on the screen.
+//?72.Write a program to print the first N natural numbers.
+//?73.Write a program to print the first N natural numbers in reverse order.
+//?74.Write a program to print the first N odd natural numbers.
+//?75.Write a program to print the first N odd natural numbers in reverse order.
+//?76.Write a program to print the first N even natural numbers.
+//?77.Write a program to print the first N even natural numbers in reverse order.
+//?78.Write a program to print squares of the first N natural numbers.
+//?79.Write a program to print cubes of the first N natural numbers.
+//?80.Write a program to print a table of N.
+__________________________________________
+// TODO: **Assignment 9: Use any loop**
+
+//?81.Write a program to calculate sum of first N natural numbers.
+//?82.Write a program to calculate sum of first N even natural numbers.
+//?83.Write a program to calculate sum of first N odd natural numbers.
+//?84.Write a program to calculate sum of squares of first N natural numbers.
+//?85.Write a program to calculate sum of cubes of first N natural numbers.
+//?86.Write a program to calculate factorial of a number.
+//?87.Write a program to count digits in a given number.
+//?88.Write a program to check whether a given number is a Prime number or not.
+//?89.Write a program to calculate LCM of two numbers.
+//?90.Write a program to reverse a given number.
+__________________________________________
+// TODO: **Assignment 10: Level up with loops**
+
+//?91.Write a program to find the Nth term of the Fibonacci series.
+//?92.Write a program to print first N terms of Fibonacci series.
+//?93.Write a program to check whether a given number is there in the Fibonacci series or not.
+//?94.Write a program to calculate HCF of two numbers.
+//?95.Write a program to check whether two given numbers are co-prime numbers or not.
+//?96.Write a program to print all Prime numbers under 100.
+//?97.Write a program to print all Prime numbers between two given numbers.
+//?98.Write a program to find next Prime number of a given number.
+//?99.Write a program to check whether a given number is an Armstrong number or not.
+//?100.Write a program to print all Armstrong numbers under 1000.
+__________________________________________
+
+//TODO: Assignment 11: Star Printing
+//_______________________________
+
+//TODO: Assignment 12: Star Printing
+//_______________________________
+
+//TODO: Assignment - 13: Switch Case Control
+
+// Q1. Write a program which takes the month number as an input and displays the number of days in that month.
+
+// Q2. Write a menu-driven program with the following options:
+// 2.1.Addition
+// 2.2.Subtraction
+// 2.3.Multiplication
+// 2.4.Division
+// 2.5.Exit
+
+// Q3. Write a program which takes the day number of a week and displays a unique greeting message for the day.
+
+// Q4. Write a menu-driven program with the following options:
+// 4.1. Check whether a given set of three numbers are lengths of an isosceles triangle or not
+// 4.2. Check whether a given set of three numbers are lengths of sides of a right-angled triangle or not
+// 4.3. Check whether a given set of three numbers are lengths of an equilateral triangle or not
+// 4.4. Exit
+
+// Q5. Convert the following if-else-if construct into switch case:
+/*
+if (var == 1)
+  printf("good");
+else if (var == 2)
+  printf("better");
+else if (var == 3)
+  printf("best");
+else
+  printf("invalid");
+  */
+
+// Q6. Write a program to find and display the grade obtained by a student in a test. Grading specifications are as follows:
+/*
+Marks from 90 to 100: Grade A
+Marks from 80 to less than 90: Grade B
+Marks from 70 to less than 80: Grade C
+Marks from 60 to less than 70: Grade D
+Marks from 50 to less than 60: Grade E
+Marks below 50: Grade F
+Marks greater than 100 or less than 0: Invalid Marks
+*/
+
+// Q7. Write a menu-driven program with the following options:
+/*
+7.1Factorial of a number
+7.2Check Even and Odd
+7.3Area of a circle
+7.4Sum of the first N natural numbers
+7.5Exit
+*/
+
+// Q8. Write a program to check whether a given character is an uppercase alphabet, lowercase alphabet, or some other special character, using a switch case statement.
+
+// Q9. Write a program to check whether a given character is a vowel, consonant, or some other special character, using a switch case statement.
+
+// Q10. Write a menu-driven program with the following options:
+/*
+10.1Calculate LCM of two numbers
+10.2Calculate the sum of the digits of a number
+10.3Volume of a cuboid
+10.4Check whether a given number is prime or not
+10.5Exit
+*/
+//_______________________________
+
+//TODO: Assignment-14: Functions
+
+//! 1. Write a function to calculate the area of a circle. (TSRS)
+
+//! 2. Write a function to calculate simple interest. (TSRS)
+
+//! 3. Write a function to check whether a given number is even or odd. Return 1 if the number is even, otherwise return 0. (TSRS)
+
+//! 4. Write a function to print first N natural numbers. (TSRN)
+
+//! 5. Write a function to print first N odd natural numbers. (TSRN)
+
+//! 6. Write a function to calculate the factorial of a number. (TSRS)
+
+//! 7. Write a function to calculate the number of combinations one can make from n items and r selected at a time. (TSRS)
+
+//! 8. Write a function to calculate the number of arrangements/permutations one can make from n items and r selected at a time. (TSRS)
+
+//! 9. Write a function to check whether a given number contains a given digit or not. (TSRS)
+
+//! 10. Write a function to print all prime factors of a given number. For example, if the number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+//_______________________________
+
+//TODO: Assignment-15: More on Functions
+
+//! 1. Write a function to calculate LCM of two numbers. (TSRS)
+
+//! 2. Write a function to calculate HCF of two numbers. (TSRS)
+
+//! 3. Write a function to check whether a given number is Prime or not. (TSRS)
+
+//! 4. Write a function to find the next prime number of a given number. (TSRS)
+
+//! 5. Write a function to print first N prime numbers (TSRN)
+
+//! 6. Write a function to print all Prime numbers between two given numbers. (TSRN)
+
+//! 7. Write a function to print first N terms of Fibonacci series (TSRN)
+
+//! 8. Write a function to print PASCAL Triangle. (TSRN)
+
+//! 9. Write a function to print all Armstrong numbers between two given numbers. (TSRN)
+
+//! 10. Write a function to find the sum of first N terms of the series 1!/1 + 2!/2 + 3!/3+ 4!/4 +5!/5 ... n!/n (TSRS)
+
+//_______________________________
+
+// TODO: Assignment-16: Recursion
+
+//! 1. Write a recursive function to print first N natural numbers
+
+//! 2. Write a recursive function to print first N natural numbers in reverse order
+
+//! 3. Write a recursive function to print first N odd natural numbers
+
+//! 4. Write a recursive function to print first N odd natural numbers in reverse order
+
+//! 5. Write a recursive function to print first N even natural numbers
+
+//! 6. Write a recursive function to print first N even natural numbers in reverse order
+
+//! 7. Write a recursive function to print squares of first N natural numbers
+
+//! 8. Write a recursive function to print binary of a given decimal number
+
+//! 9. Write a recursive function to print octal of a given decimal number
+
+//! 10. Write a recursive function to print reverse of a given number
+// _______________________________
+
+// TODO: Assignment-17: More on Recursion
+
+//! 1. Write a recursive function to calculate sum of first N natural numbers
+
+//! 2. Write a recursive function to calculate sum of first N odd natural numbers
+
+//! 3. Write a recursive function to calculate sum of first N even natural numbers
+
+//! 4. Write a recursive function to calculate sum of squares of first n natural numbers
+
+//! 5. Write a recursive function to calculate sum of digits of a given number
+
+//! 6. Write a recursive function to calculate factorial of a given number
+
+//! 7. Write a recursive function to calculate HCF of two numbers
+
+//! 8. Write a recursive function to print first N terms of Fibonacci series
+
+//! 9. Write a program in C to count the digits of a given number using recursion
+
+//! 10. Write a program in C to calculate the power of any number using recursion
+
+// _______________________________
+
+//TODO: Assignment-18: Arrays
+
+//! 1. Write a program to calculate the sum of numbers stored in an array of size 10. Take array values from the user.
+
+//! 2. Write a program to calculate the average of numbers stored in an array of size 10. Take array values from the user.
+
+//! 3. Write a program to calculate the sum of all even numbers and sum of all odd numbers, which are stored in an array of size 10. Take array values from the user.
+
+//! 4. Write a program to find the greatest number stored in an array of size 10. Take array values from the user.
+
+//! 5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user.
+
+//! 6. Write a program to sort elements of an array of size 10. Take array values from the user.
+
+//! 7. Write a program to find the second largest number in an array. Take array values from the user.
+
+//! 8. Write a program to find the second smallest number in an array. Take array values from the user.
+
+//! 9. Write a program to sort an array of 10 elements in descending order.
+
+//! 10. Write a program in C to copy the elements of one array into another array. Take array values from the user.
+
+// _______________________________
+
+// TODO: Assignment-19:
+//! 1. Write a function to find the greatest number from the given array of any size. (TSRS)
+
+//! 2. Write a function to find the smallest number from the given array of any size. (TSRS)
+
+//! 3. Write a function to sort an array of any size. (TSRN)
+
+//! 4. Write a function to rotate an array by n position in d direction.
+// The d is an indicative value for left or right.
+// For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29].
+
+//! 5. Write a function to find the first occurrence of adjacent duplicate values in the array.
+// Function has to return the value of the element.
+
+//! 6. Write a function to swap two elements of a given array with specified indices.
+
+//! 7. Write a function to count a total number of duplicate elements in an array.
+// (Means elements that occur 2 times in an array)
+
+//! 8. Write a function to print all unique elements in an array.
+
+//! 9. Write a function to merge two arrays of the same size sorted in descending order.
+
+//! 10. Write a function to count the frequency of each element of an array.
+
+// _______________________________
+
+// TODO: Assignment-20: Multi Dimensional Arrays
+
+//! 1. Write a program to calculate the sum of two matrices each of order 3x3.
+
+//! 2. Write a program to calculate the product of two matrices each of order 3x3.
+
+//! 3. Write a program to print the transpose of a given matrix.
+
+//! 4. Four players are playing a tournament of Chess with the round robin method (each player will play with every other player).
+// Each win has 2 points, a draw has 1 point, and a loss has 0 points. Declare a score_board two-dimensional array to store the scores of the players against each player.
+
+//! 5. For que-4, define a function to update score_board after each match result.
+
+//! 6. For que-4, define a function to display score_board.
+
+//! 7. For que-4, define a function that returns the score of a specific player.
+
+//! 8. For que-4, define a function to find the winner of the tournament.
+
+//! 9. For que-4, define a function to display the rank of the players.
+
+//! 10. For que-4, define a function to run the tournament, in which the user has to enter the result of each game and update the score_board using the function.
+__________________________________________
+
+// TODO: Assignment-21: String Basics
+
+//! 1. Write a program to calculate the length of the string.
+// (Without using a built-in method)
+
+//! 2. Write a program to count the occurrence of a given character in a given string.
+
+//! 3. Write a program to count vowels in a given string.
+
+//! 4. Write a program to count spaces in a given string.
+
+//! 5. Write a program to convert a given string into uppercase.
+
+//! 6. Write a program to convert a given string into lowercase.
+
+//! 7. Write a program to reverse a string.
+
+//! 8. Write a program in C to count the total number of alphabets, digits, and special characters in a string.
+
+//! 9. Write a program in C to copy one string to another char array.
+
+//! 10. Write a program to find the first occurrence of a given character in a given string.
+
+// TODO: Questions from Other Sources
+
+//! 11. Read a line of text from the user using fgets and then print it using puts.
+
+//! 12. Use printf with format specifiers to format and print a date string (day, month, year).
+
+//! 13. Write a program to convert an input string to uppercase.
+
+//! 14. Create a simple text-based user login system that compares a stored password string using strcmp.
+
+//! 15. Use a 2-D character array to store and display a tic-tac-toe board.
+
+//! 16. Write a function that takes a string and reverses it in place.
+
+//! 17. Implement a trim function that removes leading and trailing spaces from a string.
+
+//! 18. Create a program that checks if a given string is a palindrome (the same forwards and backwards) and outputs the result.
+
+//! 19. Create a program using do-while to find a password checker until a valid password is entered.
+
+//! 20. Create a program using break to read inputs from the user in a loop and break the loop if a specific keyword (like "exit") is entered.
+__________________________________________
+
+// TODO: Assignment-22: Strings and Functions
+
+//! 1. Write a function to calculate the length of the string.
+
+//! 2. Write a function to reverse a string.
+
+//! 3. Write a function to compare two strings.
+
+//! 4. Write a function to transform a string into uppercase.
+
+//! 5. Write a function to transform a string into lowercase.
+
+//! 6. Write a function to count vowels in a given string.
+
+//! 7. Write a function to find a character in a given string.
+// Return the index of the first occurrence of the given character.
+// Return -1 if the character is not found.
+
+//! 8. Write a function to find a character in a given string between specified indices.
+// (Start index inclusive, and end index exclusive)
+
+//! 9. Write a function to swap two characters of a given string with specified indices.
+
+//! 10. Write a function to check whether a given string is an alphanumeric string or not.
+// (An alphanumeric string must contain at least one alphabet and one digit)
+__________________________________________
+
+// TODO: Assignment-23: Strings and Functions
+
+//! 1. Write a function to check whether a given string is a palindrome or not.
+
+//! 2. Write a function to trim a string (removing leading and trailing spaces).
+
+//! 3. Write a function to count words in a given string.
+
+//! 4. Write a function to reverse a string word-wise.
+// (For example, if the given string is "Mysirg Education Services" then the resulting string should be "Services Education Mysirg")
+
+//! 5. Write a function to do a case-insensitive comparison of two strings.
+
+//! 6. Write a function to count the frequency of each character in the given string.
+
+//! 7. Write a function to find a word in a given string.
+
+//! 8. Write a function to make the first character of each word in the string capital.
+
+//! 9. Write a function to make an acronym name from a given name.
+// For example, "Ramesh Chand Tiwari" becomes "R C Tiwari", and "Bhavesh Gupta" becomes "B Gupta".
+
+//! 10. Write a function to concatenate two strings.
+__________________________________________
+
+// TODO: Assignment-24: Handling Multiple Strings
+
+//! 1. Write a function to store strings, taken from the user, into the given 2D char array.
+
+//! 2. Write a program to find the number of vowels in each of the 5 strings stored in a two-dimensional array, taken from the user.
+
+//! 3. Write a program to sort 10 city names stored in a two-dimensional array, taken from the user.
+
+//! 4. Write a function to store each word of a string in a 2D char array.
+
+//! 5. Write a function to remove duplicate names stored in a list of names in a 2D char array.
+
+//! 6. Write a program to find words ending with the letter 's' and store each such word in a 2D char array.
+
+//! 7. Write a function to return the most repeating character in a list of strings.
+
+//! 8. Write a function to check whether a pair of strings are anagrams or not.
+// Both strings are stored in a 2D char array.
+
+//! 9. Write a function to store all the words in a given string that start with 'a' in a two-dimensional char array.
+
+//! 10. A 2D array is filled with 10 email IDs. Write a function to find how many of them belong to gmail.com.
+
+__________________________________________
+// TODO: Assignment-25: Pointers
+
+//! 1. Write a function to swap values of two int variables. (TSRN)
+
+//! 2. Write a function to search all occurrences of a given character in a given string.
+// The result of the search is a list of indices to be stored in the given array.
+// [void search_all_occurrences(char *str, char ch, int *arr);]
+
+//! 3. Write a function to convert a given string into uppercase.
+
+//! 4. Write a function to convert a given string into lowercase.
+
+//! 5. Write a function to extract a substring from a given string with specified start index (inclusive) and end index (exclusive),
+// and store the extracted string in another char array.
+// [void extract_string(char *str, int start_index, int end_index, char *result);]
+
+//! 6. Write a function to swap strings of two char arrays.
+
+//! 7. Write a function to sort an array of int type values.
+// [void sort(int *ptr, int size);]
+
+//! 8. Write a function to merge two arrays into a given array.
+// [void merge(int *arr1, int size1, int *arr2, int size2, int *arr3);]
+
+//! 9. Write a function to move the first value of the array to the position where all smaller values will be on the left
+// and greater values will be on the right.
+
+//! 10. There are five classes with a different number of students in them.
+// Five arrays contain marks of students of each class.
+// Write a function to receive an address of an array of pointers to access marks of all the students.
+// The job of the function is to find the highest marks among all the classes.
+
+__________________________________________
+
+// TODO: Assignment-26: Structure
+
+//! 1. Define a structure Employee with member variables id, name, salary.
+
+//! 2. Write a function to take input employee data from the user.
+// [Refer structure from question 1]
+
+//! 3. Write a function to display employee data.
+// [Refer structure from question 1]
+
+//! 4. Write a function to find the highest salary employee from a given array of 10 employees.
+// [Refer structure from question 1]
+
+//! 5. Write a function to sort employees according to their salaries.
+// [Refer structure from question 1]
+
+//! 6. Write a function to sort employees according to their names.
+// [Refer structure from question 1]
+
+//! 7. Write a program to calculate the difference between two time periods.
+
+//! 8. Write a program to store information of 10 students and display them using structure.
+
+//! 9. Write a program to store information of n students and display them using structure.
+
+//! 10. Write a program to enter the marks of 5 students in Chemistry, Mathematics, and Physics (each out of 100)
+// using a structure named Marks having elements roll no., name, chem_marks, maths_marks, and phy_marks,
+// and then display the percentage of each student.
+
+__________________________________________
+
+// TODO: Assignment-27: DMA
+
+//! 1. Define a function to input a variable length string and store it in an array without memory wastage.
+
+//! 2. Write a program to ask the user to input the number of data values they would like to enter,
+// then create an array dynamically to accommodate the data values. Now take the input from the user
+// and display the average of the data values.
+
+//! 3. Write a program to calculate the sum of n numbers entered by the user using malloc and free.
+
+//! 4. Write a function to merge two array elements and store them in a dynamically created array.
+// Return the address of this dynamically created array.
+
+//! 5. Define a structure Student with name, roll number, and college name as members.
+// Define another structure Team with two Student type variables as members.
+
+//! 6. In question 5, define a method to dynamically create a Student type variable and initialize it with
+// the values received in the arguments. Return the address of the Student type variable.
+
+//! 7. In question 5, define a method to dynamically create a Team variable,
+// initialize it with the received arguments. Return the address of the Team variable.
+
+//! 8. In question 5, define a method to display data of Student type,
+// also define a method to display data of Team type.
+
+//! 9. In question 5, define a method to dynamically create an array of pointers of type Student.
+// The array size is received as an argument. Return the address of the array.
+
+//! 10. In question 5, define a method to dynamically create an array of pointers of type Team.
+// The array size is received as an argument. Return the address of the array.
+
+//! 11. In question 5, define a driver function to create 6 Students and 3 Teams.
+// Form teams by assigning two students to each team. At last, display the list of teams with students in them.
+__________________________________________
+
+// TODO: Assignment-28: Mixed C language
+
+//! 1. Define a function to produce all the combinations of strings that can be made out of characters of a given string, selecting r at a time. Return a dynamically created array of strings holding all combinations.
+
+//! 2. Write a function to print all distinct pattern of Os and 1s of a given length.
+
+//! 3. Write a program to print system date.
+
+//! 4. Write a program to print system time
+
+//! 5. Given an array of size n, reverse it. Input format - The first line contains an integer n denoting the size of the array. The next line contains n space separated integers denoting the elements of the array. The output should print the array in the desired order, elements separated by spaces.
+
+//! 6. There is a series S, where the next term is the sum of previous three terms. Given the first three terms of the series, a, b and c, You have to output the nth term of the series using recursion. Input format - the first line contains a single integer, n. The next line contains three space separated integers a, b and c. The output format - print the nth term of the series.
+
+//! 7. Define a structure triangle which can contain lengths of the sides of a triangle. Sort a list of triangles according to their areas. Input format - first line contains a number n which is number of triangles. Subsequent n lines, each contains three space separated numbers (sides of the triangle). Output format - display the tuples (side 1, side2, side3) of triangle in sorted order (according to area of triangle).
+
+//! 8. Define a function to remove duplicate numbers from an array. Return the resulting array.
+
+//! 9. Define a function to find the maximum frequency element in the given array.
+
+//! 10. Define a function to create an array of size N and store first N prime numbers in it.Return the resulting array.
+__________________________________________
+
