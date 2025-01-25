@@ -4,7 +4,7 @@ Welcome to the collection of C Programming Assignments! This repository contains
 
 ## Overview of Assignments
 
-### Assignment 1: Input and Output in C Language
+### [Assignment 1: Input and Output in C Language](assignments/assignment1/README.md)
 
 - **Focus**: Basic printf() and scanf() usage to display and read data.
 - **Questions**: 1 to 10
