@@ -1,0 +1,137 @@
+// TODO: C++ Assignment 1
+
+// TODO: Assignment-29: Basics of C++
+
+//! 1. Write a C++ program to print Hello MySirG on the screen.
+
+//! 2. Write a C++ program to print Hello on the first line and MySirG on the second line using endl.
+
+//! 3. Write a C++ program to calculate the sum of two numbers.
+
+//! 4. Write a C++ program to calculate the area of a circle.
+
+//! 5. Write a C++ program to calculate the volume of a cuboid.
+
+//! 6. Write a C++ program to calculate an average of 3 numbers.
+
+//! 7. Write a C++ program to calculate the square of a number.
+
+//! 8. Write a C++ program to swap values of two int variables without using a third variable.
+
+//! 9. Write a C++ program to find the maximum of two numbers.
+
+//! 10. Write a C++ program to add all the numbers of an array of size 10.
+__________________________________________
+
+// TODO: C++ Assignment 2
+
+// TODO: Assignment-30: Functions in C++
+
+//! 1. Define a function to check whether a given number is a Prime number or not.
+
+//! 2. Define a function to find the highest value digit in a given number.
+
+//! 3. Define a function to calculate x raised to the power y.
+
+//! 4. Define a function to print Pascal Triangle up to N lines.
+
+//! 5. Define a function to check whether a given number is a term in a Fibonacci series or not.
+
+//! 6. Define a function to swap data of two int variables using call by reference.
+
+//! 7. Write a function using the default argument that is able to add 2 or 3 numbers.
+
+//! 8. Define overloaded functions to calculate the area of a circle, the area of a rectangle, and the area of a triangle.
+
+//! 9. Write functions using function overloading to find the maximum of two numbers where both numbers can be integers or real.
+
+//! 10. Write functions using function overloading to add two numbers having different data types.
+__________________________________________
+
+// TODO: C++ Assignment 3
+
+// TODO: Assignment-31: More on Functions in C++
+
+//! 1. Define a function to sort an array of integers in ascending or descending order depending on bool type argument (true for ascending and false for descending). Use default argument to implement it.
+
+//! 2. Define a function to sort an array of strings in ascending or descending order depending on bool type argument (true for ascending and false for descending). Use default argument to implement it.
+
+//! 3. Define a function to rotate an array by n positions in the d direction. Implement position and direction using default arguments. Argument d can be -1 or 1 denoting left or right direction. Argument n should be the last argument with default value 1.
+
+//! 4. Define a function to calculate LCM of three numbers.
+
+//! 5. Define a function to print all the prime factors of a given number. [For example, num = 36, prime factors are 2, 3]
+
+//! 6. Define a function to calculate HCF of two numbers.
+
+//! 7. Define overloaded functions to calculate the volume of a cuboid, cone, and sphere.
+
+//! 8. Define a function to print a substring from startIndex (inclusive) to endIndex (exclusive). Define the function in such a way that if the second argument is not provided, the string will print till the last possible index.
+
+//! 9. Define a function to swap two arrays.
+
+//! 10. Define a function to merge two sorted arrays of the same size.
+__________________________________________
+
+// TODO: C++ Assignment 4
+
+// TODO: Assignment-32: Classes and Objects
+
+//! 1. Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number. Also define instance member functions to set values of complex number and print values of complex number.
+
+//! 2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate number of instance member variables and also define instance member functions to set values for time and display values of time.
+
+//! 3. Define a class Date to represent date (like d=31, m=12, y=2022). Declare appropriate number of instance member variables and also define instance member functions to set date and get date.
+
+//! 4. In question 3, define methods to display date in the following pattern:
+//!    1. 31-12-2022
+//!    2. 31-Dec-2022
+
+//! 5. Define a class Circle with radius as its property. Provide setRadius() and getRadius() methods. Also define methods to return area and circumference of the circle.
+
+__________________________________________
+
+// TODO: C++ Assignment 5
+
+// TODO: Assignment-33: Member function, static
+
+//! 1. Define a class Complex to represent a complex number with instance variables a and b to store real and imaginary parts. Also define following member functions
+//! 1. void setData(int, int)
+//! 2. void showData()
+//! 3. Complex add(Complex)
+//! 4. Complex subtract(Complex)
+//! 5. Complex multiply(Complex)
+
+//! 2. Define a class Time to represent a time with instance variables him and sec to store hour, minute, and second. Also define following member functions
+//! 1. void setTime(int, int, int)
+//! 2. void showTime()
+//! 3. void normalize()
+//! 4. Time add(Time)
+//! 5. bool isGreater(Time)
+
+//! 3. Define a class TestResult with properties roll_no, right, wrong, net_score. Also define class properties right_weightage, wrong_weightage. Provide methods to set and get all the properties.
+
+//! 4. Write a driver function main() to use TestResult class (Question 3). Create an array of 5 TestResult objects, set values to all the objects and display the results in sorted order (by net_score).
+
+//! 5. Define a class Matrix to represent a 3x3 order matrix. Provide appropriate methods and properties to the class. Also define following methods in the class:
+//! 1. Matrix add(Matrix)
+//! 2. Matrix sub(Matrix)
+//! 3. Matrix multiply(Matrix)
+//! 4. Matrix transpose()
+//! 5. bool is_singular()
+
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
