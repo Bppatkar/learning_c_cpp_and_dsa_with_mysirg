@@ -247,3 +247,7 @@ By completing these assignments, you will:
 Questions from - Saurabh Shukla Sir and Solving by BHANU PRATAP PATKAR. Specially Designed for students and beginners to improve their C programming skills.
 
 Happy Coding! 🚀
+<<<<<<< HEAD
+=======
+
+>>>>>>> 489d2c84a38531856a32f2e38ebfc2f405fac10e
