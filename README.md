@@ -217,34 +217,51 @@ Welcome to the collection of C Programming Assignments! This repository contains
 ### [Assignment 1: Basics of C++](c++%20programs/assignments/assignment1)
 
 - **Focus**: Basic input/output operations and calculations in C++.
-- **Questions**:
-  1. Write a C++ program to print Hello MySirG on the screen.
-  2. Write a C++ program to print Hello on the first line and MySirG on the second line using endl.
-  3. Write a C++ program to calculate the sum of two numbers.
-  4. Write a C++ program to calculate the area of a circle.
-  5. Write a C++ program to calculate the volume of a cuboid.
-  6. Write a C++ program to calculate an average of 3 numbers.
-  7. Write a C++ program to calculate the square of a number.
-  8. Write a C++ program to swap values of two int variables without using a third variable.
-  9. Write a C++ program to find the maximum of two numbers.
-  10. Write a C++ program to add all the numbers of an array of size 10.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Printing text and numbers
+  - Simple arithmetic operations
+  - Swapping variables and finding maximum values
+  - Summation of arrays
 
 ### [Assignment 2: Functions in C++](c++%20programs/assignments/assignment2)
 
 - **Focus**: Function definitions and overloading.
-- **Questions**:
-  1. Define a function to check whether a given number is a Prime number or not.
-  2. Define a function to find the highest value digit in a given number.
-  3. Define a function to calculate x raised to the power y.
-  4. Define a function to print Pascal Triangle up to N lines.
-  5. Define a function to check whether a given number is a term in a Fibonacci series or not.
-  6. Define a function to swap data of two int variables using call by reference.
-  7. Write a function using the default argument that is able to add 2 or 3 numbers.
-  8. Define overloaded functions to calculate the area of a circle, the area of a rectangle, and the area of a triangle.
-  9. Write functions using function overloading to find the maximum of two numbers where both numbers can be integers or real.
-  10. Write functions using function overloading to add two numbers having different data types.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Prime number checking
+  - Highest digit finder
+  - Pascal's Triangle
+  - Fibonacci series and swapping by reference
+  - Function overloading and default arguments
 
 ### [Assignment 3: More on Functions in C++](c++%20programs/assignments/assignment3)
+
+- **Focus**: Advanced function implementations.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Sorting arrays with default arguments
+  - Advanced recursion
+  - Overloaded functions for area and maximum value calculations
+
+### [Assignment 4: Object-Oriented Programming Basics](c++%20programs/assignments/assignment4)
+
+- **Focus**: Introduction to classes and objects.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Defining and using classes
+  - Constructor and destructor implementation
+  - Simple programs using object-oriented concepts
+
+### [Assignment 5: Advanced OOP Concepts](c++%20programs/assignments/assignment5)
+
+- **Focus**: Inheritance, polymorphism, and advanced OOP features.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Single and multiple inheritance
+  - Virtual functions and abstract classes
+  - Operator overloading
+  - Friend functions and exception handling
 
 ## How to Use
 
