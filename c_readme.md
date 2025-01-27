@@ -1,19 +1,21 @@
 # C Programming Assignments
 
-Welcome to the collection of C Programming Assignments! This repository contains 100+ carefully curated questions divided into 28 assignments that cover fundamental to advanced concepts in C programming. Each question is designed to help you practice and master key programming concepts.
+Welcome to the collection of **C Programming Assignments**! This repository contains **100+ carefully curated questions** divided into **28 assignments** that cover concepts ranging from fundamentals to advanced topics in C programming. Each question is designed to help you practice and master key programming concepts effectively.
+
+---
 
 ## Overview of Assignments
 
 ### [Assignment 1: Input and Output in C Language](c%20programs/assignments/assignment1)
 
-- **Focus**: Basic printf() and scanf() usage to display and read data.
+- **Focus**: Basic usage of `printf()` and `scanf()` to display and read data.
 - **Questions**: 1 to 10
 - **Topics Covered**:
   - Printing strings, special characters, and simple arithmetic calculations.
 
 ### [Assignment 2: More on printf and scanf](c%20programs/assignments/assignment2)
 
-- **Focus**: Advanced use of input/output functions and data formatting.
+- **Focus**: Advanced usage of input/output functions and data formatting.
 - **Questions**: 11 to 20
 - **Topics Covered**:
   - Calculating averages, ASCII codes, formatting date and time, and other operations.
@@ -23,7 +25,7 @@ Welcome to the collection of C Programming Assignments! This repository contains
 - **Focus**: Arithmetic, relational, and bitwise operators.
 - **Questions**: 21 to 30
 - **Topics Covered**:
-  - Calculating sizes of constants, swapping variables, and using operators creatively.
+  - Calculating sizes of constants, swapping variables, and creative use of operators.
 
 ### [Assignment 4: More on Operators in C Language](c%20programs/assignments/assignment4)
 
@@ -34,7 +36,7 @@ Welcome to the collection of C Programming Assignments! This repository contains
 
 ### [Assignment 5: Decision Control Statements](c%20programs/assignments/assignment5)
 
-- **Focus**: Conditional statements (if, else, if-else).
+- **Focus**: Conditional statements (`if`, `else`, `if-else`).
 - **Questions**: 41 to 50
 - **Topics Covered**:
   - Number properties, leap years, root analysis, and decision-making programs.
@@ -48,7 +50,7 @@ Welcome to the collection of C Programming Assignments! This repository contains
 
 ### [Assignment 7: Iterative Control Statements](c%20programs/assignments/assignment7)
 
-- **Focus**: Loops (for, while, do-while).
+- **Focus**: Loops (`for`, `while`, `do-while`).
 - **Questions**: 61 to 70
 - **Topics Covered**:
   - Printing sequences, squares, cubes, and multiplication tables.
@@ -78,19 +80,19 @@ Welcome to the collection of C Programming Assignments! This repository contains
 
 - **Focus**: Pattern printing using nested loops.
 
-### [Assignment 12: Star Printing](c%20programs/assignments/assignment12)
+### [Assignment 12: Advanced Star Printing](c%20programs/assignments/assignment12)
 
 - **Focus**: Advanced pattern printing techniques.
 
 ### [Assignment 13: Switch Case Control](c%20programs/assignments/assignment13)
 
-- **Focus**: Using switch-case statements for decision making.
+- **Focus**: Using `switch-case` statements for decision-making.
 - **Topics Covered**:
   - Displaying days in a month
   - Menu-driven calculator
   - Day-specific greetings
   - Triangle type checker
-  - Converting if-else to switch-case
+  - Converting `if-else` to `switch-case`
   - Grade calculator
   - Menu-driven math operations
   - Character type checker
@@ -120,7 +122,7 @@ Welcome to the collection of C Programming Assignments! This repository contains
   - HCF calculator
   - Prime number checker
   - Next prime number finder
-  - N prime numbers printer
+  - Printing N prime numbers
   - Prime numbers in a range
   - Fibonacci series printer
   - Pascal's Triangle printer
@@ -160,92 +162,43 @@ Welcome to the collection of C Programming Assignments! This repository contains
 ### [Assignment 18: Arrays](c%20programs/assignments/assignment18)
 
 - **Focus**: Basic array operations and manipulations.
-- **Topics Covered**:
-  - Sum of array elements
-  - Average of array elements
-  - Sum of even and odd numbers in array
-  - Find greatest number in array
-  - Find smallest number in array
-  - Sort array elements
-  - Find second largest number
-  - Find second smallest number
-  - Sort array in descending order
-  - Copy elements to another array
 
-### [Assignment 19: More on Arrays](c%20programs/assignments/assignment19)
+### [Assignment 19: Arrays and Functions](c%20programs/assignments/assignment19)
 
-- **Focus**: Advanced array operations.
+- **Focus**: Combining arrays with functions.
 
-### [Assignment 20: Strings](c%20programs/assignments/assignment20)
+### [Assignment 20: Multi Dimensional Arrays](c%20programs/assignments/assignment20)
+
+- **Focus**: Operations on multi-dimensional arrays.
+
+### [Assignment 21: String Basics](c%20programs/assignments/assignment21)
 
 - **Focus**: Basic string operations.
 
-### [Assignment 21: Pointers](c%20programs/assignments/assignment21)
+### [Assignment 22: Strings and Functions](c%20programs/assignments/assignment22)
+
+- **Focus**: String manipulation with functions.
+
+### [Assignment 23: Strings and Functions](c%20programs/assignments/assignment23)
+
+- **Focus**: More string operations and use of functions.
+
+### [Assignment 24: Handling Multiple Strings](c%20programs/assignments/assignment24)
+
+- **Focus**: Managing and manipulating multiple strings.
+
+### [Assignment 25: Pointers](c%20programs/assignments/assignment25)
 
 - **Focus**: Basics of pointers and memory management.
 
-### [Assignment 22: More on Pointers](c%20programs/assignments/assignment22)
+### [Assignment 26: Structures](c%20programs/assignments/assignment26)
 
-- **Focus**: Advanced pointer applications.
+- **Focus**: Basics and applications of structures.
 
-### [Assignment 23: Structures](c%20programs/assignments/assignment23)
+### [Assignment 27: Dynamic Memory Allocation](c%20programs/assignments/assignment27)
 
-- **Focus**: Basics of structures.
+- **Focus**: `malloc`, `calloc`, `realloc`, and `free`.
 
-### [Assignment 24: More on Structures](c%20programs/assignments/assignment24)
+### [Assignment 28: Mixed C Language](c%20programs/assignments/assignment28)
 
-- **Focus**: Advanced applications of structures.
-
-### [Assignment 25: File Handling](c%20programs/assignments/assignment25)
-
-- **Focus**: Basics of file handling in C.
-
-### [Assignment 26: Dynamic Memory Allocation](c%20programs/assignments/assignment26)
-
-- **Focus**: malloc, calloc, realloc, and free.
-
-### [Assignment 27: Preprocessor Directives](c%20programs/assignments/assignment27)
-
-- **Focus**: Macros and conditional compilation.
-
-### [Assignment 28: Command Line Arguments](c%20programs/assignments/assignment28)
-
-- **Focus**: Using command-line arguments in programs.
-
-<<<<<<< HEAD
-
-## How to Use
-
-1. **Start Small**: Begin with Assignment 1 and gradually move to advanced assignments.
-2. **Write Code**: Solve each question by writing and testing code in your favorite C compiler (e.g., GCC, Turbo C).
-3. **Debug and Practice**: Test edge cases, improve your logic, and ensure you understand each solution.
-4. **Track Progress**: Mark questions as completed to stay organized.
-
-## Prerequisites
-
-To complete these assignments, you need a basic understanding of:
-
-- C syntax and structure
-- Variables and data types
-- Input/output functions (printf, scanf)
-- Operators (arithmetic, relational, bitwise)
-- Conditional statements and loops
-
-## Goals
-
-By completing these assignments, you will:
-
-- Gain a solid understanding of C programming concepts.
-- Build a strong foundation for solving programming problems.
-- Improve logical thinking and debugging skills.
-
-## Recommended Tools
-
-- **Compiler**: GCC, Turbo C, or any modern C compiler.
-- **IDE/Text Editors**: Visual Studio Code, Code::Blocks, Dev C++, or Sublime Text.
-
-## Author
-
-Questions from - Saurabh Shukla Sir and Solving by BHANU PRATAP PATKAR. Specially Designed for students and beginners to improve their C programming skills.
-
-Happy Coding! 🚀
+- **Focus**: Combination of various C concepts in problem-solving.
