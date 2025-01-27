@@ -212,6 +212,8 @@ Welcome to the collection of C Programming Assignments! This repository contains
 
 - **Focus**: Using command-line arguments in programs.
 
+<<<<<<< HEAD
+
 ## How to Use
 
 1. **Start Small**: Begin with Assignment 1 and gradually move to advanced assignments.
@@ -247,7 +249,3 @@ By completing these assignments, you will:
 Questions from - Saurabh Shukla Sir and Solving by BHANU PRATAP PATKAR. Specially Designed for students and beginners to improve their C programming skills.
 
 Happy Coding! 🚀
-<<<<<<< HEAD
-=======
-
->>>>>>> 489d2c84a38531856a32f2e38ebfc2f405fac10e
