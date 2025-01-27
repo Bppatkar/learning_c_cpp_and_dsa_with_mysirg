@@ -1,9 +1,83 @@
 // TODO: Assignment-21: String Basics
 
-//! 1. Write a program to calculate the length of the string.
+/* //! 1. Write a program to calculate the length of the string.
 // (Without using a built-in method)
+#include <stdio.h>
+void lengthOfString(char str[], int size)
+{
+  int i, length = 0;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] != '\n')
+      length++;
+  }
+  printf("%d ", length);
+}
+int main()
+{
+  char str[20];
+  printf("Enter a string: ");
+  fgets(str, 20, stdin);
+  printf("%s", str);
+  lengthOfString(str, 20);
+  return 0;
+} */
+// _______New Approch__________ (Run loop till str[i]!='\0')
+/* #include <stdio.h>
+void lengthOfString(char str[], int size)
+{
+  int i, length = 0;
+  for (i = 0; str[i] != '\0'; i++)
+  {
+    if (str[i] != '\n')
+      length++;
+  }
+  printf("%d ", length);
+}
+int main()
+{
+  char str[20];
+  printf("Enter a string: ");
+  fgets(str, 20, stdin);
+  printf("%s", str);
+  lengthOfString(str, 20);
+  return 0;
+} */
+// _______New Approch__________ (taking input from scanf and %c)-[but u have to input string without space- Ex: bhanupratap]
+/* #include <stdio.h>
+void lengthOfString(char str[], int size)
+{
+  int i, length = 0;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] != '\n')
+      length++;
+  }
+  printf("\nLength of the string: %d\n", length);
+}
+int main()
+{
+  char str[20];
+  printf("Enter a string: ");
+  int i;
+  scanf("%19s", str);
+  printf("You Entered: ");
+  for (i = 0; str[i]; i++)
+    printf("%c", str[i]);
+  lengthOfString(str, 20);
+  return 0;
+} */
 
 //! 2. Write a program to count the occurrence of a given character in a given string.
+#include <stdio.h>
+int main()
+{
+  char str[20];
+  printf("Enter a string: ");
+  fgets(str, 20, stdin);
+  occurrenceChecker(str, 20);
+  return 0;
+}
 
 //! 3. Write a program to count vowels in a given string.
 

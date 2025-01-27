@@ -342,7 +342,7 @@ void printWinner(int playerData[4][2])
     calculatingRowWiseData(a, playerData);
 }*/
 
-//! here is complete code for solving all questions from 4 to 10
+//! here is complete code for solving all questions from Question 4 to Quesetion 10
 
 /* #include <stdio.h>
 
