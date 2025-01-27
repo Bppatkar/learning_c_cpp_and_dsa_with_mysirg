@@ -205,13 +205,134 @@ int main()
   return 0;
 } */
 
-//! 7. Write a program to reverse a string.
+/* //! 7. Write a program to reverse a string.
+#include <stdio.h>
+#include <string.h>
+void stringReverse(char str[])
+{
+  int i;
+  int length = strlen(str) - 1;
+  for (i = length; i >= 0; i--)
+  {
+    printf("%c", str[i]);
+  }
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[(strlen(str) - 1)] = '\0';
+  stringReverse(str);
+  return 0;
+} */
 
-//! 8. Write a program in C to count the total number of alphabets, digits, and special characters in a string.
+/* //! 8. Write a program in C to count the total number of alphabets, digits, and special characters in a string.
+#include <stdio.h>
+#include <string.h>
+void countAlphabetsDigitsSpecial(char str[])
+{
+  int i, alpha = 0, digit = 0, special = 0;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
+      alpha++;
+    else if (str[i] >= 48 && str[i] <= 57)
+      digit++;
+    else
+      special++;
+  }
+  printf("Total Alphabets: %d\n", alpha);
+  printf("Total Digits: %d\n", digit);
+  printf("Total Special Character: %d\n", special);
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    (str[strlen(str) - 1]) = '\0';
+  countAlphabetsDigitsSpecial(str);
+  return 0;
+} */
 
-//! 9. Write a program in C to copy one string to another char array.
+/* //! 9. Write a program in C to copy one string to another char array.
+#include <stdio.h>
+#include <string.h>
+void copyingArray(char str[])
+{
+  int i;
+  char newstr[50];
+  for (i = 0; str[i]; i++)
+    newstr[i] = str[i];
+  newstr[i] = '\0'; // Adding null terminator to the end of the string
+  printf("Destination string: %s\n", newstr);
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    (str[strlen(str) - 1]) = '\0';
+  printf("Source string: %s\n", str);
+  copyingArray(str);
+  return 0;
+} */
+//____________New Approach using sring method strcpy_____________
+/* #include <stdio.h>
+#include <string.h>
+void copyingArrayUsingMethod(char str[])
+{
+  int i;
+  char newstr[50];
+  // ************  adding only single line
+  strcpy(newstr, str);
+  // ************
+  printf("Destination string: %s\n", newstr);
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    (str[strlen(str) - 1]) = '\0';
+  printf("Source string: %s\n", str);
+  copyingArrayUsingMethod(str);
+  return 0;
+} */
 
-//! 10. Write a program to find the first occurrence of a given character in a given string.
+/* //! 10. Write a program to find the first occurrence of a given character in a given string.
+#include <stdio.h>
+#include <string.h>
+void findFirstOccurrence(char str[])
+{
+  int i;
+  char x;
+  printf("Enter the character to search for: ");
+  scanf(" %c", &x);
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] == x)
+    {
+      printf("First occurrence of '%c' is at index %d\n", x, i);
+      break;
+    }
+  }
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    (str[strlen(str) - 1]) = '\0';
+  findFirstOccurrence(str);
+  return 0;
+} */
 
 // TODO: Questions from Other Sources
 
