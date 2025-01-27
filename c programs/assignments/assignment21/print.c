@@ -88,13 +88,13 @@ int main()
 {
   char str[30];
   printf("Enter a string: ");
-  fgets(str, 20, stdin);
+  fgets(str, 30, stdin);
 
   // Remove the newline character that fgets captures
   if (str[strlen(str) - 1] == '\n')
     str[strlen(str) - 1] = '\0'; // removing the newline
 
-  occurrenceChecker(str, 20);
+  occurrenceChecker(str, 30);
   return 0;
 } */
 

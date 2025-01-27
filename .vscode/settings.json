@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "SuggestionVideoCard,js": "javascriptreact",
+    "iostream": "cpp"
+  }
+}
