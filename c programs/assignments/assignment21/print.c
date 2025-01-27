@@ -68,24 +68,142 @@ int main()
   return 0;
 } */
 
-//! 2. Write a program to count the occurrence of a given character in a given string.
+/* //! 2. Write a program to count the occurrence of a given character in a given string.
 #include <stdio.h>
+#include <string.h>
+void occurrenceChecker(char str[], int size)
+{
+  int i, count = 0;
+  char x;
+  printf("Enter a character u want to count the occurrence in string:\n ");
+  scanf(" %c", &x); // Adding a space before %c to ignore any leading whitespace or newline
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] == x)
+      count++;
+  }
+  printf("Occurrence of Character %c is %d times ", x, count);
+}
 int main()
 {
-  char str[20];
+  char str[30];
   printf("Enter a string: ");
   fgets(str, 20, stdin);
+
+  // Remove the newline character that fgets captures
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0'; // removing the newline
+
   occurrenceChecker(str, 20);
   return 0;
+} */
+
+/* //! 3. Write a program to count vowels in a given string.
+#include <stdio.h>
+#include <string.h>
+void countingVowels(char str[])
+{
+  int i, j, count = 0;
+  char vowels[] = "aeiouAEIOU";
+  for (i = 0; str[i]; i++)
+  {
+    for (j = 0; vowels[j]; j++)
+    {
+      if (str[i] == vowels[j])
+      {
+        printf(" %c", str[i]);
+        count++;
+        break;   // Exit the inner loop once a match is found
+      }
+    }
+  }
+  printf("\n total %d vowels are found in string", count);
 }
+int main()
+{
+  char str[50];
+  printf("Enter a String: ");
+  fgets(str, 50, stdin);
+  // Removing Trailling newline if present
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  countingVowels(str);
+  return 0;
+} */
 
-//! 3. Write a program to count vowels in a given string.
+/* //! 4. Write a program to count spaces in a given string.
+#include <stdio.h>
+#include <string.h>
+void spaceCounting(char str[])
+{
+  int i, count = 0;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] == ' ')
+      count++;
+  }
+  printf("There %s %d space%s in given string.\n",
+         (count == 1) ? "is" : "are", count,
+         (count == 1) ? "" : "s");
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  spaceCounting(str);
+  return 0;
+} */
 
-//! 4. Write a program to count spaces in a given string.
+/* //! 5. Write a program to convert a given string into uppercase.
+#include <stdio.h>
+#include <string.h>
+void uppercaseStringConverter(char str[])
+{
+  int i;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z')
+      str[i] -= 32;
+  }
+  printf("string in uppercase is :\n %s ", str);
+}
+int main()
+{
+  char str[25];
+  printf("Enter a string: ");
+  fgets(str, 25, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  uppercaseStringConverter(str);
+  return 0;
+} */
 
-//! 5. Write a program to convert a given string into uppercase.
-
-//! 6. Write a program to convert a given string into lowercase.
+/* //! 6. Write a program to convert a given string into lowercase.
+#include <stdio.h>
+#include <string.h>
+void lowercaseStringConverter(char str[])
+{
+  int i;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] >= 'A' && str[i] <= 'Z')
+      str[i] += 32;
+  }
+  printf("string in uppercase is :\n %s ", str);
+}
+int main()
+{
+  char str[25];
+  printf("Enter a string: ");
+  fgets(str, 25, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  lowercaseStringConverter(str);
+  return 0;
+} */
 
 //! 7. Write a program to reverse a string.
 
