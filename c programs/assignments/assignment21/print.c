@@ -227,6 +227,7 @@ int main()
   stringReverse(str);
   return 0;
 } */
+//? we are printing reverse string only not actually reversing string
 
 /* //! 8. Write a program in C to count the total number of alphabets, digits, and special characters in a string.
 #include <stdio.h>

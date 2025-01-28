@@ -100,7 +100,7 @@ int main(){
   printf("%d",x);
 }  */
 
-/* // WAP to check whether a given number is positive or non positive [using if]
+/* //! WAP to check whether a given number is positive or non positive [using if]
 #include<stdio.h>
 int main(){
   int a;
@@ -111,7 +111,7 @@ int main(){
   return 0;
 } */
 
-/* // WAP to check whether a given number is positive or non positive [using if else]
+/* //! WAP to check whether a given number is positive or non positive [using if else]
 #include<stdio.h>
 int main(){
   int a;
@@ -122,7 +122,7 @@ int main(){
   return 0;
 } */
 
-/* // WAP to check whether a given number is positive or non positive [using if ternary]
+/* //! WAP to check whether a given number is positive or non positive [using if ternary]
 #include<stdio.h>
 int main(){
   int a;
