@@ -5,7 +5,7 @@
 int sum_of_array(int a[], int n)
 {
   int i, sum = 0;
-  printf("Enter numbers for array: ");
+  printf("Enter 10 numbers for array: ");
   for (i = 0; i < n; i++)
   {
     scanf("%d", &a[i]);
@@ -28,7 +28,8 @@ int main()
 #include <stdio.h>
 int avg_of_array(int a[], int n)
 {
-  int i, sum = 0, avg = 0;
+  int i, sum = 0;
+  float avg = 0;
   printf("Enter numbers for array: ");
   for (i = 0; i < n; i++)
     scanf("%d", &a[i]);
@@ -40,8 +41,8 @@ int avg_of_array(int a[], int n)
 int main()
 {
   int a[10];
-  int avg = avg_of_array(a, 10);
-  printf("average of array is %d\n", avg);
+  float avg = avg_of_array(a, 10);
+  printf("average of array is %0.2f\n", avg);
   return 0;
 } */
 
@@ -84,14 +85,15 @@ int main()
 #include <stdio.h>
 int greatest_of_array(int a[], int n)
 {
-  int i, large = a[0];
+  int i;
   printf("Enter numbers for array: ");
   for (i = 0; i < n; i++)
     scanf("%d", &a[i]);
-  for (i = 0; i < n - 1; i++)
+  int large = a[0];
+  for (i = 1; i < n - 1; i++)
   {
-    if (a[i] < a[i + 1])
-      large = a[i + 1];
+    if (a[i] > large)
+      large = a[i];
   }
   return large;
 }
@@ -107,14 +109,15 @@ int main()
 #include <stdio.h>
 int smallest_of_array(int a[], int n)
 {
-  int i, small = a[0];
+  int i;
   printf("Enter numbers for array: ");
   for (i = 0; i < n; i++)
     scanf("%d", &a[i]);
-  for (i = 0; i < n - 1; i++)
+  int small = a[0];
+  for (i = 1; i < n - 1; i++)
   {
-    if (a[i] > a[i + 1])
-      small = a[i + 1];
+    if (a[i] < small)
+      small = a[i];
   }
   return small;
 }
@@ -124,7 +127,8 @@ int main()
   int small = smallest_of_array(a, 10);
   printf("smallest number of array is %d\n", small);
   return 0;
-} */
+}
+ */
 
 /* //! 6. Write a program to sort elements of an array of size 10. Take array values from the user.
 #include <stdio.h>
@@ -186,6 +190,41 @@ int main()
   second_largest(a, 10);
   return 0;
 } */
+// _____________New Approach_______________
+/* #include <stdio.h>
+int main()
+{
+  int i, max, second_max;
+  int a[10];
+  printf("Enter numbers for array: ");
+  for (i = 0; i <= 9; i++)
+    scanf("%d", &a[i]);
+  if (max > second_max)
+  {
+    max = a[0];
+    second_max = a[1];
+  }
+  else
+  {
+    max = a[1];
+    second_max = a[0];
+  }
+  for (i = 2; i <= 9; i++)
+  {
+    if (a[i] > max)
+    {
+      second_max = max;
+      max = a[i];
+    }
+    else
+    {
+      if (a[i] > second_max)
+        second_max = a[i];
+    }
+  }
+  printf("\nSecond Largest Number is %d", second_max);
+  return 0;
+} */
 
 /* //! 8. Write a program to find the second smallest number in an array. Take array values from the user.
 #include <stdio.h>
@@ -214,6 +253,41 @@ int main()
 {
   int a[10];
   second_smallest(a, 10);
+  return 0;
+} */
+// _____________New Approach_______________
+/* #include <stdio.h>
+int main()
+{
+  int i, min, second_min;
+  int a[10];
+  printf("Enter numbers for array: ");
+  for (i = 0; i <= 9; i++)
+    scanf("%d", &a[i]);
+  if (min > second_min)
+  {
+    min = a[0];
+    second_min = a[1];
+  }
+  else
+  {
+    min = a[1];
+    second_min = a[0];
+  }
+  for (i = 2; i <= 9; i++)
+  {
+    if (a[i] < min)
+    {
+      second_min = min;
+      min = a[i];
+    }
+    else
+    {
+      if (a[i] < second_min)
+        second_min = a[i];
+    }
+  }
+  printf("\nSecond Smallest Number is %d", second_min);
   return 0;
 } */
 

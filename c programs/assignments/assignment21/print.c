@@ -335,23 +335,298 @@ int main()
   return 0;
 } */
 
-// TODO: Questions from Other Sources
+// TODO: Questions from Other Source
 
-//! 11. Read a line of text from the user using fgets and then print it using puts.
+/* //! 11. Read a line of text from the user using fgets and then print it using puts.
+#include <stdio.h>
 
-//! 12. Use printf with format specifiers to format and print a date string (day, month, year).
+int main()
+{
+  char usingPut[100];
 
-//! 13. Write a program to convert an input string to uppercase.
+  printf("Enter a line of text: ");
+  fgets(usingPut, sizeof(usingPut), stdin); // Read a line of text
 
-//! 14. Create a simple text-based user login system that compares a stored password string using strcmp.
+  printf("You entered: ");
+  puts(usingPut); // Print the line of text
 
-//! 15. Use a 2-D character array to store and display a tic-tac-toe board.
+  return 0;
+} */
 
-//! 16. Write a function that takes a string and reverses it in place.
+/* //! 12. Use printf with format specifiers to format and print a date string (day, month, year).
+#include <stdio.h>
+int main()
+{
+  int date = 1;
+  int month = 2;
+  int year = 2025;
+  printf("Formateed Date: %02d/%02d/%04d\n", date, month, year);
+  return 0;
+} */
 
-//! 17. Implement a trim function that removes leading and trailing spaces from a string.
+/* //! 13. Write a program to convert an input string to uppercase.
+#include <stdio.h>
+#include <string.h>
+void uppercaseStringConverter(char str[])
+{
+  int i;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z')
+      str[i] -= 32;
+  }
+  printf("String in uppercase: \n%s", str);
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  uppercaseStringConverter(str);
+  return 0;
+} */
 
-//! 18. Create a program that checks if a given string is a palindrome (the same forwards and backwards) and outputs the result.
+/* //! 14. Create a simple text-based user login system that compares a stored password string using strcmp.
+#include <stdio.h>
+#include <string.h>
+void passwordConfirmation(char pass[], char correctPass[])
+{
+  int result = strcmp(pass, correctPass);
+  if (result == 0)
+    printf("Login SuccessFull");
+  else
+    printf("Password does not matched..try again later");
+}
+int main()
+{
+  char pass[30];
+  char correctPass[30];
+
+  printf("Enter a password: ");
+  fgets(pass, 30, stdin);
+  // strcspn(pass, "\n") finds the position of the newline character (\n) in the string pass  - ["string complement span"].
+  pass[strcspn(pass, "\n")] = '\0';
+
+  printf("confirm your password: ");
+  fgets(correctPass, 30, stdin);
+  correctPass[strcspn(correctPass, "\n")] = '\0';
+
+  passwordConfirmation(pass, correctPass);
+  return 0;
+} */
+
+/* //! 15. Use a 2-D character array to store and display a tic-tac-toe board.
+#include <stdio.h>
+
+int main()
+{
+  char board[3][3] = {
+      {'_', '_', '_'}, // row 1
+      {'_', '_', '_'}, // row 2
+      {'_', '_', '_'}  // row 3
+  };
+
+  printf("Tic-Tac-Toe Board: \n");
+  for (int i = 0; i < 3; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      printf(" %c", board[i][j]);
+      if (j < 2)
+        printf(" |");
+    }
+    printf("\n");
+    if (i < 2)
+      printf("------------\n");
+  }
+
+  return 0;
+} */
+//? Extended Example with user input
+/* #include <stdio.h>
+
+// Function to display the board
+void displayBoard(char board[3][3])
+{
+  printf("Tic-Tac-Toe Board:\n");
+  for (int i = 0; i < 3; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      printf(" %c ", board[i][j]);
+      if (j < 2)
+        printf("|");
+    }
+    printf("\n");
+    if (i < 2)
+      printf("-----------\n");
+  }
+}
+
+// Function to check if a player has won
+int checkWin(char board[3][3], char player)
+{
+  // Check rows
+  for (int i = 0; i < 3; i++)
+  {
+    if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
+      return 1; // Player wins
+  }
+
+  // Check columns
+  for (int j = 0; j < 3; j++)
+  {
+    if (board[0][j] == player && board[1][j] == player && board[2][j] == player)
+      return 1; // Player wins
+  }
+
+  // Check diagonals
+  if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
+    return 1; // Player wins
+  if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
+    return 1; // Player wins
+
+  return 0; // No winner yet
+}
+
+int main()
+{
+  char board[3][3] = {
+      {'_', '_', '_'},
+      {'_', '_', '_'},
+      {'_', '_', '_'}};
+
+  int row, col;
+  char player = 'X';
+  int turn;
+
+  for (turn = 0; turn < 9; turn++)
+  {
+    displayBoard(board);
+
+    printf("Player %c's turn. Enter row (0-2) and column (0-2): ", player);
+    scanf("%d %d", &row, &col);
+
+    // Validate input
+    if (row < 0 || row > 2 || col < 0 || col > 2 || board[row][col] != '_')
+    {
+      printf("Invalid move! Try again.\n");
+      turn--; // Repeat the turn
+      continue;
+    }
+
+    // Place the player's symbol on the board
+    board[row][col] = player;
+
+    // Check if the current player has won
+    if (checkWin(board, player))
+    {
+      displayBoard(board);
+      printf("Player %c wins!\n", player);
+      return 0; // End the game
+    }
+
+    // Switch players
+    player = (player == 'X') ? 'O' : 'X';
+  }
+
+  // If no one wins after 9 turns, it's a draw
+  displayBoard(board);
+  printf("It's a draw!\n");
+
+  return 0;
+} */
+
+/* //! 16. Write a function that takes a string and reverses it in place.
+#include <stdio.h>
+#include <string.h>
+void reverseString(char str[])
+{
+  int i, j;
+  int len = strlen(str);
+  for (i = 0, j = len - 1; i < j; i++, j--)
+  {
+    // Swap characters at position i and j
+    char temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+  }
+}
+void reverseStrInPlace(char *str)
+{
+  reverseString(str);
+  printf("Reversed String is: %s\n", str);
+}
+int main()
+{
+  char str[30];
+  printf("Enter a string: ");
+  fgets(str, 30, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  printf("You Entered: %s\n", str);
+  reverseStrInPlace(str);
+  return 0;
+} */
+
+/* //! 17. Implement a trim function that removes leading and trailing spaces from a string.
+#include <stdio.h>
+#include <string.h>
+void removingSpaces(char str[])
+{
+  int i, start = 0, end = strlen(str) - 1;
+  while (str[start] == ' ')
+    start++;
+  while (end > start && str[end] == ' ')
+    end--;
+  for (i = start; i <= end; i++)
+    printf("%c", str[i]);
+  printf("\n");
+}
+int main()
+{
+  char str[30];
+  printf("Enter a string: ");
+  fgets(str, 30, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  removingSpaces(str);
+  return 0;
+} */
+
+/* //! 18. Create a program that checks if a given string is a palindrome (the same forwards and backwards) and outputs the result.
+#include <stdio.h>
+#include <string.h>
+void palindromeChecker(char str[])
+{
+  char newStr[50];
+  int i, j;
+
+  int length = strlen(str) - 1;
+
+  for (i = length, j = 0; i >= 0; i--, j++)
+    newStr[j] = str[i];
+  newStr[j] = '\0';
+  // printing reverse string for debugging
+  printf("reverse String: %s\n", newStr);
+
+  if (strcmp(str, newStr) == 0)
+    printf("Palindrome");
+  else
+    printf("Not Palindrome");
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  palindromeChecker(str);
+  return 0;
+} */
 
 //! 19. Create a program using do-while to find a password checker until a valid password is entered.
 
