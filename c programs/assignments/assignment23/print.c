@@ -386,7 +386,7 @@ int main()
   return 0;
 } */
 
-//! 10. Write a function to concatenate two strings.
+/* //! 10. Write a function to concatenate two strings.
 #include <stdio.h>
 #include <string.h>
 
@@ -435,3 +435,4 @@ int main()
 
   return 0;
 }
+ */
