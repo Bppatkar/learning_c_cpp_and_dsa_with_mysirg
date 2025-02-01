@@ -104,10 +104,10 @@ int main()
   return 0;
 } */
 
-/* //! 4. Write a function to rotate an array by n position in d direction.
-// The d is an indicative value for left or right.
-// For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29].
-#include <stdio.h>
+//! 4. Write a function to rotate an array by n position in d direction.
+//? The d is an indicative value for left or right.
+//? For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29].
+/* #include <stdio.h>
 void rotatingWithDiractionArray(int a[], int n, int m, int dir)
 {
   int temp[m]; // Temporary array to store elements during rotation
@@ -173,6 +173,56 @@ int main()
   // Call the rotation function
   rotatingWithDiractionArray(a, n, m, dir);
   return 0;
+}  */
+//__________New Approach____________
+/* #include <stdio.h>
+void rotate(int A[], int size, int n, int d)
+{
+  int i, temp;
+  if (d == 1)
+  {
+    while (n)
+    {
+      temp = A[size - 1];
+      for (i = size - 2; i >= 0; i--)
+        A[i + 1] = A[i];
+      A[0] = temp;
+      n--;
+    }
+  }
+  else
+  {
+    while (n)
+    {
+      temp = A[0];
+      for (i = 1; i <= size - 1; i++)
+        A[i - 1] = A[i];
+      A[size - 1] = temp;
+      n--;
+    }
+  }
+  printf("\nrotated array is: ");
+  for (i = 0; i < size; i++)
+    printf("%d ", A[i]);
+}
+int main()
+{
+  int i, l, n, d;
+  printf("Enter the size of array: ");
+  scanf("%d", &l);
+  int a[l];
+  printf("Enter %d numbers for array: ", l);
+  for (i = 0; i < l; i++)
+    scanf("%d", &a[i]);
+  printf("How many times u want to rotate array: ");
+  scanf("%d", &n);
+  printf("if want to rotate right press 1 otherwise press -1: ");
+  scanf("%d", &d);
+  printf("Your Entered array is: ");
+  for (i = 0; i < l; i++)
+    printf("%d ", a[i]);
+  rotate(a, l, n, d);
+  return 0;
 } */
 
 /* //! 5. Write a function to find the first occurrence of adjacent duplicate values in the array. Function has to return the value of the element.
@@ -180,8 +230,9 @@ int main()
 int duplicateOccurrence(int a[], int n)
 {
   int i;
-  for (i = 0; i < n - 1; i++) // Stop at n - 1 to prevent out-of-bounds access.
-                              // When i == n - 1, a[i + 1] will try to access an element beyond the last index
+  for (i = 0; i < n - 1; i++)
+    // Stop at n - 1 to prevent out-of-bounds access.
+    // When i == n - 1, a[i + 1] will try to access an element beyond the last index
     if (a[i] == a[i + 1])
       return a[i];
   return -1; // means no duplicate found
@@ -199,7 +250,33 @@ int main()
   for (i = 0; i < n; i++)
     printf("%d ", a[i]);
   int value = duplicateOccurrence(a, n);
-  printf("Duplicate value in array is: %d", value);
+  printf("first occurrence of adjacent duplicate values in array is: %d", value);
+  return 0;
+} */
+//__________New Approach____________
+/* #include <stdio.h>
+int duplicateOccurrence(int a[], int size)
+{
+  int i;
+  for (i = 0; i < size - 2; i++)
+    if (a[i] == a[i + 1])
+      return a[i];
+  return; // means no duplicate found
+}
+int main()
+{
+  int n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  int a[n], i;
+  printf("Enter %d elements for array:", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  printf("You Entered: ");
+  for (i = 0; i < n; i++)
+    printf("%d ", a[i]);
+  int value = duplicateOccurrence(a, n);
+  printf("first occurrence of adjacent duplicate values in array is: %d", value);
   return 0;
 } */
 
@@ -269,6 +346,8 @@ void countElementsWithTwoOccurrences(int a[], int n)
   }
   if (total == 0)
     printf("None");
+  else
+    printf("\nIt means total %d numbers are founded duplicate in array", total);
   printf("\n");
 }
 int main()
@@ -335,6 +414,62 @@ int main()
 
     array(a, n);
     return 0;
+} */
+//__________New Approach____________
+/* #include <stdio.h>
+void sortedArr(int a[], int n)
+{
+  int i, j, temp;
+  for (i = 0; i < n; i++)
+  {
+    for (j = i + 1; j < n; j++)
+    {
+      if (a[i] > a[j])
+      {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+}
+int count_duplicate(int a[], int n)
+{
+  int i = 0, j = 1, count = 0;
+  sortedArr(a, n); // Sort the array first
+
+  while (i < n - 1)
+  {
+    if (a[i] == a[j])
+    {
+      count++; // Increment count for duplicate
+      while (j < n && a[i] == a[j])
+      { // Skip all duplicates
+        j++;
+      }
+      i = j; // Move i to the next unique element
+      j = j + 1;
+    }
+    else
+    {
+      i++;
+      j++;
+    }
+  }
+  return count; // Return the count of duplicates
+}
+int main()
+{
+  int i, n;
+  printf("Enter the size of array: ");
+  scanf("%d", &n);
+  int a[n];
+  printf("Enter %d numbers for array: ", n);
+  for (i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  int duplicateFound = count_duplicate(a, n);
+  printf("There are total %d duplicates", duplicateFound);
+  return 0;
 } */
 
 /* //! 8. Write a function to print all unique elements in an array.

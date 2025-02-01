@@ -98,6 +98,62 @@ int main()
   // now adding two matrices
   productOfMatrices(a, b);
 } */
+//__________New Approach____________
+/* #include <stdio.h>
+void creatingMatrix(int a[][3])
+{
+  int i, j;
+  for (i = 0; i < 3; i++)
+    for (j = 0; j < 3; j++)
+      scanf("%d", &a[i][j]);
+  printf("You Entered in matrix: \n");
+  // printing matrix
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+    {
+      printf("%d ", a[i][j]);
+    }
+    printf("\n");
+  }
+}
+void productOfMatrices(int a[][3], int b[][3])
+{
+  int i, j, k, sum;
+  int resultMatrix[3][3];
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+    {
+      for (k = 0, sum = 0; k < 3; k++)
+      {
+        sum = sum + a[i][k] * b[k][j];
+      }
+      resultMatrix[i][j] = sum;
+    }
+    printf("\n");
+  }
+  // printing matrix
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+    {
+      printf("%d ", resultMatrix[i][j]);
+    }
+    printf("\n");
+  }
+}
+int main()
+{
+  int a[3][3];
+  printf("Enter values in matrix 1: ");
+  creatingMatrix(a);
+  int b[3][3];
+  printf("Enter values in matrix 2: ");
+  creatingMatrix(b);
+  // now adding two matrices
+  productOfMatrices(a, b);
+} */
 
 /* //! 3. Write a program to print the transpose of a given matrix.
 #include <stdio.h>
@@ -147,6 +203,47 @@ int main()
   printf("Enter values in matrix 1: ");
   creatingMatrix(a);
   transposingMatrix(a);
+} */
+//_____________New Approach____________
+/* #include <stdio.h>
+void transposingArr(int a[][3])
+{
+  int i, j, k, temp;
+  for (i = 0, j = 1, k = 1; k <= 3; k++)
+  {
+    temp = a[i][j];
+    a[i][j] = a[j][i];
+    a[j][i] = temp;
+    if (j - i == 1)
+      j++;
+    else
+      i++;
+  }
+  printf("After Transposing\n");
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+      printf("%d ", a[i][j]);
+    printf("\n");
+  }
+}
+int main()
+{
+  int i, j;
+  int a[3][3];
+  printf("Enter 9 numbers for array");
+  for (i = 0; i < 3; i++)
+    for (j = 0; j < 3; j++)
+      scanf("%d", &a[i][j]);
+  printf("You Entered: \n");
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+      printf("%d ", a[i][j]);
+    printf("\n");
+  }
+  transposingArr(a);
+  return 0;
 } */
 
 /* //! 4. Four players are playing a tournament of Chess with the round robin method (each player will play with every other player).
@@ -342,10 +439,9 @@ void printWinner(int playerData[4][2])
     calculatingRowWiseData(a, playerData);
 }*/
 
-//! here is complete code for solving all questions from Question 4 to Quesetion 10
+//?????? here is complete code for solving all questions from Question 4 to Quesetion 10
 
 /* #include <stdio.h>
-
 // Function to calculate factorial
 int fact(int n) {
     int sum = 1;
@@ -515,4 +611,108 @@ int main() {
     calcSumOfScore(a);
 
     return 0;
+} */
+//__________New Approach_____________
+/* #include <stdio.h>
+void sort(int scores[], int n, int player_index[])
+{
+  int i, j, temp;
+  for (i = 0; i < n - 1; i++)
+  {
+    for (j = i + 1; j < n; j++)
+    {
+      if (scores[i] < scores[j])
+      {
+        temp = scores[i];
+        scores[i] = scores[j];
+        scores[j] = temp;
+        temp = player_index[i];
+        player_index[i] = player_index[j];
+        player_index[j] = temp;
+      }
+    }
+  }
+}
+int get_player_score(int player, int score_board[][4])
+{ // solving 7th question
+  int j, sum = 0;
+
+  for (j = 0; j <= 3; j++)
+    sum += score_board[player][j];
+  return sum;
+}
+void show_rank(int score_board[][4])
+{
+  // solving 9th question   {display rank means sorting}
+  int player_score[4], scores[4], player_index[4];
+  int i;
+  for (i = 0; i <= 3; i++)
+  {
+    player_score[i] = get_player_score(i, score_board);
+    scores[i] = player_score[i];
+    player_index[i] = i;
+  }
+
+  // now we have score of all 4 player... we need to sort them only
+  sort(scores, 4, player_index);
+  // now we have to print scores array and check inside player array so we get index
+  for (i = 0; i <= 3; i++)
+  {
+    printf("%d) %d - Score %d\n", i + 1, player_index[i], scores[i]);
+  }
+}
+int find_winner(int score_board[][4])
+{
+  // solving 8th question
+  int player, score, winner, gps;
+  player = 0;
+  winner = player;
+  score = get_player_score(player, score_board);
+  for (++player; player <= 3; player++)
+  {
+    gps = get_player_score(player, score_board);
+    if (score < gps)
+    {
+      winner = player;
+      score = gps;
+    }
+  }
+  return winner;
+}
+void display_score_board(int score_board[][4])
+{
+  // solving 6th question
+  int i, j;
+  printf("\nPrinting score board\n");
+  for (i = 0; i <= 3; i++)
+  {
+    for (j = 0; j <= 3; j++)
+    {
+      printf("%d ", score_board[i][j]);
+    }
+    printf("\n");
+  }
+}
+void update_score_board(int p1, int p2, int result, int score_board[][4])
+{
+  // solving 5th question
+  score_board[p1][p2] = result;
+  score_board[p2][p1] = 2 - result;
+}
+void solvingByNewApproach()
+// solving 4rth question
+{
+  int score_board[4][4] = {0}; // initialize from 0
+  update_score_board(0, 1, 2, score_board);
+  update_score_board(0, 2, 1, score_board);
+  update_score_board(0, 3, 2, score_board);
+  update_score_board(1, 2, 1, score_board);
+  update_score_board(1, 3, 0, score_board);
+  update_score_board(2, 3, 0, score_board);
+  show_rank(score_board);
+}
+int main()
+{
+  solvingByNewApproach();
+  return 0;
 } */
