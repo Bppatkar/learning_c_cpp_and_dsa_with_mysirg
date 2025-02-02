@@ -2,6 +2,8 @@
   "files.associations": {
     "*.jsx": "javascriptreact",
     "SuggestionVideoCard,js": "javascriptreact",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "functional": "c",
+    "string.h": "c"
   }
 }

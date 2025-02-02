@@ -227,7 +227,28 @@ int main()
   stringReverse(str);
   return 0;
 } */
-//? we are printing reverse string only not actually reversing string
+//? we are "printing" reverse string...... only {not actually reversing a actual string}
+// if want to reverse a actual string then we have to use swapping
+// __________________New Appraoch____________
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+  int i, l;
+  char str[50], ch;
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  str[(strlen(str) - 1)] = '\0';
+  l = strlen(str);
+  for (i = 0; i < l / 2; i++)
+  {
+    ch = str[i];
+    str[i] = str[l - 1 - i];
+    str[l - 1 - i] = ch;
+  }
+  printf("Reverse of String is %s", str);
+  return 0;
+} */
 
 /* //! 8. Write a program in C to count the total number of alphabets, digits, and special characters in a string.
 #include <stdio.h>
@@ -243,6 +264,42 @@ void countAlphabetsDigitsSpecial(char str[])
       digit++;
     else
       special++;
+  }
+  printf("Total Alphabets: %d\n", alpha);
+  printf("Total Digits: %d\n", digit);
+  printf("Total Special Character: %d\n", special);
+}
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    (str[strlen(str) - 1]) = '\0';
+  countAlphabetsDigitsSpecial(str);
+  return 0;
+} */
+//____________New Approach_____________{using switch case}
+/* #include <stdio.h>
+#include <string.h>
+void countAlphabetsDigitsSpecial(char str[])
+{
+  int i, alpha = 0, digit = 0, special = 0;
+  for (i = 0; str[i]; i++)
+  {
+    switch (str[i])
+    {
+    case 'a' ... 'z':
+    case 'A' ... 'Z':
+      alpha++;
+      break;
+    case '0' ... '9':
+      digit++;
+      break;
+    default:
+      special++;
+      break;
+    }
   }
   printf("Total Alphabets: %d\n", alpha);
   printf("Total Digits: %d\n", digit);

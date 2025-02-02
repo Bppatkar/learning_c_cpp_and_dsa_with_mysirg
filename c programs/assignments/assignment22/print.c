@@ -84,6 +84,23 @@ int main()
   comparingStrings(str, newStr);
   return 0;
 } */
+//_____________New Approach___________
+/* #include <stdio.h>
+int compare(char s1[], char s2[])
+{
+  int i;
+  for (i = 0; s1[i] && s2[i]; i++)
+  {
+    if (s1[i] != s2[i])
+      break;
+    return s1[i] - s2[i];
+  }
+}
+int main()
+{
+  printf("%d", compare("bhanu", "Bhanu"));
+  return 0;
+} */
 
 /* //! 4. Write a function to transform a string into uppercase.
 #include <stdio.h>
@@ -198,6 +215,7 @@ void charFinderBtwIndices(char str[])
 {
   int i, start = 0, end = 0;
   char x;
+  int l = strlen(str) - 1;
   printf("Enter the character u want to find in string: ");
   scanf(" %c", &x);
   printf("Enter the first index u want to start searching (but remember indexing start from 0): ");
@@ -223,6 +241,7 @@ int main()
   if (str[strlen(str) - 1] == '\n')
     str[strlen(str) - 1] = '\0';
   charFinderBtwIndices(str);
+
   return 0;
 } */
 
