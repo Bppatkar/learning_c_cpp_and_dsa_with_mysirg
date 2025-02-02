@@ -628,6 +628,57 @@ int main()
   return 0;
 } */
 
-//! 19. Create a program using do-while to find a password checker until a valid password is entered.
+/* //! 19. Create a program using do-while to find a password checker until a valid password is entered.
+#include <stdio.h>
+#include <string.h>
 
-//! 20. Create a program using break to read inputs from the user in a loop and break the loop if a specific keyword (like "exit") is entered.
+int main()
+{
+  char correctPass[] = "secure123"; // Stored correct password
+  char userPass[30];
+
+  do
+  {
+    printf("Enter the password: ");
+    fgets(userPass, 30, stdin);
+    userPass[strcspn(userPass, "\n")] = '\0'; // Remove newline character
+
+    if (strcmp(userPass, correctPass) == 0)
+    {
+      printf("Login Successful!\n");
+      break; // Exit the loop if the password is correct
+    }
+    else
+    {
+      printf("Incorrect password. Try again.\n");
+    }
+  } while (1);
+
+  return 0;
+} */
+
+/* //! 20. Create a program using break to read inputs from the user in a loop and break the loop if a specific keyword (like "exit") is entered.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+  char input[100];
+  const char keyword[] = "exit";
+
+  while (1)
+  {
+    printf("Enter a string (or 'exit' to quit): ");
+    fgets(input, 100, stdin);
+    input[strcspn(input, "\n")] = '\0';
+
+    if (strcmp(input, keyword) == 0)
+    {
+      printf("Exiting the loop. GoodBye!!!\n");
+      break;
+    }
+    else
+      printf("you entered %s\n", input);
+  }
+
+  return 0;
+} */
