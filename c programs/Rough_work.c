@@ -495,6 +495,20 @@ int main()
   return 0;
 } */
 
+//? length by strlen string method
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+  int count = 0;
+  char name[30];
+  printf("Enter a string: ");
+  fgets(name, 30, stdin);
+  count = strlen(name);
+  printf("String length is - %d", count);
+  return 0;
+} */
+
 //? taking input from user
 /* #include <stdio.h>
 int main()
@@ -507,7 +521,7 @@ int main()
   return 0;
 } */
 
-//! using gets()
+//! using fgets()
 /* #include <stdio.h>
 int main()
 {
@@ -629,6 +643,46 @@ int main()
   // ********
   // Print the last character of the string stored in 'ch'.
   printf("last character of string is %c", ch);
+  return 0;
+} */
+
+//! string in c (printf in 0.5 and 10.5)
+/* #include <stdio.h>
+int main()
+{
+  // char name[30];
+  // printf("Enter name: ");
+  // scanf("%s", name);
+  // printf("printing in .5 %.5s\n", name);// .5 means i want only first 5 character
+  // printf("printing in 10.5 %10.5s\n", name);   10.5 means 10 filled with but only 5 character
+  return 0;
+} */
+
+//! string in c (gets and puts)
+/* #include <stdio.h>
+int main()
+{
+  char name[30];
+  printf("Enter name: ");
+  gets(name);
+  printf("%s",name);
+  puts(name); // puts add \n in end automatically so next put print in next line
+  puts(name);
+  return 0;
+} */
+
+//! one more thing
+/* #include <stdio.h>
+int main()
+{
+  char name[30];
+  printf("Enter name: ");
+  // scanf("%s", name);
+  // printf("%s", &name[2]);  // it will start printing from index 2 and scanf is taking string till found space so we are checking with gets
+  gets(name);
+  printf("%s", &name[2]);
+  // it is printing from index 2 till \0
+  // printf("%s", name[2]);  // this should be error
   return 0;
 } */
 
@@ -797,7 +851,7 @@ int main()
 } */
 
 //! pointers and strings
-// calculating the length of string give making seperate function for it
+// calculating the length of string give making separate function for it
 
 /* #include <stdio.h>
 int length(char *p)

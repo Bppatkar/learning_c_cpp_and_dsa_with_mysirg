@@ -22,7 +22,7 @@ int main()
   lengthOfString(str, 20);
   return 0;
 } */
-// _______New Approch__________ (Run loop till str[i]!='\0')
+// _______New Approach__________ (Run loop till str[i]!='\0')
 /* #include <stdio.h>
 void lengthOfString(char str[], int size)
 {
@@ -43,7 +43,7 @@ int main()
   lengthOfString(str, 20);
   return 0;
 } */
-// _______New Approch__________ (taking input from scanf and %c)-[but u have to input string without space- Ex: bhanupratap]
+// _______New Approach__________ (taking input from scanf and %c)-[but u have to input string without space- Ex: bhanupratap]
 /* #include <stdio.h>
 void lengthOfString(char str[], int size)
 {
@@ -229,7 +229,7 @@ int main()
 } */
 //? we are "printing" reverse string...... only {not actually reversing a actual string}
 // if want to reverse a actual string then we have to use swapping
-// __________________New Appraoch____________
+// __________________New Approach____________
 /* #include <stdio.h>
 #include <string.h>
 int main()
