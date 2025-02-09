@@ -237,11 +237,189 @@ int main()
   return 0;
 } */
 
-//! 7. Write a function to return the most repeating character in a list of strings.
+/* //! 7. Write a function to return the most repeating character in a list of strings.
+#include <stdio.h>
+#include <string.h>
+void repeatingChar(char str[5][20])
+{
+  int i, j, count[26] = {0};
+  for (i = 0; i < 5; i++)
+    for (j = 0; str[i][j] != '\0'; j++)
+      if (str[i][j] >= 'a' && str[i][j] <= 'z')
+        count[str[i][j] - 'a']++;
 
-//! 8. Write a function to check whether a pair of strings are anagrams or not.
-// Both strings are stored in a 2D char array.
+  // find most repeating character
+  int maxIndex = 0;
+  for (i = 1; i < 26; i++)
+  {
+    if (count[i] > count[maxIndex])
+      maxIndex = i;
+  }
 
-//! 9. Write a function to store all the words in a given string that start with 'a' in a two-dimensional char array.
+  // printing the frequency of all letters
+  printf("Character frequencies:\n");
+  for (i = 1; i < 26; i++)
+    if (count[i] > 0)
+      printf("%c -%d times\n", 'a' + i, count[i]);
 
-//! 10. A 2D array is filled with 10 email IDs. Write a function to find how many of them belong to gmail.com.
+  // print most repeating character
+  printf("\n%c the most repeating character is :%d times\n", 'a' + maxIndex, count[maxIndex]);
+}
+
+int main()
+{
+  char str[5][20];
+  printf("Enter 5 string: ");
+  for (int i = 0; i < 5; i++)
+  {
+    fgets(str[i], 20, stdin);
+    str[i][strcspn(str[i], "\n")] = '\0';
+  }
+  repeatingChar(str);
+
+  return 0;
+} */
+
+/* //! 8. Write a function to check whether a pair of strings are anagrams or not. Both strings are stored in a 2D char array.
+#include <stdio.h>
+#include <string.h>
+void checkAnagram(char str[][20])
+{
+  int i, j, len, count[26] = {0};
+  int len1 = strlen(str[0]); // length of first string
+  int len2 = strlen(str[1]); // length of second string
+
+  // printf("length of first string: %d\n", len1);
+  // printf("length of second string: %d\n", len2);
+
+  // Step 1: If lengths are different, they are NOT anagrams
+  if (len1 != len2)
+  {
+    printf("No, They are not anagram\n");
+    return;
+  }
+  // Step 2: Count characters in first string and subtract for second string
+  for (i = 0; i < len1; i++)
+  {
+    count[str[0][i] - 'a']++; // increment for first string
+    count[str[1][i] - 'a']--; // decrement for second string
+  }
+  // Step 3: check if all counts are zero (meaning both string are balanced)
+  for (i = 0; i < 26; i++)
+  {
+    if (count[i] != 0)
+    {
+      printf("No, They are not anagram\n");
+      return;
+    }
+  }
+  printf("Yes, they are anagrams.\n");
+}
+int main()
+{
+  char str[2][20];
+  printf("Enter string: ");
+  for (int i = 0; i < 2; i++)
+  {
+    fgets(str[i], 20, stdin);
+    // str[i][strcspn(str[i], "\n")] = '\0';
+    if (str[i][strlen(str[i]) - 1] == '\n')
+      str[i][strlen(str[i]) - 1] = '\0';
+  }
+
+  checkAnagram(str);
+} */
+
+/* //! 9. Write a function to store all the words in a given string that start with 'a' in a two-dimensional char array.
+#include <stdio.h>
+#include <string.h>
+void storeWordsStartingWithA(char str[100])
+{
+  int i = 0, wordIndex = 0, charIndex = 0;
+  char words[10][20];
+
+  while (str[i] != '\0')
+  { // skip spaces
+    while (str[i] == ' ')
+      i++;
+    // if end of string , break
+    if (str[i] == '\0')
+      break;
+
+    if (str[i] == 'a')
+    {
+      charIndex = 0; // reset character index for new word
+
+      // copy the word
+      while (str[i] != ' ' && str[i] != '\0')
+        words[wordIndex][charIndex++] = str[i++];
+
+      words[wordIndex][charIndex] = '\0'; // null terminate the word
+      wordIndex++;                        // move to the next word slot
+    }
+    else
+    {
+      // skip the current word if it doesn't start with 'a'
+      while (str[i] != ' ' && str[i] != '\0')
+        i++;
+    }
+  }
+  // printing stored words
+  printf("WOrds starting with 'a':\n");
+  for (int j = 0; j < wordIndex; j++)
+    printf("%s\n", words[j]);
+}
+int main()
+{
+  char str[100];
+  printf("Enter a string: ");
+  fgets(str, 100, stdin);
+  // if (str[strlen(str) - 1] == '\n')
+  //   str[strlen(str) - 1] = '\0';
+  str[strcspn(str, "\n")] = '\0';
+  storeWordsStartingWithA(str);
+  return 0;
+} */
+
+/* //! 10. A 2D array is filled with 10 email IDs. Write a function to find how many of them belong to gmail.com.
+#include <stdio.h>
+#include <string.h>
+void gmailFinder(char str[10][50])
+{
+  int i, len, count = 0;
+  char gmail[] = "@gmail.com";
+
+  for (int i = 0; i < 10; i++)
+  {
+    len = strlen(str[i]);
+
+    if (len > 10)
+    {
+      int match = 1;
+
+      for (int j = 0; j < 10; j++)
+      {
+        if (str[i][len - 10 + j] != gmail[j])
+        {
+          match = 0;
+          break;
+        }
+      }
+      if (match)
+        count++;
+    }
+  }
+  printf("Number of gmail address :%d\n", count);
+}
+int main()
+{
+  char str[10][50];
+  printf("Enter a string: ");
+  for (int i = 0; i < 10; i++)
+  {
+    fgets(str[i], 50, stdin);
+    str[i][strcspn(str[i], "\n")] = '\0';
+  }
+  gmailFinder(str);
+  return 0;
+} */
