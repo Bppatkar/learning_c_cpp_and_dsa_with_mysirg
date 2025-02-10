@@ -293,7 +293,7 @@ int main()
 
 /* //! 9. Write a program to sort an array of 10 elements in descending order.
 #include <stdio.h>
-void decending_sort(int a[], int n)
+void descending_sort(int a[], int n)
 {
   int i, j, temp;
   printf("Enter numbers for array: ");
@@ -312,12 +312,12 @@ void decending_sort(int a[], int n)
     }
   }
   for (i = 0; i < n; i++)
-    printf("sorting in decending order is: %d\n", a[i]);
+    printf("sorting in descending order is: %d\n", a[i]);
 }
 int main()
 {
   int a[10];
-  decending_sort(a, 10);
+  descending_sort(a, 10);
   return 0;
 } */
 
@@ -505,7 +505,7 @@ void deletingElem(int a[], int n)
     if (a[i] != x)
       b[j++] = a[i];
   }
-  printf("You got element in array B are:\n ");
+  printf("new array after deleting a specific elements:\n ");
   for (i = 0; i < n - 1; i++)
     printf("%d ", b[i]);
 }
@@ -635,13 +635,13 @@ void mergingSortedArray(int a[], int b[], int n, int m)
     k++;
   }
 
-  // if any element left in array 'a' so we copy mannually
+  // if any element left in array 'a' so we copy manually
   for (; i < n; i++)
   {
     result[k] = a[i];
     k++;
   }
-  // if any element left in array 'b' so we copy mannually
+  // if any element left in array 'b' so we copy manually
   for (; j < m; j++)
   {
     result[k] = b[j];

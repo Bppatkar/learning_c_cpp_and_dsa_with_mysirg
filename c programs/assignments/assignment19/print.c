@@ -569,7 +569,7 @@ void arrayFrequencyCounter(int a[], int n)
           a[j] = -1;
       }
     }
-    printf("\n Element %d - Frequence %d", a[i], count);
+    printf("\n Element %d - Frequent %d", a[i], count);
   }
 }
 int main()
