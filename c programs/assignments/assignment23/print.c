@@ -164,7 +164,7 @@ int main()
 //__________________New Approach______________
 /* #include <stdio.h>
 #include <string.h>
-// using above quesetion logic for removing leading and trailling space
+// using above question logic for removing leading and trailing space
 char *removingSpaces(char str[])
 {
   int i = 0, j, k, count = 0;
@@ -258,7 +258,7 @@ int main()
 //_________New Approach {using above 2 logic wordCount+removingSpace}__________
 /* #include <stdio.h>
 #include <string.h>
-// using above quesetion logic for removing leading and trailling space
+// using above question logic for removing leading and trailing space
 char *removingSpaces(char str[])
 {
   int i = 0, j, k, count = 0;
@@ -276,7 +276,7 @@ char *removingSpaces(char str[])
   str[k - count - i] = '\0';
   return str;
 }
-// using above quesetion logic for counting words
+// using above question logic for counting words
 int wordCounter(char str[])
 {
   int i, count = 0;

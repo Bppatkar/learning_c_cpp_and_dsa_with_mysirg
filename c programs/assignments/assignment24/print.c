@@ -77,8 +77,8 @@ int main()
   return 0;
 } */
 
-//! 3. Write a program to sort 10 city names stored in a two-dimensional array, taken from the user.
-/* #include <stdio.h>
+/* //! 3. Write a program to sort 10 city names stored in a two-dimensional array, taken from the user.
+ #include <stdio.h>
 #include <string.h>
 void storingCity(char city[10][20])
 {

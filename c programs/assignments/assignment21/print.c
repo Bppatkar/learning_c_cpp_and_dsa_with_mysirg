@@ -417,7 +417,7 @@ int main()
   int date = 1;
   int month = 2;
   int year = 2025;
-  printf("Formateed Date: %02d/%02d/%04d\n", date, month, year);
+  printf("Formatted Date: %02d/%02d/%04d\n", date, month, year);
   return 0;
 } */
 
