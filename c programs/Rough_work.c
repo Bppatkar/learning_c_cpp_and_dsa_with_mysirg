@@ -751,7 +751,7 @@ int main()
 } */
 // **************************************
 
-//! arithmatic pointer
+//! arithmetic pointer
 // swapping assignment
 
 /* #include <stdio.h>

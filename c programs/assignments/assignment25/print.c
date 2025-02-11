@@ -1,7 +1,24 @@
 // TODO: Assignment-25: Pointers
 
-//! 1. Write a function to swap values of two int variables. (TSRN)
-
+/* //! 1. Write a function to swap values of two int variables. (TSRN)
+#include <stdio.h>
+void swappingValue(int *a, int *b)
+{
+  int temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+int main()
+{
+  int a, b;
+  printf("Enter value for a and b:");
+  scanf("%d %d", &a, &b);
+  printf("entered value a=%d b=%d\n", a, b);
+  swappingValue(&a, &b);
+  printf("after swapping a=%d b=%d\n", a, b);
+  return 0;
+} */
 
 //! 2. Write a function to search all occurrences of a given character in a given string.
 // The result of the search is a list of indices to be stored in the given array.

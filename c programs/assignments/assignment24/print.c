@@ -125,7 +125,7 @@ int main()
 /* //! 4. Write a function to store each word of a string in a 2D char array.
 #include <stdio.h>
 #include <string.h>
-void sortingWord(char word[5][50])
+void storingWord(char word[5][50])
 {
   int i, j;
   char temp[50];
@@ -157,7 +157,7 @@ int main()
     fgets(word[i], 50, stdin);
     word[i][strcspn(word[i], "\n")] = '\0';
   }
-  sortingWord(word);
+  storingWord(word);
   return 0;
 } */
 
