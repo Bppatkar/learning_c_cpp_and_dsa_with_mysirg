@@ -751,7 +751,7 @@ int main()
 } */
 // **************************************
 
-//! arithmatic pointer
+//! arithmetic pointer
 // swapping assignment
 
 /* #include <stdio.h>
@@ -795,8 +795,8 @@ int main()
 } */
 
 //! pointers in array
-// yaha hm pointer padh rhe h isiliye waha s array bhejne par pointer reciever kr rha
-// agr array padh rhe hote to array bhejne pr empty array recieve krta ya fir use bhi pointer s hi recieve kr lete..... pointer wala use krna wo jyada sahi rhta h
+// yaha hm pointer padh rhe h isiliye waha s array bhejne par pointer receive kr rha
+// agr array padh rhe hote to array bhejne pr empty array receive krta ya fir use bhi pointer s hi receive kr lete..... pointer wala use krna wo jyada sahi rhta h
 // agr above line smjh nahi aae to assignment 18 ka 1st question k both solution dekho
 
 /* #include <stdio.h>
@@ -917,7 +917,7 @@ int main()
   return 0;
 } */
 
-//! now making 2d array and recieving in function without pointer using same above code
+//! now making 2d array and receiving in function without pointer using same above code
 #include <stdio.h>
 /* void display(int *q, int size)
 {
@@ -976,8 +976,33 @@ int main()
 
 //! pointers to array
 //? means pointer that stores array's of address
+//? it is useful in 2d array
+//? example
+/* int (*p)[4]; // now p is pointing a integer type of 4 size of array
+int a[5][4]; // 5 ,1d array with each have 4 length
+p = a;       // means p is a base address of a.
+ Since a is a 2D array, a decays to a pointer to its first row(which is an array of 4 integers).So, p now holds the base address of a, meaning p and a behave the same when accessing elements.Accessing Elements :
+
+a[2][2] = 10;
+*(a[2] + 2) = 10;
+*(*(a + 2) + 2) = 10;
+// above all these three lines is same
+Explanation :
+
+a[i] gives the base address of the ith row.a[i][j] is the value at row i,column j.
+*(a[i] + j) means we move j steps from the start of row i.
+*(*(a + i) + j) moves i rows down,
+then j columns right.Using p Instead of a : Since p = a;
+
+,you can use p in the same way :
+
+p[2][2] = 10;
+*(p[2] + 2) = 10;
+*(*(p + 2) + 2) = 10;
+Thus, p[i][j] works just like a[i][j]. */
 
 //! structure
+
 /* ///? it means we declare structure in global variable
 struct Book
 {
@@ -997,7 +1022,7 @@ struct Book
   };
 } */
 
-//! initializing """"""""structure variable"""""" during declaration
+//! initializing """""""structure variable"""""" during declaration
 /* #include <stdio.h>
 struct Book
 {
@@ -1043,13 +1068,14 @@ struct Book
   int bookid;
   char title[20];
   float price;
-} b1, b2, b3;
+} b1, b2, b3;          // aise bhi initialize kr skte h
 int main()
 {
   printf("Enter bookid, title and price: ");
-  scanf("%d", &b3.bookid); // ye bs aise hi bna liye qki bookid khali ni likh skte
+  scanf("%d", &b3.bookid); // ye bs aise hi bna liye qki bookid khali ni likh skte or bookid input karayege b3 m
   fgets(b3.title, 20, stdin);
   scanf("%f", &b3.price);
+
   struct Book b1 = {1, "c in depth", 340.0};
   struct Book b2;
   b2.bookid = 2;
@@ -1079,6 +1105,9 @@ struct Book
   char title[20];
   float price;
 } b1, b2, b3;
+
+// *** here is code for func returning structure***
+
 struct Book input()
 {
   struct Book b;
@@ -1096,6 +1125,7 @@ int main()
   b2.bookid = 2;
   strcpy(b2.title, "java");
   b2.price = 350.0;
+
   b3 = input();
   // "Whatever the input function returns directly goes into b3 because b3 is of type 'Book,' and the input function returns b, which is also of type 'Book.' Therefore, the data will be copied."
   return 0;
