@@ -270,6 +270,12 @@ int main()
  */
 
 //! 9. Write a function to move the first value of the array to the position where all smaller values will be on the left and greater values will be on the right.
+#include <stdio.h>
+int main()
+{
+
+  return 0;
+}
 
 //! 10. There are five classes with a different number of students in them.
 // Five arrays contain marks of students of each class.
