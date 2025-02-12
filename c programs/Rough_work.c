@@ -1073,7 +1073,12 @@ int main()
 {
   printf("Enter bookid, title and price: ");
   scanf("%d", &b3.bookid); // ye bs aise hi bna liye qki bookid khali ni likh skte or bookid input karayege b3 m
+  // fflush(stdin);
+  // fflush(stdin); // ye kab lagate h jab input buffer poora bhar jata hai wo backend ni ho rha tha isliye fgets apna kaam ni kr rha tha isiliye ye use kiya... is line ko uncomment krke dekh lo smjh jaoge pr ye depriciate ho gya h to soln-- ye getchar use kro
+  while (getchar() != '\n')
+    ;
   fgets(b3.title, 20, stdin);
+  b3.title[strcspn(b3.title, "\n")] ='\0';
   scanf("%f", &b3.price);
 
   struct Book b1 = {1, "c in depth", 340.0};
@@ -1113,7 +1118,10 @@ struct Book input()
   struct Book b;
   printf("Enter bookid, title and price: ");
   scanf("%d", &b.bookid);
+  while(getchar() != '\n)
+    ;
   fgets(b.title, 20, stdin);
+  b.title[strscpn(b.title, "\n")] = '\0';  // Remove trailing newline
   scanf("%f", &b.price);
   return b;
 };
@@ -1152,6 +1160,9 @@ struct Book input()
   fgets(b.title, 20, stdin);
   // fgets newline character bhi le rha h usi ko thk krna h ab
   b.title[strlen(b.title) - 1] = '\0';
+  // or
+  // b.title[strscpn(b.title, "\n")] = '\0';  // Remove trailing newline
+
   scanf("%f", &b.price);
   return b;
 };

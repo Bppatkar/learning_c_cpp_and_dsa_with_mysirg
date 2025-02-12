@@ -21,11 +21,11 @@ int main()
 } */
 
 //! in 'C' lang - function """name""" must be unique
-//! two  functions must have different names, even if their prototype  different.
+//! two  functions must have different names, even if their prototype different.
 
-//? protoypes means- 1)function name
-//?                  2)function argument
-//?                  3)function return type
+//? prototypes means- 1)function name
+//?                   2)function argument
+//?                   3)function return type
 
 //! in 'C' lang... function name not be sameeeeeeeeeeeeeeee
 //! in 'C++'  function name maybe same at sometime but """signature""" must be unique
@@ -34,8 +34,8 @@ int main()
 //?                  2)function argument
 //>                 "But Not Return Type"
 
-// Summary- in 'c' - two function name not same
-//          in 'c++' - two function signature not same
+// Summary- in 'c' - two function name not be same
+//          in 'c++' - two function signature not be same
 // example
 /* #include <iostream>
 using namespace std;
@@ -63,7 +63,7 @@ int add(int a, int b, int c) { return a + b + c; } */
 //?             1) a+b+c;
 
 //! write a C++ program to define a structure to handle book record (book_id,title, price), also define function input book and display book to take input data form user and display book data on the screen..
-//? in book.title -- we are putting string in char array so we use strcpy (string.h) (we read this in c lang tutorial - structure topic)
+//? in book.title -- we are putting string in char array so we use strcpy (string.h) (we read this in c lang tutorial -(pointer topic)-> + structure topic)
 /*
 #include <iostream>
 #include <stdio.h>
@@ -101,6 +101,7 @@ int main()
 //   cin >> b.bookid;
 //   // fgets we used in "C" lang to take input from user and fflush for memory clearance but we are in "C++" so we use getline and ignore();
 //   // we are taking input from user to we use fgets so we use stdio.h but we have to clear memory before using fgets wo we use fflush
+//   flush --> ignore(); and fgets --> getline
 //   // fflush(stdin);
 //   cin.ignore();
 //   // fgets(b.title, 20, stdin);
