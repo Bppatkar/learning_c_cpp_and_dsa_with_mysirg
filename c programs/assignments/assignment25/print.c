@@ -269,9 +269,154 @@ int main()
 }
  */
 
-//! 9. Write a function to move the first value of the array to the position where all smaller values will be on the left and greater values will be on the right.
+/* //! 9. Write a function to move the first value of the array to the position where all smaller values will be on the left and greater values will be on the right.
+#include <stdio.h>
+void partitionArray(int *ptr, int size)
+{
+  int i, left = 0, right = size - 1;
+  int temp[size]; // temporary arrays
+  int pivot = ptr[0];
+  for (i = 1; i < size; i++)
+  {
+    if (ptr[i] < pivot)
+      temp[left++] = ptr[i]; // storing small value first
+    else
+      temp[right--] = ptr[i]; // storing greater at the end
+  }
 
-//! 10. There are five classes with a different number of students in them.
-// Five arrays contain marks of students of each class.
-// Write a function to receive an address of an array of pointers to access marks of all the students.
-// The job of the function is to find the highest marks among all the classes.
+  temp[left] = pivot;
+
+  // copying back to the original array
+  for (i = 0; i < size; i++)
+    ptr[i] = temp[i];
+}
+int main()
+{
+  int size, i;
+  printf("Enter a size for array: ");
+  scanf("%d", &size);
+
+  int arr[size];
+  printf("Enter %d value for arr: ", size);
+  for (i = 0; i < size; i++)
+    scanf("%d", &arr[i]);
+
+  partitionArray(arr, size);
+
+  printf("\narray after partition: ");
+  for (i = 0; i < size; i++)
+    printf("%d ", arr[i]);
+
+  return 0;
+} */
+//________________New Approach________________
+/* #include <stdio.h>
+void partitionArray(int *ptr, int size)
+{
+    int pivot = ptr[0];
+    int left[size], right[size];  // Temporary arrays to hold values
+    int l = 0, r = 0, i;
+
+    // Separate elements into left and right partitions
+    for (i = 1; i < size; i++)
+    {
+        if (ptr[i] < pivot)
+            left[l++] = ptr[i];  // Store in left if smaller
+        else
+            right[r++] = ptr[i]; // Store in right if greater
+    }
+
+    // Merge left partition + pivot + right partition into the original array
+    for (i = 0; i < l; i++)
+        ptr[i] = left[i];
+
+    ptr[l] = pivot;  // Place pivot at its correct position
+
+    for (i = 0; i < r; i++)
+        ptr[l + 1 + i] = right[i];  // Place right partition
+
+}
+
+int main()
+{
+    int size, i;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    int arr[size];
+    printf("Enter %d values for the array: ", size);
+    for (i = 0; i < size; i++)
+        scanf("%d", &arr[i]);
+
+    partitionArray(arr, size);
+
+    printf("\nArray after partitioning: ");
+    for (i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+
+    return 0;
+}*/
+
+/* //! 10. There are five classes with a different number of students in them. Five arrays contain marks of students of each class. Write a function to receive an address of an array of pointers to access marks of all the students. The job of the function is to find the highest marks among all the classes.
+#include <stdio.h>
+void findHighestMark(int *arr[], int num_students[], int num_classes)
+{
+  int i, j, highest = -1; // Initialize highest with a very low value
+
+  // Traverse all students' marks across all classes
+  for (i = 0; i < num_classes; i++)
+  {
+    for (j = 0; j < num_students[i]; j++)
+    {
+      if (arr[i][j] > highest)
+      {
+        highest = arr[i][j]; // Update highest mark
+      }
+    }
+  }
+
+  printf("\nHighest marks among all classes: %d\n", highest);
+}
+
+int main()
+{
+  int i, j;
+  int num_students[5]; // Stores the number of students in each class
+
+  // Declare an array of pointers (each will point to an array of marks)
+  int arr1[10], arr2[10], arr3[10], arr4[10], arr5[10];
+  int *arr[5] = {arr1, arr2, arr3, arr4, arr5};
+
+  // Input number of students for each class
+  for (i = 0; i < 5; i++)
+  {
+    printf("Enter number of students in class %d: ", i + 1);
+    scanf("%d", &num_students[i]);
+  }
+
+  // Input marks for each class
+  for (i = 0; i < 5; i++)
+  {
+    printf("Enter marks for %d students in class %d: ", num_students[i], i + 1);
+    for (j = 0; j < num_students[i]; j++)
+    {
+      scanf("%d", &arr[i][j]);
+    }
+  }
+
+  // Print marks for verification
+  printf("\nMarks entered:\n");
+  for (i = 0; i < 5; i++)
+  {
+    printf("Class %d: ", i + 1);
+    for (j = 0; j < num_students[i]; j++)
+    {
+      printf("%d ", arr[i][j]);
+    }
+    printf("\n");
+  }
+
+  findHighestMark(arr, num_students, 5);
+  return 0;
+} */
