@@ -129,6 +129,146 @@ void displayBook(struct Book b)
   cout << b.bookid << " " << b.title << " " << b.price << endl;
 }
 */
+// TODO: Writing complete clear code again without any comment
+/* #include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+};
+struct Book inputBook()
+{
+  struct Book b;
+  cout << "Enter bookid, title, and price: ";
+  cin >> b.bookid;
+  cin.ignore();
+  cin.getline(b.title, 20);
+  cin >> b.price;
+  return b;
+}
+void displayBook(struct Book b)
+{
+  cout << b.bookid << " " << b.title << " " << b.price << endl;
+}
+int main()
+{
+  struct Book b1 = {02, "C language in Depth", 340.45}, b2, b3;
+  b2.bookid = 12;
+  strcpy(b2.title, "C++ in depth");
+  b2.price = 422.80;
+  b3 = inputBook();
+  displayBook(b3);
+  return 0;
+} */
+
 //? we use structure in c++ by using knowledge of c lang
 //! Advanced version of structure
 //? now we are going to use new concepts in structure which is in C++
+//! NOTE:--***********ENCAPSULATION**************
+//? FIXME: Rule 1 -  in  C lang whenever u want to write a datatype example Book so it was a rule to write struct before Book like - struct Book,  but in C++ - writing struct before datatype is optional not compulsory
+//? FIXME: Rule 2 - in c lang - we can't initialize function inside structure body,  but in c++ we can use function as well
+
+// TODO: again using above clear code for using advanced version of structure
+//? we are not going to use struct again and again but while defining it is necessary to write struct 😁
+//? when u make function inside structure , it is not necessary to define function outside, or as a global variable
+/* #include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+struct Book
+{
+  int bookid;
+  char title[20];
+  float price;
+  // making function inside structure body
+  void displayBook()
+  {
+    cout << bookid << " " << title << " " << price << endl;
+  }
+  void inputBook()
+  {
+    cout << "Enter bookid, title, and price: ";
+    cin >> bookid;
+    // checking bookid is always positive
+    if (bookid < 0)
+      bookid = -bookid;
+    cin.ignore();
+    cin.getline(title, 20);
+    cin >> price;
+  }
+};
+
+// void displayBook(Book b){ cout << b.bookid << " " << b.title << " " << b.price << endl;}   // this is written inside structure variable
+// same for inputBook
+
+int main()
+{
+  Book b1 = {02, "C language in Depth", 340.45}, b2, b3;
+  b2.bookid = 12;
+  strcpy(b2.title, "C++ in depth");
+  b2.price = 422.80;
+  b3.inputBook();
+  // displayBook(b3); then we can access that displayBook member function using (.)
+  b3.displayBook();
+  return 0;
+} */
+
+//! Data Hiding with access specifier(3-type) (private, public and protected)
+/* #include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+struct Book
+{
+private:
+  int bookid;
+  char title[20];
+  float price;
+
+public:
+  void displayBook()
+  {
+    cout << bookid << " " << title << " " << price << endl;
+  }
+  void inputBook()
+  {
+    cout << "Enter bookid, title, and price: ";
+    cin >> bookid;
+    // checking bookid is always positive
+    if (bookid < 0)
+      bookid = -bookid;
+    cin.ignore();
+    cin.getline(title, 20);
+    cin >> price;
+  }
+};
+
+// void displayBook(Book b){ cout << b.bookid << " " << b.title << " " << b.price << endl;}   // this is written inside structure variable
+// same for inputBook
+
+int main()
+{
+  // Book b1 = {02, "C language in Depth", 340.45}, b2, b3;
+  // b2.bookid = 12;
+  // strcpy(b2.title, "C++ in depth");
+  // b2.price = 422.80;
+  // b3.inputBook();
+  // // displayBook(b3); then we can access that displayBook member function using (.)
+  // b3.displayBook();
+
+  //? we cant write like this because we cant access member variable using (.) because it is private now but structure member function can use it so how let see
+
+  Book b1, b2, b3;
+  b3.inputBook();
+  b3.displayBook();
+
+  return 0;
+} */
+
+//! Encapsulation is - making a group of properties and methods
+//! Data-Hiding is not allowing you to access some of the member variables of the structure or making them private
+//! Abstraction is hiding implementation details of any method
