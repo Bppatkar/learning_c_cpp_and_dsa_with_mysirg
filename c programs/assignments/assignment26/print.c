@@ -313,12 +313,203 @@ int main()
   return 0;
 } */
 
-//! 8. Write a program to store information of 10 students and display them using structure.
+/*//! 8. Write a program to store information of 10 students and display them using structure.
 #include <stdio.h>
 #include <string.h>
+struct Student
+{
+  char name[30];
+  int roll_number;
+  int age;
+  float marks;
+};
+void inputData(struct Student students[], int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("Enter details for student %d:\n", i + 1);
 
-//! 9. Write a program to store information of n students and display them using structure.
+    // Input name
+    printf("Enter name: ");
 
-//! 10. Write a program to enter the marks of 5 students in Chemistry, Mathematics, and Physics (each out of 100)
-// using a structure named Marks having elements roll no., name, chem_marks, maths_marks, and phy_marks,
-// and then display the percentage of each student.
+    fgets(students[i].name, 30, stdin);
+    students[i].name[strcspn(students[i].name, "\n")] = '\0';
+
+    // Input roll_number age marks
+    printf("Enter roll number: ");
+    scanf("%d", &students[i].roll_number);
+
+    printf("Enter age: ");
+    scanf("%d", &students[i].age);
+
+    printf("Enter marks: ");
+    scanf("%f", &students[i].marks);
+
+    // Clear the buffer after scanf()
+    while (getchar() != '\n')
+      ;
+  }
+}
+void displayData(struct Student students[], int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("********************");
+    printf("\nDetails of student %d:\n", i + 1);
+    printf("Name: %s\n", students[i].name);
+    printf("Roll Number: %d\n", students[i].roll_number);
+    printf("Age: %d\n", students[i].age);
+    printf("Marks: %.2f\n", students[i].marks);
+  }
+}
+int main()
+{
+  struct Student students[10];
+  inputData(students, 10);
+  displayData(students, 10);
+  return 0;
+}*/
+
+/* //! 9. Write a program to store information of n students and display them using structure.
+#include <stdio.h>
+#include <string.h>
+struct Student
+{
+  char name[30];
+  int roll_number;
+  int age;
+  float marks;
+};
+void inputData(struct Student students[], int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("Enter details for student %d:\n", i + 1);
+
+    // Clear the input buffer before fgets
+    while (getchar() != '\n')
+      ;
+
+    // Input name
+    printf("Enter name: ");
+
+    fgets(students[i].name, 30, stdin);
+    students[i].name[strcspn(students[i].name, "\n")] = '\0';
+
+    // Input roll_number age marks
+    printf("Enter roll number: ");
+    scanf("%d", &students[i].roll_number);
+
+    printf("Enter age: ");
+    scanf("%d", &students[i].age);
+
+    printf("Enter marks: ");
+    scanf("%f", &students[i].marks);
+  }
+}
+void displayData(struct Student students[], int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("\nDetails of student %d:\n", i + 1);
+    printf("Name: %s\n", students[i].name);
+    printf("Roll Number: %d\n", students[i].roll_number);
+    printf("Age: %d\n", students[i].age);
+    printf("Marks: %.2f\n", students[i].marks);
+  }
+}
+int main()
+{
+  int n;
+  printf("Enter the number of student: ");
+  scanf("%d", &n);
+  struct Student students[n];
+  inputData(students, n);
+  displayData(students, n);
+  return 0;
+} */
+
+/* //! 10. Write a program to enter the marks of 5 students in Chemistry, Mathematics, and Physics (each out of 100) using a structure named Marks having elements roll no., name, chem_marks, maths_marks, and phy_marks, and then display the percentage of each student.
+#include <stdio.h>
+#include <string.h>
+struct Marks
+{
+  int roll_num;
+  char name[30];
+  float chem_marks;
+  float maths_marks;
+  float phy_marks;
+};
+void inputdata(struct Marks student[], int size)
+{
+  int i;
+  for (i = 0; i < size; i++)
+  {
+    printf("Enter roll number %d: ", i + 1);
+    scanf("%d\n", &student[i].roll_num);
+
+    while (getchar() != '\n')
+      ;
+    printf("Enter name: ");
+    fgets(student[i].name, 30, stdin);
+    student[i].name[strcspn(student[i].name, "\n")] = '\0';
+
+    // Input chemistry marks with validation
+    do
+    {
+      printf("Enter chemistry marks (0 -100): ");
+      scanf("%f\n", &student[i].chem_marks);
+      if (student[i].chem_marks < 0 || student[i].chem_marks > 100)
+        printf("Invalid Input! Marks should be between 0 to 100.\n");
+    } while (student[i].chem_marks < 0 || student[i].chem_marks > 100);
+
+    // Input maths marks with validation
+    do
+    {
+      printf("Enter maths marks (0-100): ");
+      scanf("%f\n", &student[i].maths_marks);
+      if (student[i].maths_marks < 0 || student[i].maths_marks > 100)
+        printf("Invalid input! Marks should be between 0 and 100.\n");
+    } while (student[i].maths_marks < 0 || student[i].maths_marks > 100);
+
+    // Input physics marks with validation
+    do
+    {
+      printf("Enter physics marks (0-100): ");
+      scanf("%f\n", &student[i].phy_marks);
+      if (student[i].phy_marks < 0 || student[i].phy_marks > 100)
+        printf("Invalid input! Marks should be between 0 and 100.\n");
+    } while (student[i].phy_marks < 0 || student[i].phy_marks > 100);
+  }
+  // percentage calculating
+}
+void displayData(struct Marks student[], int size)
+{
+  int i;
+  float percentage;
+  for (i = 0; i < size; i++)
+  {
+    percentage = (student[i].chem_marks + student[i].maths_marks + student[i].phy_marks) / 300 * 100;
+
+    // printing student percentage
+    printf("***********************");
+    printf("Student details of\n");
+    printf("Roll No. %d\n", student[i].roll_num);
+    printf("%s\n", student[i].name);
+    printf("Percentage: %.2f%%\n", percentage);
+  }
+}
+
+int main()
+
+{
+  struct Marks student[5];
+  inputdata(student, 5);
+  displayData(student, 5);
+  return 0;
+}
+ */
