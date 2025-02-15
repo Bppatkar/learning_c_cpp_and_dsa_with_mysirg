@@ -436,6 +436,7 @@ int main()
 /* //! 10. Write a program to enter the marks of 5 students in Chemistry, Mathematics, and Physics (each out of 100) using a structure named Marks having elements roll no., name, chem_marks, maths_marks, and phy_marks, and then display the percentage of each student.
 #include <stdio.h>
 #include <string.h>
+
 struct Marks
 {
   int roll_num;
@@ -444,16 +445,17 @@ struct Marks
   float maths_marks;
   float phy_marks;
 };
+
 void inputdata(struct Marks student[], int size)
 {
   int i;
   for (i = 0; i < size; i++)
   {
     printf("Enter roll number %d: ", i + 1);
-    scanf("%d\n", &student[i].roll_num);
+    scanf("%d", &student[i].roll_num);
 
-    while (getchar() != '\n')
-      ;
+    while (getchar() != '\n'); // Clear input buffer
+
     printf("Enter name: ");
     fgets(student[i].name, 30, stdin);
     student[i].name[strcspn(student[i].name, "\n")] = '\0';
@@ -461,17 +463,17 @@ void inputdata(struct Marks student[], int size)
     // Input chemistry marks with validation
     do
     {
-      printf("Enter chemistry marks (0 -100): ");
-      scanf("%f\n", &student[i].chem_marks);
+      printf("Enter chemistry marks (0 - 100): ");
+      scanf("%f", &student[i].chem_marks);
       if (student[i].chem_marks < 0 || student[i].chem_marks > 100)
-        printf("Invalid Input! Marks should be between 0 to 100.\n");
+        printf("Invalid Input! Marks should be between 0 and 100.\n");
     } while (student[i].chem_marks < 0 || student[i].chem_marks > 100);
 
     // Input maths marks with validation
     do
     {
-      printf("Enter maths marks (0-100): ");
-      scanf("%f\n", &student[i].maths_marks);
+      printf("Enter maths marks (0 - 100): ");
+      scanf("%f", &student[i].maths_marks);
       if (student[i].maths_marks < 0 || student[i].maths_marks > 100)
         printf("Invalid input! Marks should be between 0 and 100.\n");
     } while (student[i].maths_marks < 0 || student[i].maths_marks > 100);
@@ -479,37 +481,38 @@ void inputdata(struct Marks student[], int size)
     // Input physics marks with validation
     do
     {
-      printf("Enter physics marks (0-100): ");
-      scanf("%f\n", &student[i].phy_marks);
+      printf("Enter physics marks (0 - 100): ");
+      scanf("%f", &student[i].phy_marks);
       if (student[i].phy_marks < 0 || student[i].phy_marks > 100)
         printf("Invalid input! Marks should be between 0 and 100.\n");
     } while (student[i].phy_marks < 0 || student[i].phy_marks > 100);
   }
-  // percentage calculating
 }
+
 void displayData(struct Marks student[], int size)
 {
   int i;
   float percentage;
+  printf("\n***********************\n");
   for (i = 0; i < size; i++)
   {
-    percentage = (student[i].chem_marks + student[i].maths_marks + student[i].phy_marks) / 300 * 100;
+    percentage = (student[i].chem_marks + student[i].maths_marks + student[i].phy_marks) / 3.0;
 
-    // printing student percentage
-    printf("***********************");
-    printf("Student details of\n");
-    printf("Roll No. %d\n", student[i].roll_num);
-    printf("%s\n", student[i].name);
+    // Printing student percentage
+    printf("Student details:\n");
+    printf("Roll No.: %d\n", student[i].roll_num);
+    printf("Name: %s\n", student[i].name);
     printf("Percentage: %.2f%%\n", percentage);
+    printf("***********************\n");
   }
 }
 
 int main()
-
 {
   struct Marks student[5];
   inputdata(student, 5);
   displayData(student, 5);
   return 0;
 }
+
  */
