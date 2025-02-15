@@ -168,9 +168,12 @@ int main()
 //? we use structure in c++ by using knowledge of c lang
 //! Advanced version of structure
 //? now we are going to use new concepts in structure which is in C++
+
 //! NOTE:--***********ENCAPSULATION**************
+
 //? FIXME: Rule 1 -  in  C lang whenever u want to write a datatype example Book so it was a rule to write struct before Book like - struct Book,  but in C++ - writing struct before datatype is optional not compulsory
 //? FIXME: Rule 2 - in c lang - we can't initialize function inside structure body,  but in c++ we can use function as well
+//? FIXME: Rule 3 - we can control the access of member variable defined in structure body by using access specifier (private, protected and public)
 
 // TODO: again using above clear code for using advanced version of structure
 //? we are not going to use struct again and again but while defining it is necessary to write struct 😁
@@ -272,3 +275,42 @@ int main()
 //! Encapsulation is - making a group of properties and methods
 //! Data-Hiding is not allowing you to access some of the member variables of the structure or making them private
 //! Abstraction is hiding implementation details of any method
+
+//! classes and object
+//? i am using same above code just change struct to class and that's it - it is class.
+/* #include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+class Book
+{
+private:
+  int bookid;
+  char title[20];
+  float price;
+
+public:
+  void displayBook()
+  {
+    cout << bookid << " " << title << " " << price << endl;
+  }
+  void inputBook()
+  {
+    cout << "Enter bookid, title, and price: ";
+    cin >> bookid;
+    // checking bookid is always positive
+    if (bookid < 0)
+      bookid = -bookid;
+    cin.ignore();
+    cin.getline(title, 20);
+    cin >> price;
+  }
+};
+ */
+
+//? class is end yes... for performing encapsulation there is only two way - struct and class
+//? if they both are same then why we have two choices - struct for backward compatibility and class for accepting upcoming update but the main diff is:
+//! struct → Everything is public by default.
+//! class → Everything is private by default.
+
+//! now class is complete and what about object so- for what we called structure variable actually it is object means in above code (b1,b2,b3) is object.
