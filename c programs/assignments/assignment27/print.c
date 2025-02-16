@@ -1,6 +1,41 @@
 // TODO: Assignment-27: DMA
 
 //! 1. Define a function to input a variable length string and store it in an array without memory wastage.
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+  printf("Enter string: ");
+
+  // Initially allocate memory for 20 characters
+  char *p = (char *)calloc(1, 20);
+  // or --> char *p = (char*)malloc(20* sizeof(char));
+
+  // checking p is not or not bcz if it is null it will show undefined behaviour
+  if (p == NULL)
+  {
+    printf("Memory Allocation failed.\n");
+    return 1;
+  }
+
+  // taking input in string
+  fgets(p, 20, stdin);
+
+  // finding the length of string
+  int length = strlen(p);
+
+  if (length > 0 && p[length - 1] == '\n')
+    p[length - 1] = '\0';
+
+  // Reallocate memory to fit the exact string size
+  p = (char *)realloc(p, (length + 1) * sizeof(char));
+
+  // Freeing the dynamically allocated memory
+  free(p);
+
+  return 0;
+}
 
 //! 2. Write a program to ask the user to input the number of data values they would like to enter,
 // then create an array dynamically to accommodate the data values. Now take the input from the user
