@@ -439,7 +439,7 @@ void printWinner(int playerData[4][2])
     calculatingRowWiseData(a, playerData);
 }*/
 
-//?????? here is complete code for solving all questions from Question 4 to Quesetion 10
+//?????? here is complete code for solving all questions from Question 4 to Question 10
 
 /* #include <stdio.h>
 // Function to calculate factorial
@@ -634,7 +634,8 @@ void sort(int scores[], int n, int player_index[])
   }
 }
 int get_player_score(int player, int score_board[][4])
-{ // solving 7th question
+{
+// solving 7th question
   int j, sum = 0;
 
   for (j = 0; j <= 3; j++)

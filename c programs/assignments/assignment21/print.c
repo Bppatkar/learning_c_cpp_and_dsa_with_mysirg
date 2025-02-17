@@ -43,7 +43,7 @@ int main()
   lengthOfString(str, 20);
   return 0;
 } */
-// _______New Approach__________ (taking input from scanf and %c)-[but u have to input string without space- Ex: bhanupratap]
+// _______New Approach__________ (taking input from scanf and %c)-[but u have to input a string, without space- Ex: bhanupratap]
 /* #include <stdio.h>
 void lengthOfString(char str[], int size)
 {
