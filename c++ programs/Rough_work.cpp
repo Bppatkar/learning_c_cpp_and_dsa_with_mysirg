@@ -596,3 +596,57 @@ int main()
 // 1) objectName.instanceMethod()
 //    objectName.staticMethod()
 // 2) className::staticMethod()
+// [instance method can use both members static member and instance member ok]
+
+//! call by object and returning object
+//! call by object
+//? --> ReturnType functionName(className object);
+// for better learning we see example
+//! Define complex class with appropriate members. Also define a function to add two complex numbers.
+
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b; // instance member variable (instance means object simple)
+
+public:
+  void addData(int, int);
+  void showData();
+  Complex add(Complex);
+};
+Complex Complex::add(Complex newC)
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::addData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.addData(4, 5);
+  c2.addData(6, 9);
+
+  // changes made here
+  Complex c3;
+  // c3 = c1 + c2;   // this line is showing error because operator "+"  not matches these operands means they both are not a normal variable , we are trying to add: Complex + Complex, so for solution we are going to make add();
+  c3 = c1.add(c2);
+  //? explain this like - c1 is a collar object which called own add function and passing c2 as an argument and whatever that add function will return that thing will store in c3 thats it.
+
+  c3.showData();
+
+  return 0;
+} */
+//? so what we learn here - a function that want a object as an argument and it is returning a object [call by object and returning object]
