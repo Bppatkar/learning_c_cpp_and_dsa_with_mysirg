@@ -367,3 +367,36 @@ int main()
   charFinderBtwIndices(str);
   return 0;
 } */
+//____________New Approach__________________
+/* #include <stdio.h>
+#include <string.h>
+int isAlphaNumeric(char str[])
+{
+  int i, alpha = 0, digit = 0;
+  for (i = 0; str[i]; i++)
+  {
+    if (str[i] >= '0' && str[i] <= '9')
+      digit = 1;
+    if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
+      alpha = 1;
+  }
+  if (alpha && digit)
+    return 1;
+  else
+    return 0;
+}
+
+int main()
+{
+  char str[50];
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  if (str[strlen(str) - 1] == '\n')
+    str[strlen(str) - 1] = '\0';
+  int result = isAlphaNumeric(str);
+  if (result)
+    printf("Yes alphanumeric");
+  else
+    printf("Sorry!!! it is not alphanumeric");
+  return 0;
+} */
