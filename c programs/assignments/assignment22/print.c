@@ -41,6 +41,28 @@ int main()
   reverseString(str);
   return 0;
 } */
+//? we are "printing" reverse string...... only {not actually reversing a actual string}
+// if want to reverse a actual string then we have to use swapping
+// __________________New Approach____________
+/* #include <stdio.h>
+#include <string.h>
+int main()
+{
+  int i, l;
+  char str[50], ch;
+  printf("Enter a string: ");
+  fgets(str, 50, stdin);
+  str[(strlen(str) - 1)] = '\0';
+  l = strlen(str);
+  for (i = 0; i < l / 2; i++)
+  {
+    ch = str[i];
+    str[i] = str[l - 1 - i];
+    str[l - 1 - i] = ch;
+  }
+  printf("Reverse of String is %s", str);
+  return 0;
+} */
 
 /* //! 3. Write a function to compare two strings.
 #include <stdio.h>
@@ -222,6 +244,11 @@ void charFinderBtwIndices(char str[])
   scanf(" %d", &start);
   printf("Enter the last index u want to end searching: ");
   scanf(" %d", &end);
+
+  if (end > l)
+    end = l;
+  if (start >= l)
+    return -1;
 
   for (i = start; i <= end; i++)
   {
