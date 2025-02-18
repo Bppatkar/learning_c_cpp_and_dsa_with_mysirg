@@ -299,7 +299,7 @@ char *reverse_word_wise(char str[])
 {
   int j, i, k, word_count;
   word_count = wordCounter(str);
-  char s[word_count][30]; // creating 2d array
+  char s[word_count][30]; // creating new 2d array and then i want to assign every word (which we get from wordCounter ) from str to in 2d arr
 
   for (i = 0, j = 0, k = 0; str[i]; i++, k++)
   {

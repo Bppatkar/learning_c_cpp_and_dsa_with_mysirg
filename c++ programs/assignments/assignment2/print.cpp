@@ -99,6 +99,43 @@ int main()
 }*/
 
 //! 4. Define a function to print Pascal Triangle up to N lines.
+#include <iostream>
+using namespace std;
+
+void printPascal(int n)
+{
+  int i, j, k, x, val;
+  for (i = 1; i <= n; i++)
+  {
+    k = 1;
+    x = 1;
+    val = 1; // Initialize the first value in each row
+    for (j = 1; j <= 2 * n - 1; j++)
+    {
+      if (j >= n + 1 - i && j <= n - 1 + i)
+      {
+        if (k)
+        {
+          cout << val << " "; // Print the current value
+
+          // Calculate the next value in the row
+          val = val * (i - x) / x;
+          x++;
+        }
+        else
+        {
+          cout << "   "; // Space between numbers
+        }
+        k = 1 - k; // Toggle between number and space
+      }
+      else
+      {
+        cout << "   "; // Leading or trailing spaces
+      }
+    }
+    cout << endl;
+  }
+}
 
 //! 5. Define a function to check whether a given number is a term in a Fibonacci series or not.
 

@@ -643,10 +643,202 @@ int main()
   Complex c3;
   // c3 = c1 + c2;   // this line is showing error because operator "+"  not matches these operands means they both are not a normal variable , we are trying to add: Complex + Complex, so for solution we are going to make add();
   c3 = c1.add(c2);
-  //? explain this like - c1 is a collar object which called own add function and passing c2 as an argument and whatever that add function will return that thing will store in c3 thats it.
+  //? explain this like - c1 is a collar object/ current object which called own add function and passing c2 as an argument and whatever that add function will return that thing will store in c3 thats it.
 
   c3.showData();
 
   return 0;
 } */
 //? so what we learn here - a function that want a object as an argument and it is returning a object [call by object and returning object]
+
+//! one more example
+//!  Define complex class with appropriate members. Also define a function to multiply two complex numbers
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  void showData();
+  void setData(int, int);
+  Complex multi(Complex newC);
+};
+void Complex::showData()
+{
+  cout << "\na = " << a << ", b = " << b << endl;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+Complex Complex::multi(Complex newC)
+{
+  Complex temp;
+  temp.a = a * newC.a;
+  temp.b = b * newC.b;
+  return temp;
+}
+int main()
+{
+  Complex c1, c2, c3;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+  c3 = c1.multi(c2);
+  c3.showData();
+  return 0;
+} */
+
+//! Constructor
+//? "A constructor is just a simple function that has the same name as the class and does not have a return type. Every time an object is created, the constructor is invoked automatically. Here, there are four objects (c1, c2, c3, and temp). It works for objects, meaning for instances, which means the constructor is an instance member."
+//? usually constructor is defined as public member but it can be private.
+//? programmer has to define constructor, so he can write any code (simple hello or anything) "but" it is useful to initialize properties of an objects[because it will automatically called when object is created so just printing a hello world from constructor i think it is useless so we have to do some necessary things which is very useful and important].
+
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  Complex(); // constructor declaration
+  void showData();
+  void setData(int, int);
+  Complex multi(Complex newC);
+};
+Complex::Complex() // constructor definition
+{
+  cout << "Hello\n";
+  //? it will not return anything that's why it do not have return keyword and return type
+}
+void Complex::showData()
+{
+  cout << "\na = " << a << ", b = " << b << endl;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+Complex Complex::multi(Complex newC)
+{
+  Complex temp;
+  temp.a = a * newC.a;
+  temp.b = b * newC.b;
+  return temp;
+}
+int main()
+{
+  Complex c1, c2, c3;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+  c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+} */
+//? //? if u put constructor function inside private, so u can't create objects 😁 yes u can try (i tried that's why i am laughing)
+
+//! parameterized constructor
+//? we can make a constructor with argument and and argument are passed at the time of object creation
+//* example -
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  // Complex(); // constructor declaration
+  Complex(int, int);
+  // void showData();
+  // void setData(int, int);
+  // Complex multi(Complex newC);
+};
+Complex::Complex(int x, int y)
+{
+  a = x;
+  b = y;
+}
+int main()
+{
+  Complex c1(4, 5), c2(5, 6), c3(7, 8);
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+} */
+
+//! constructor overloading
+//? in above code constructor is taking 2 argument but if i want to use constructor without argument or only 1 argument then we to have diff kind of constructor
+
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  // Complex(); // constructor declaration
+  Complex();
+  Complex(int);
+  Complex(int, int);
+};
+Complex::Complex(){a = 0;b = 0;}
+Complex::Complex(int x){a = x;b =0;}
+Complex::Complex(int x, int y){ a = x; b = y;}
+
+int main()
+{
+  Complex c1;
+  Complex c2(5);
+  Complex c3(7, 8);
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+} */
+//? this is called constructor overloading --> programmer can provide multiple constructor in the class with different signature.
+
+//! default constructor
+//? when a programmer dose not provide explicit constructor in the class, compiler creates an empty body, no arguments constructor in the class
+//? that means if i do not create any constructor then in object there is an error specially in which who are accepting argument , not in who are not accepting argument because read above line - [compiler creates an empty body, no arguments constructor in the class] but if we create any one of the constructor then compiler does not create anything by it owns.
+//? so the solution is
+
+#include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  // Complex(); // constructor declaration
+  // Complex();
+  // Complex(int);
+  // Complex(int, int);
+};
+// Complex::Complex(){a = 0;b = 0;}
+// // Complex::Complex(int x){a = x;b =0;}
+// // Complex::Complex(int x, int y){ a = x; b = y;}
+
+int main()
+{
+  Complex c1;
+  Complex c2(5);
+  Complex c3(7, 8);
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+}
+
+/* //! copy constructor
+//! shallow vs deep copy */
