@@ -1,12 +1,25 @@
 // TODO: Assignment-27: DMA
 
 //! 1. Define a function to input a variable length string and store it in an array without memory wastage.
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 int main()
 {
+  int size = 50;
+  char *str = (char *)malloc(sizeof(char));
+  if (str == NULL)
+  {
+    printf("Memory allocation failed!! ");
+    return 1;
+  }
+  printf("Enter a string: ");
+  fgets(str, size, stdin);
+  str[strlen(str) - 1] = '\0';
 
+  printf("You entered: %s\n", str);
+  free(str);
   return 0;
 }
 
