@@ -6,33 +6,6 @@
 #include <stdlib.h>
 int main()
 {
-  printf("Enter string: ");
-
-  // Initially allocate memory for 20 characters
-  char *p = (char *)calloc(1, 20);
-  // or --> char *p = (char*)malloc(20* sizeof(char));
-
-  // checking p is not or not bcz if it is null it will show undefined behaviour
-  if (p == NULL)
-  {
-    printf("Memory Allocation failed.\n");
-    return 1;
-  }
-
-  // taking input in string
-  fgets(p, 20, stdin);
-
-  // finding the length of string
-  int length = strlen(p);
-
-  if (length > 0 && p[length - 1] == '\n')
-    p[length - 1] = '\0';
-
-  // Reallocate memory to fit the exact string size
-  p = (char *)realloc(p, (length + 1) * sizeof(char));
-
-  // Freeing the dynamically allocated memory
-  free(p);
 
   return 0;
 }

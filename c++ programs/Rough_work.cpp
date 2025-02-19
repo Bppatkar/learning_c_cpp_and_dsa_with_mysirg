@@ -893,6 +893,7 @@ int main()
 
 //* Shallow Copy : Copies the same memory address (pointer p still points to the same location as obj.p).
 //? Any change in the copied object affects the original.  Example(Shallow Copy - Default Copy Constructor)
+//? this thing automatically done by compiler so we do not have to write code for shallow copy
 
 /* #include <iostream>
  using namespace std;
@@ -902,6 +903,7 @@ public:
   int a;
   int *p;
 
+   // Normal Constructor (Needed to create first object)
   Complex(int x)
   {
     a = x;
@@ -923,8 +925,9 @@ int main()
 //! Deep copy
 //* Deep Copy : Creates a new memory allocation and copies the actual value instead of just the memory address.
 //? Does not share memory with the original object.   Example(Deep Copy - Custom Copy Constructor)
+//? shallow copy is done by compiler but for the deep copy , it is a must to it be done by programmer.
 
-#include <iostream>
+/* #include <iostream>
 using namespace std;
 class Complex
 {
@@ -932,6 +935,7 @@ public:
   int a;
   int *p;
 
+   // Normal Constructor (Needed to create first object)
   Complex(int x)
   {
     a = x;
@@ -939,8 +943,8 @@ public:
     *p = x;
   }
 
-  Complex(const Complex &obj)
-  { // Deep Copy Constructor
+   // Deep Copy Constructor
+  Complex(const Complex &obj){
     a = obj.a;
     p = (int *)malloc(4); // Allocating new memory
     *p = *(obj.p);        // Copying the value, not the address
@@ -955,7 +959,7 @@ int main()
   *(c2.p) = 10; // Changing c2 does NOT affect c1
 
   cout << *(c1.p); // Output: 5 (Separate memory allocations)
-}
+} */
 
 //! ###Key Differences:
 /*
@@ -966,3 +970,52 @@ int main()
     | Default Behavior            | Yes (Compiler creates it)       | No (Needs manual copy constructor)    |
     | Code Difference             | `p = obj.p;`                    | `p = new malloc(4); *p = *(obj.p);`   |
 */
+
+//! Destructor
+//? constructor creates object by initialize it and make it object [in object oriented language]
+//?  destructor work is - "last action whatever it is, happened in the life of object is because of destructor" -- destructor is not destroying anything
+//* Destructor is invoked implicitly/specially when objects is about to destroy.
+//? implicitly - [in a way that is not directly expressed]
+// it does not take any argument so therefore overloading if destructor is not possible. and it is an instance member.
+//? if u can't create destructor then compiler can make it.
+//? the job of destructor should be to free up the memory resources handle by the object.
+
+//*TODO: In a life of object the first action is constructor and last action is destructor
+
+//* example code
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  Complex();
+  Complex(int);
+  Complex(int, int);
+  Complex(Complex &); // copy constructor is taking &[address]
+
+  // destructor
+  ~Complex();
+};
+Complex::Complex(){  a = 0;  b = 0;}
+Complex::Complex(int x){  a = x;  b = 0;}
+Complex::Complex(int x, int y){  a = x;  b = y;}
+Complex::Complex(Complex &x){  a = x.a;  b = x.b;}
+Complex::~Complex(){
+  cout<<"destructor is called"<<endl;
+}
+
+int main()
+{
+  Complex c1(7, 8);
+  Complex c2(5);
+  Complex c3;
+  Complex c4 = c1;
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+} */

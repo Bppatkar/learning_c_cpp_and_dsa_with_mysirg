@@ -463,19 +463,19 @@ int main()
   return 0;
 } */
 //__________________New Approach______________
-// using ASCII table from 0 to 127
+//  creating Array of 128 length and use that length as a ASCII code
 /* #include <stdio.h>
 #include <string.h>
 void strFrequencyCounter(char str[])
 {
-  int i, f[128] = {0}; // Array to store frequency of characters (ASCII 0 to 127)
+  int i, f[128] = {0}; // creating Array of 128 length and use that length as a ASCII code
 
   for (i = 0; str[i]; i++)
     f[str[i]]++; // Increment the count for the character at str[i]
 
   // Print the frequency of each character that appears in the string
   for (i = 0; i <= 127; i++)
-    if (f[i] != '\0')
+    if (f[i] != 0)
       // Check if the character with ASCII value 'i' appeared in the string
       printf("%c - %d\n", i, f[i]); // Print the character and its frequency
 }
@@ -552,9 +552,9 @@ int wordInStringFinder(char str[], char word[])
   { // Loop through the string to find the word
     for (j = 0; word[j]; j++)
     { // Compare each character of the word
-      // printf("%c %c", str[i + l], word[j]);
+      // printf("%c %c\n", str[i + l], word[j]);
       if (str[i + j] != word[j])
-        break;
+        break;  // means match is not found
     }
     // printf("\n \n");
     // If a match is found, check the surrounding boundaries
@@ -696,7 +696,7 @@ int main()
 //_________New Approach {using above 2 logic wordCount+removingSpace}__________
 /* #include <stdio.h>
 #include <string.h>
-// using above quesetion logic for removing leading and trailling space
+// using above question logic for removing leading and trailing space
 char *removingSpaces(char str[])
 {
   int i = 0, j, k, count = 0;
