@@ -27,7 +27,7 @@ int main()
 //?                   2)function argument
 //?                   3)function return type
 
-//! in 'C' lang... function name not be sameeeeeeeeeeeeeeee
+//! in 'C' lang... function name not be same
 //! in 'C++'  function name maybe same at sometime but """signature""" must be unique
 
 //? signature means- 1)function name
@@ -807,11 +807,55 @@ int main()
 //? this is called constructor overloading --> programmer can provide multiple constructor in the class with different signature.
 
 //! default constructor
-//? when a programmer dose not provide explicit constructor in the class, compiler creates an empty body, no arguments constructor in the class
-//? that means if i do not create any constructor then in object there is an error specially in which who are accepting argument , not in who are not accepting argument because read above line - [compiler creates an empty body, no arguments constructor in the class] but if we create any one of the constructor then compiler does not create anything by it owns.
-//? so the solution is
+//? when a programmer does not provide explicit constructor in the class, compiler creates an empty body, no arguments constructor in the class
+//? that means if we do not create any constructor then in object there is an error specially in which who are accepting argument , not in who are not accepting argument because read above line - [compiler creates an empty body, no arguments constructor in the class] but if we create any one of the constructor then compiler does not create anything on its owns.
+//? now go to more deep concept - when we do not create any constructor by our own then compiler create 2 constructor
+// 1) default constructor
+// 2) copy constructor
+//? if we create any type of constructor then compiler only creates copy constructor,,,, if we create copy constructor from our end then compiler do not make anything by its end.
 
-#include <iostream>
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+  private:
+  int a, b;
+
+  public:
+  // Complex(); // constructor declaration
+  Complex();
+  Complex(int);
+  Complex(int, int);
+};
+Complex::Complex(){a = 0;b = 0;}
+Complex::Complex(int x){a = x;b =0;}
+Complex::Complex(int x, int y){ a = x; b = y;}
+
+int main()
+{
+  Complex c1(7, 8);
+  Complex c2(5);
+  Complex c3;
+  Complex c4=c1;
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+} */
+///* now the question is what is the copy constructor
+
+//! copy constructor
+//? remember in above code when we write like this => Complex c4 = c1;
+//? we create c4 so constructor will be called by default but the question is why copy constructor is called [not default one]
+//* so the answer is-- whenever you are creating a object of any class and on the same time you are assigning that object with other object with same class then copy constructor will automatically called
+//* The default constructor is not used here because c4 is not being initialized as an empty object; rather, it is being initialized using c1.
+// if we write like this c4=c1; then it is just assigning c1 to c4 for copy constructor - [Complex c1=c4]; not [c1=c4];
+//? above example for clarification
+// it takes & - address because if we do not use & then recursion will start for infinite time
+//? listen how - when we write Complex(Complex C) and Complex c4=c1 then c1 is the C then it will automatically creates copy constructor because C1 = C and then compiler create copy constructor again for C1 = C then again compiler create copy constructor thats why we are saying it is recursion  so the solution is to pass address of c1 and make it reference by using write like this - Complex(Complex &C)
+
+/* #include <iostream>
 using namespace std;
 class Complex
 {
@@ -819,26 +863,106 @@ private:
   int a, b;
 
 public:
-  // Complex(); // constructor declaration
-  // Complex();
-  // Complex(int);
-  // Complex(int, int);
+  Complex();
+  Complex(int);
+  Complex(int, int);
+  Complex(Complex &) // copy constructor is taking &[address]
 };
-// Complex::Complex(){a = 0;b = 0;}
-// // Complex::Complex(int x){a = x;b =0;}
-// // Complex::Complex(int x, int y){ a = x; b = y;}
+Complex::Complex(){  a = 0;  b = 0;}
+Complex::Complex(int x){  a = x;  b = 0;}
+Complex::Complex(int x, int y){  a = x;  b = y;}
+Complex::Complex(Complex &x){  a = x.a;  b = x.b;}
 
 int main()
 {
-  Complex c1;
+  Complex c1(7, 8);
   Complex c2(5);
-  Complex c3(7, 8);
+  Complex c3;
+  Complex c4 = c1;
   // c1.setData(4, 5);
   // c2.setData(6, 9);
   // c3 = c1.multi(c2);
   // c3.showData();
   return 0;
+} */
+//*  When the compiler already creates a copy constructor, why do we need to create one manually?
+//* The answer is: When we need to perform a deep copy, we must create the copy constructor manually.
+//? so what is the deep copy
+
+//! shallow vs deep copy
+
+//* Shallow Copy : Copies the same memory address (pointer p still points to the same location as obj.p).
+//? Any change in the copied object affects the original.  Example(Shallow Copy - Default Copy Constructor)
+
+/* #include <iostream>
+ using namespace std;
+class Complex
+{
+public:
+  int a;
+  int *p;
+
+  Complex(int x)
+  {
+    a = x;
+    p = (int *)malloc(4); // Allocating memory dynamically
+    *p = x;
+  }
+};
+
+int main()
+{
+  Complex c1(5);
+  Complex c2 = c1; // Shallow copy (default behavior)
+
+  *(c2.p) = 10; // Changing c2 also affects c1
+
+  cout << *(c1.p); // Output: 10 (Both c1 & c2 point to the same memory)
+} */
+
+//! Deep copy
+//* Deep Copy : Creates a new memory allocation and copies the actual value instead of just the memory address.
+//? Does not share memory with the original object.   Example(Deep Copy - Custom Copy Constructor)
+
+#include <iostream>
+using namespace std;
+class Complex
+{
+public:
+  int a;
+  int *p;
+
+  Complex(int x)
+  {
+    a = x;
+    p = (int *)malloc(4); // Allocating memory dynamically
+    *p = x;
+  }
+
+  Complex(const Complex &obj)
+  { // Deep Copy Constructor
+    a = obj.a;
+    p = (int *)malloc(4); // Allocating new memory
+    *p = *(obj.p);        // Copying the value, not the address
+  }
+};
+
+int main()
+{
+  Complex c1(5);
+  Complex c2 = c1; // Deep copy
+
+  *(c2.p) = 10; // Changing c2 does NOT affect c1
+
+  cout << *(c1.p); // Output: 5 (Separate memory allocations)
 }
 
-/* //! copy constructor
-//! shallow vs deep copy */
+//! ###Key Differences:
+/*
+    | Feature                     | Shallow Copy                    | Deep Copy                             |
+    |-----------------------------|---------------------------------|---------------------------------------|
+    | Memory Address              | Shared (Same Address)           | Separate (New Address)                |
+    | Data Modification           | Changes reflect in both objects | Changes affect only the copied object |
+    | Default Behavior            | Yes (Compiler creates it)       | No (Needs manual copy constructor)    |
+    | Code Difference             | `p = obj.p;`                    | `p = new malloc(4); *p = *(obj.p);`   |
+*/
