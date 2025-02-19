@@ -753,6 +753,7 @@ char *fullNameToAcronymConverter(char str[])
 
   s[j][k] = '\0'; // Null-terminate the last word
   str[0] = '\0';  // reset the string
+
   for (k = 1, i = 0; k < word_count; k++, i++)
   {
     str[i] = s[k - 1][0];
