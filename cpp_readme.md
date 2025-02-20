@@ -55,3 +55,57 @@ Welcome to the collection of C++ Programming Assignments! This repository contai
   - Operator overloading
   - Friend functions and exception handling
 
+### [Assignment 6: Pointers and Memory Management](c++%20programs/assignments/assignment6)
+
+- **Focus**: Dynamic memory allocation and pointers.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Pointers and arrays
+  - Dynamic memory allocation
+  - Smart pointers
+  - Pointer arithmetic
+
+### [Assignment 7: File Handling in C++](c++%20programs/assignments/assignment7)
+
+- **Focus**: File input/output operations.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Reading and writing files
+  - File stream manipulation
+  - Working with different file modes
+
+### [Assignment 8: Templates and STL](c++%20programs/assignments/assignment8)
+
+- **Focus**: Introduction to templates and the Standard Template Library (STL).
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Function and class templates
+  - Working with vectors, lists, and maps
+  - Iterators and algorithms
+
+### [Assignment 9: Exception Handling](c++%20programs/assignments/assignment9)
+
+- **Focus**: Error handling mechanisms in C++.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Try-catch blocks
+  - Custom exception classes
+  - Handling runtime errors
+
+### [Assignment 10: Multithreading and Concurrency](c++%20programs/assignments/assignment10)
+
+- **Focus**: Parallel programming concepts.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Thread creation and synchronization
+  - Mutex and locks
+  - Multi-threaded applications
+
+### [Assignment 11: Advanced Data Structures](c++%20programs/assignments/assignment11)
+
+- **Focus**: Implementation of complex data structures.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Linked lists, stacks, and queues
+  - Trees and graphs
+  - Hash tables and advanced algorithms
