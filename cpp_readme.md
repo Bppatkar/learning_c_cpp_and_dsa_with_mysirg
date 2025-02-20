@@ -1,10 +1,8 @@
 # C++ Programming Assignments
 
-Welcome to the collection of C++ Programming Assignments! This repository contains 100+ carefully curated questions divided into 10 assignments that cover fundamental to advanced concepts in C++ programming. Each question is designed to help you practice and master key programming concepts.
+Welcome to the collection of C++ Programming Assignments! This repository contains 100+ carefully curated questions divided into 11 assignments that cover fundamental to advanced concepts in C++ programming. Each question is designed to help you practice and master key programming concepts.
 
 ## Overview of Assignments
-
-## Welcome to C++ Programming Assignments
 
 ### [Assignment 1: Basics of C++](c++%20programs/assignments/assignment1)
 
@@ -55,7 +53,6 @@ Welcome to the collection of C++ Programming Assignments! This repository contai
   - Operator overloading
   - Friend functions and exception handling
 
-
 ### [Assignment 6: Constructors](c++%20programs/assignments/assignment6)
 
 - **Focus**: Understanding and implementing constructors.
@@ -83,7 +80,7 @@ Welcome to the collection of C++ Programming Assignments! This repository contai
   - Overloading stream insertion and extraction operators
   - Deep copy constructor implementation
 
-### [Assignment 9: Pointers, Dynamic Memory Allocation, and `this` Pointer](c++%20programs/assignments/assignment9)
+### [Assignment 9: Pointers, Dynamic Memory Allocation, and ](c++%20programs/assignments/assignment9)[`this`](c++%20programs/assignments/assignment9)[ Pointer](c++%20programs/assignments/assignment9)
 
 - **Focus**: Understanding pointers and dynamic memory.
 - **Questions**: 1 to 10
@@ -109,8 +106,7 @@ Welcome to the collection of C++ Programming Assignments! This repository contai
   - Exception handling
   - Smart pointers
   - File handling
-  - Templates and STL
-
+  - Templates
 
 
 
