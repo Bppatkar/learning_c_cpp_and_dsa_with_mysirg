@@ -1,10 +1,8 @@
 # C++ Programming Assignments
 
-Welcome to the collection of C++ Programming Assignments! This repository contains 100+ carefully curated questions divided into 10 assignments that cover fundamental to advanced concepts in C++ programming. Each question is designed to help you practice and master key programming concepts.
+Welcome to the collection of C++ Programming Assignments! This repository contains 100+ carefully curated questions divided into 11 assignments that cover fundamental to advanced concepts in C++ programming. Each question is designed to help you practice and master key programming concepts.
 
 ## Overview of Assignments
-
-## Welcome to C++ Programming Assignments
 
 ### [Assignment 1: Basics of C++](c++%20programs/assignments/assignment1)
 
@@ -54,4 +52,61 @@ Welcome to the collection of C++ Programming Assignments! This repository contai
   - Virtual functions and abstract classes
   - Operator overloading
   - Friend functions and exception handling
+
+### [Assignment 6: Constructors](c++%20programs/assignments/assignment6)
+
+- **Focus**: Understanding and implementing constructors.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Constructor overloading
+  - Copy constructors
+  - Dynamic memory allocation in constructors
+
+### [Assignment 7: Operator Overloading](c++%20programs/assignments/assignment7)
+
+- **Focus**: Implementing operator overloading.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Overloading arithmetic and comparison operators
+  - Implementing operator overloading in complex numbers
+  - Overloading increment and decrement operators
+
+### [Assignment 8: Operator Overloading & Friend Functions](c++%20programs/assignments/assignment8)
+
+- **Focus**: Advanced operator overloading with friend functions.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Friend functions and classes
+  - Overloading stream insertion and extraction operators
+  - Deep copy constructor implementation
+
+### [Assignment 9: Pointers, Dynamic Memory Allocation, and ](c++%20programs/assignments/assignment9)[`this`](c++%20programs/assignments/assignment9)[ Pointer](c++%20programs/assignments/assignment9)
+
+- **Focus**: Understanding pointers and dynamic memory.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Pointer manipulation and memory allocation
+  - `this` pointer usage
+  - Managing memory dynamically
+
+### [Assignment 10: Inheritance](c++%20programs/assignments/assignment10)
+
+- **Focus**: Implementing inheritance in C++.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Single and multiple inheritance
+  - Method overriding
+  - Constructor chaining and virtual base classes
+
+### [Assignment 11: Advanced Topics in C++](c++%20programs/assignments/assignment11)
+
+- **Focus**: Exploring advanced C++ features.
+- **Questions**: 1 to 10
+- **Topics Covered**:
+  - Exception handling
+  - Smart pointers
+  - File handling
+  - Templates
+
+
 

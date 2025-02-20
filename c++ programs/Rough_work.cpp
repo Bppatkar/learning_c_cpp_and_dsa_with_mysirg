@@ -1021,3 +1021,236 @@ int main()
 } */
 
 //! Initializer
+//? also knows as initializer list. It allows you which constructor is called and what arguments that constructor receives.
+//? if you have a reference or a const field or if one of the classes used does not have a default constructor you must use an initialization list.
+
+//* syntax
+/* class className{
+  public:
+  className(args):initialization __va_list_tag
+  {
+
+  }
+} */
+
+//! using initialization list to initialize fields
+/* class A{
+  private:
+  int a,b,c;   //fields/attribute/data member/properties
+  public:
+  A():a(5),b(6),c(8){}   // this is a constructor and using (:)[colon] we are initializing the fields
+  A(int a, int b, int c): a(a),b(b),c(c){}  // this is also a constructor but parameterized
+} */
+
+//* using above code for better learning
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  Complex();
+  Complex(int);
+  Complex(int, int);
+  Complex(Complex &); // copy constructor is taking &[address]
+
+  // destructor
+  ~Complex();
+};
+// Complex::Complex(){  a = 0;  b = 0;}
+//* changing above line
+Complex::Complex():a(0),b(0){}
+
+
+// Complex::Complex(int x){  a = x;  b = 0;}
+//* we can change this line also
+Complex::Complex(int x):a(x),b(0){}
+
+// Complex::Complex(int x, int y){a = x;b = y;}
+//* we can change this line also
+Complex::Complex(int x, int y):a(x),b(y){}
+
+
+Complex::Complex(Complex &x){  a = x.a;  b = x.b;}
+Complex::~Complex(){
+  cout<<"destructor is called"<<endl;
+}
+
+int main()
+{
+  Complex c1(7, 8);
+  Complex c2(5);
+  Complex c3;
+  Complex c4 = c1;
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c3.showData();
+  return 0;
+}*/
+
+//! use of initialization list
+//! initializing const member
+//! initialization list
+//*syntax
+/* class A{
+  private:
+  const int k;    // if we use const then the value of k is freezed whatever the value is assign to k , it will never changed
+  public:
+  // A(){k=10;}  //error we forgot to initialize 'k' but in constructor we can't initialize it, we are late to initialize it, so how can we initialize it by using initializing list
+  //! use of initialization list
+  A():k(10){}   // we are assigning value by using initializing list
+  } */
+
+//! initialization list
+//* using above code for better learning
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+  //* creating const variable
+  const int k; // and we are not initializing it here, so we will initialize k by initializing list and i am giving random values to it
+
+public:
+  Complex();
+  Complex(int);
+  Complex(int, int);
+  Complex(int, int, int); // we are adding one more int here for k
+  Complex(Complex &);     // copy constructor is taking &[address]
+
+  // destructor
+  ~Complex();
+};
+// Complex::Complex(){  a = 0;  b = 0;}
+//* changing above line
+Complex::Complex() : a(0), b(0), k(1) {} // random value initialize for k
+
+// Complex::Complex(int x){  a = x;  b = 0;}
+//* we can change this line also
+Complex::Complex(int x) : a(x), b(0), k(2) {} // random value initialize for k
+
+Complex::Complex(int a, int b) : a(a), b(b), k(0) {}
+
+// Complex::Complex(int x, int y){a = x;b = y;}
+//* we can change this line also
+Complex::Complex(int a, int b, int k) : a(a), b(b), k(k) {}
+
+Complex::Complex(Complex &x) : k(2)
+{
+  a = x.a;
+  b = x.b;
+
+} // random value initialize for k
+Complex::~Complex()
+{
+  cout << "destructor is called" << endl;
+}
+
+int main()
+{
+  Complex c1(7, 8, 12); // so we have to send a value of k from here also
+  Complex c2(5, 3);
+  Complex c3;
+  Complex c5(4);
+  Complex c4 = c1;
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+  // c1.showData();
+  // c2.showData();
+  // c3.showData();
+  return 0;
+} */
+
+//! initialization cost members
+//* const member variable can only be initialized using initializer list.
+//? you can not modify const member variable.
+
+//! initialization reference variables
+// for a reference variable it is compulsory to initialize it by only variable
+//* syntax
+/* class A
+{
+private:
+  int &x; // reference variable
+  int k;
+
+public:
+  A() : k(5), x(k) {}
+//* here x is referencing variable k, so if u do x++ or k++ .. that increment is happened in k.
+
+  // we can also write like this by using [DMA] dynamic memory allocation but we don't know new keyword but we read ahead
+  // A() : k(5), x(* new int) {}
+} */
+
+//? using above code for better clarification  [ --> like that ====> p(val)]
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+  const int k;
+
+  //* creating reference variable
+  int &p; // Reference variable (must be initialized)
+
+public:
+  Complex();
+  Complex(int);
+  Complex(int, int);
+  Complex(int, int, int);
+  Complex(Complex &);
+
+  ~Complex();
+};
+Complex::Complex() : a(0), b(0), k(1), p(a) {}
+
+Complex::Complex(int x) : a(x), b(0), k(2), p(a) {}
+
+Complex::Complex(int a, int b) : a(a), b(b), k(0), p(this->a) {}
+
+Complex::Complex(int a, int b, int k) : a(a), b(b), k(k), p(this->a) {}
+
+Complex::Complex(Complex &x) : k(2), p(x.p)
+{
+  a = x.a;
+  b = x.b;
+}
+Complex::~Complex()
+{
+  cout << "destructor is called" << endl;
+}
+
+int main()
+{
+  Complex c1(7, 8, 12);
+  Complex c2(5, 3);
+  Complex c3;
+  Complex c5(4);
+  Complex c4 = c1;
+  // c1.setData(4, 5);
+  // c2.setData(6, 9);
+  // c3 = c1.multi(c2);
+
+  int num = 10;
+  // Complex c1(num); // Now p refers to num instead of a
+
+  // if we not pass num explicitly then from c1 or c2 the first value which is value of 'a' become the value of reference variable [p will refer to a (which is 7)and 5 from c2]
+  // c1 is already declared above so we use other variable example c6 or whatever u want to make
+  Complex c6(num);
+  return 0;
+} */
+
+//! where you can use initializer list
+//? 1) to initialize reference member variable
+//? 2) to initialize const member variable
+//? 3) to initialize data member variable
+//* some point we read ahead
+// 4) to invoke base class constructor
+
+//! operator overloading
