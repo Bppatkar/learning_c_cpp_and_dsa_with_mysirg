@@ -1254,3 +1254,355 @@ int main()
 // 4) to invoke base class constructor
 
 //! operator overloading
+//* Recall add method
+//* operator overloading
+//* polymorphism
+//* not all the operators can be overloaded
+//* overloading of binary operator
+//* overloading of unary operator
+
+//! Recall add method
+// have to see this code above for add method  [Define complex class with appropriate members. Also define a function to add two complex numbers].
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b; // instance member variable (instance means object simple)
+
+public:
+  void addData(int, int);
+  void showData();
+  Complex add(Complex);
+};
+Complex Complex::add(Complex newC)
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::addData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.addData(4, 5);
+  c2.addData(6, 9);
+
+  // changes made here
+  Complex c3;
+  // c3 = c1 + c2;   // this line is showing error because operator "+"  not matches these operands means they both are not a normal variable , we are trying to add: Complex + Complex, so for solution we are going to make add();
+  c3 = c1.add(c2);
+  //? explain this like - c1 is a collar object/ current object which called own add function and passing c2 as an argument and whatever that add function will return that thing will store in c3 thats it.
+
+  c3.showData();
+  return 0;
+} */
+
+//? we cant use symbol as variable name it should be alphabet,digit,underscore , other than that is not acceptable.
+//? but this is a rule in 'C' so it will come automatically in 'C++' but there is a catch... we can give + symbol as a function name using operator keyword
+//* i am using above code ok
+
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  void setData(int, int);
+  void showData();
+  // Complex add(Complex);
+  Complex operator+(Complex); //* here i made changes
+};
+// Complex Complex::add(Complex newC)
+Complex Complex::operator+(Complex newC) //* here i made changes
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+
+  // changes made here
+  Complex c3;
+  // c3 = c1 + c2;
+  c3 = c1.operator+(c2); //* here i made changes
+
+  c3.showData();
+  return 0;
+} */
+
+//? // c3 = c1 + c2;   // this line is showing error because operator "+"  not matches these operands means they both are not a normal variable , we are trying to add: Complex + Complex, so for solution we are going to make add();
+//* this line c3 = c1+c2; is showing error right.... but
+//! write like this c3 = c1.operator+(c2);   is old way then...we can write like this
+//*TODO: c3=c1+c2; because of operator overloading and c1 and c2 both are complex class and we are assigning in c3 which is also complex class [bcz we initialize + operator as a member {Complex operator+(Complex);}]
+
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  void setData(int, int);
+  void showData();
+  // Complex add(Complex);
+  Complex operator+(Complex); //* here i made changes
+};
+// Complex Complex::add(Complex newC)
+Complex Complex::operator+(Complex newC) //* here i made changes
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+
+  // changes made here
+  Complex c3;
+
+
+  c3 = c1 + c2; // c3 = c1.operator+(c2); //* here i made changes
+
+  c3.showData();
+  return 0;
+} */
+
+//! how it is possible to write like this -- c3 = c1+c2;
+//? because when we are learning about classes and object then we are learning about classes have 3 things
+// 1) variables  2) functions   3) operators
+//* and object can access anything from class by using .(dot)operator if [access specifier is allowing]
+//* how
+// object . variable
+// object . function
+
+// object . operator(arguments)
+// object + arg
+//? last two ways are calling operators
+
+// TODO: for example we write cout<<x;
+//  full form of cout<<x; is--     cout.operator<<(x);
+
+/* #include <iostream>
+using namespace std;
+int main()
+{
+  int x = 5;
+  cout.operator<<(x);
+  return 0;
+} */
+
+//! operator overloading
+//? when one operator symbol is overloaded with multiple operations, it is known as overloaded operator.
+//? Defining an operator in a class , is providing a new behaviour of operator for specific type operands.
+//? In simple words, operator overloading occurs when you define an operator with respect to the class.
+
+//! polymorphism
+//? in c++ there are 3 way to implement polymorphism
+//* 1) function overloading 2) operator overloading 3)virtual function
+//? 1st and 2nd is compile time polymorphism and 3rd one is run time
+
+// 3 + 4 [int + int]
+// 5.4 + 6.3 [double + double]
+// c1 + c2 [Complex + Complex]
+// t1 + t2 [time + time]
+//? these all are checked in compile time  [by + {operator overloading}]
+
+//! not all the operator can be overloaded
+//? only those symbols can be defined as an operator which were valid operators in c lang.
+//? there are few operator in c language which you cannot overloaded in c++.
+//* 1) sizeof()   [bcz this operator resolve on compile time and operator overloading execute on run time] {interview question}
+//* 2) .   [member access operator]
+//* 3) .*  [pointer to member operator]
+//* 4) ?:  [conditional/ternary operator]
+//* 5) ::  [scope resolution operator]
+
+//! overloading of binary operator
+// binary operator means who have two operator [c1+c2] so + is a binary operator here and c1,c2 are operands of + operator.
+//* when a binary operator is overloaded in a class as a member. only ***left*** operands is caller object and right operands is an argument [but only case in binary not in other ok].
+//? so if we write like this => c3 = c1 + c2;
+// explanation --> c1 is collar object and c2 is passing as an argument and whatever result will come it will stored in c3.
+
+//*** using above code for subtraction function means [-] minus operator overloading
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  void setData(int, int);
+  void showData();
+  // Complex add(Complex);
+  Complex operator+(Complex);
+  Complex operator-(Complex); //* here i made changes
+};
+// Complex Complex::add(Complex newC)
+Complex Complex::operator-(Complex newC) //* here i made changes
+{
+  Complex temp;
+  temp.a = a - newC.a;
+  temp.b = b - newC.b;
+  return temp;
+}
+Complex Complex::operator+(Complex newC)
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+
+  // changes made here
+  Complex c3;
+  // c3 = c1 + c2;
+  c3 = c1.operator+(c2);
+
+  Complex c4;            //* here i made changes
+  c4 = c2-c1;           //c4 = c2.operator-(c1); //* here i made changes
+
+  c3.showData();
+  c4.showData();
+  return 0;
+} */
+
+//! overloading of unary operator
+//? the way of writing/using unary operator will remain same for overloaded version.
+// using above code [minus operator overloading]
+/* #include <iostream>
+using namespace std;
+class Complex
+{
+private:
+  int a, b;
+
+public:
+  void setData(int, int);
+  void showData();
+  // Complex add(Complex);
+  Complex operator+(Complex);
+  Complex operator-(Complex);
+  Complex operator-(); //* here i made changes [no argument here for unary operator]
+};
+// Complex Complex::add(Complex newC)
+Complex Complex::operator-() //* here i made changes
+{
+  Complex temp;
+  temp.a = -a;
+  temp.b = -b;
+  return temp;
+}
+Complex Complex::operator-(Complex newC)
+{
+  Complex temp;
+  temp.a = a - newC.a;
+  temp.b = b - newC.b;
+  return temp;
+}
+Complex Complex::operator+(Complex newC)
+{
+  Complex temp;
+  temp.a = a + newC.a;
+  temp.b = b + newC.b;
+  return temp;
+}
+void Complex::setData(int x, int y)
+{
+  a = x;
+  b = y;
+}
+void Complex::showData()
+{
+  cout << "\na=" << a << " b=" << b << endl;
+}
+
+int main()
+{
+  Complex c1, c2;
+  c1.setData(4, 5);
+  c2.setData(6, 9);
+
+  // changes made here
+  Complex c3;
+  // c3 = c1 + c2;
+  c3 = c1.operator+(c2);
+
+  Complex c4; //* here i made changes
+  c4 = -c1;   // also write like this - [c4 = c1.operator-()]
+  // here c1 is collar object and it is calling minus operator but do not passing any value in argument and the result will store in c4. [we want like if c1 has 4,5 and in c4 a value is -4 and -5 after negation]
+  c4.showData();
+
+  c3.showData();
+  return 0;
+} */
+
+//! MIMP questions asked in interview... [u have to do overloading of diff type of operator]
+// 1) >
+// 2) ==
+// 3) !
+// 4) *
+// 5) []
+// 6) ()
+// 7) ++ [post and pre both]
+// 8) -- [post and pre both]
+// 9) =
+// 10) <<
+// 11) >>
