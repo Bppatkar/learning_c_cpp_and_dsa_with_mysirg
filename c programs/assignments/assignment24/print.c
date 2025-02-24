@@ -3,10 +3,10 @@
 /* //! 1. Write a function to store strings, taken from the user, into the given 2D char array.
 #include <stdio.h>
 #include <string.h>
-void storeStr(char arr[3][15])
+void storeStr(char arr[][15], int n)
 {
   int i;
-  for (i = 0; i < 3; i++)
+  for (i = 0; i < n; i++)
   {
     printf("Enter a string %d: ", i + 1);
     fgets(arr[i], 15, stdin);
@@ -15,21 +15,21 @@ void storeStr(char arr[3][15])
       arr[i][strlen(arr[i]) - 1] = '\0';
   }
 }
-void displayStr(char arr[3][15])
+void displayStr(char arr[][15], int n)
 {
   int i;
   printf("You Entered:\n");
-  for (i = 0; i < 3; i++)
+  for (i = 0; i < n; i++)
     printf("%s\n", arr[i]);
 }
 int main()
 {
   char arr[3][15];
-  storeStr(arr);
-  displayStr(arr);
+  storeStr(arr,3);
+  displayStr(arr, 3);
   return 0;
 } */
-//? fgets is designed to work with a string (1D array), not a 2D array directly.n the case of a 2D array like arr[3][5], fgets will read the entire line of input and store it in the first row of the array (essentially arr[0]), but this is not what you want because each row in the array should contain individual strings.
+//? fgets is designed to work with a string (1D array), not a 2D array directly.n the case of a 2D array like arr[3][5], fgets will read the entire line of input and store it in the first row of the array (essentially arr[0]), but that is not what we want because each row in the array should contain individual strings.
 
 /* //! 2. Write a program to find the number of vowels in each of the 5 strings stored in a two-dimensional array, taken from the user.
 #include <stdio.h>
@@ -125,39 +125,76 @@ int main()
 /* //! 4. Write a function to store each word of a string in a 2D char array.
 #include <stdio.h>
 #include <string.h>
-void storingWord(char word[5][50])
+
+// using assignment 23 question logic for removing leading and trailing space
+char *removingSpaces(char str[])
 {
-  int i, j;
-  char temp[50];
-  for (i = 0; i < 5; i++)
+  int i = 0, j, k, count = 0;
+
+  for (k = strlen(str) - 1; str[k] == ' '; k--)
+    count++;
+  k = strlen(str);
+
+  while (str[i] == ' ')
+    i++;
+
+  for (j = 0; str[j + i]; j++)
+    str[j] = str[i + j];
+
+  str[k - count - i] = '\0';
+  return str;
+}
+
+// using assignment 23 question logic for counting words
+int wordCounter(char str[])
+{
+  int i, count = 0;
+  removingSpaces(str); // using here
+  for (i = 0; str[i]; i++)
   {
-    for (j = i + 1; j < 5; j++)
+    if (str[i] == ' ')
     {
-      if (strcmp(word[i], word[j]) > 0)
-      {
-        strcpy(temp, word[i]);
-        strcpy(word[i], word[j]);
-        strcpy(word[j], temp);
-      }
+      if (str[i] == str[i + 1])
+        continue;
+      else
+        count++;
     }
   }
+
+  return count + 1;
+}
+
+void splitWord(char str[], char word[][50])
+{
+  int j, i, k, word_count;
+  word_count = wordCounter(str);
+  char s[word_count][30]; // creating new 2d array and then i want to assign every word (which we get from wordCounter ) from str to in 2d arr
+
+  for (i = 0, j = 0, k = 0; str[i]; i++, k++)
+  {
+    if (str[i] != ' ')
+      word[j][k] = str[i];
+    else
+    {
+      word[j][k] = '\0';
+      j++;
+      k = -1;
+    }
+  }
+  word[j][k] = '\0';
+}
+int main()
+{
+  char str[] = "mysirg education services private limited";
+  char word[5][50]; // 5 word, each up to 19 character's long
+  int i;
+  splitWord(str, word);
+
   // printing sorted words
   for (i = 0; i < 5; i++)
   {
     printf("word %d) %s\n", i + 1, word[i]);
   }
-}
-int main()
-{
-  char word[5][50]; // 5 word, each up to 19 character's long
-  int i;
-  printf("Enter 5 words: \n");
-  for (i = 0; i < 5; i++)
-  {
-    fgets(word[i], 50, stdin);
-    word[i][strcspn(word[i], "\n")] = '\0';
-  }
-  storingWord(word);
   return 0;
 } */
 
