@@ -1606,3 +1606,128 @@ int main()
 // 9) =
 // 10) <<
 // 11) >>
+
+//! friend function
+//* friend function
+//* friend operator
+//* Benefits of friend function
+//* overloading of << && >>. [insertion and exertion]
+
+//! friend function
+//? friend function is not a member of a class to which it is a friend. function which is friend to a class can access any member of the class (private,protected,public).
+//? in simple words - [A function that is not a member of a class is called a non-member function, and  non-member function can be a friend of a class, but it is not necessary., However, every friend function of a class is always a non-member, but not every non-member function is a friend of the class.]
+
+//! Making a function friend to a class
+//? function needs to be declared with ''Friend'' keyword in the class to which we want to make it a friend.
+//? friend function is defined outside the class without membership label, as it is not a member function.
+//* Remember friend function can be a member to another class, so membership label is required while defining outside all the classes.
+
+//! trying to make a friend function
+/* #include <iostream>
+using namespace std;
+
+class Item
+{
+private:
+  int a, b;
+
+public:
+  friend void f1(); // friend keyword only used in declaration
+};
+
+void f1() {} // friend keyword ''not'' used in defintion [and we can not use membership label because f1 is not a function of that class , it is a friend func {but i can be a member of another class then of that another class we have to use membership label of that another class}{ but where do u declare that friend func - in private, public or protected -- so the ans is friend is not a member of a class so it doesn't  affected by access specifier  so go down and read //?}]
+int main()
+{
+  return 0;
+} */
+
+//? you can declare friend function without bothering access specifier because it is not a member, so no impact of access specifier on it.
+//? a function which is a friend to same class can be
+//                           -->  a non-member function ,or
+//                           --> a member of same class
+
+//* it is not going like - f1 is not a member function of ''any'' class but it can't be a member function of above Item class
+
+// now i want to call that f1 function inside main function then what should we write -->
+//! calling friend function from main
+
+/* int main(){
+  f1();     // this is right way to call f1  // when f1 is not a member of Item class then why u want to access f1 by creating object
+  return 0;
+} */
+
+//* complete code of friend function
+/* #include<iostream>
+using namespace std;
+class Item{
+  private: int a, b;
+  public: friend void f1();
+};
+void f1(){
+  cout<<"Hello from friend function";
+}
+int main(){
+  f1();
+  return 0;
+} */
+
+//* friend function can access any member of the class from friend function,[but not directly], and just printing hello word from friend function is looking like small task ... now we are trying to access variable
+/* #include<iostream>
+using namespace std;
+class Item{
+  private: int a, b;
+  public:
+  void setData(int x, int y){a=x;b=y;}
+  friend void f1(Item);   // we are receiving Item object here so i made change (Item)
+};
+// void f1(){
+//   // [but not directly] then we have two ways 1) we can create object ot Item class
+//   // Item t1;
+
+//   // int c= t1.a+t1.b;
+// //* but the problem is every time t1 object is created and garbage value is calculated and assigned in c (bcz we are not giving any value in a and b so they have garbage value) so we make setdata function so assign value in a an b
+
+// // Item t1;
+// // t1.setData(10,20);
+// // int c = t1.a+ t1.b;
+// // cout<<"sum is "<<c<<endl;           // now it is working and printing the sum of 10 and 20
+
+//2)
+// //* but utility is not good here bcz , we call f1 from main and then in f1 it create t1 object and then it is adding a and b .... if we direct sent a value from f1 then so we comment out that f1 and create new fresh
+
+// }
+ void f1(Item i){
+    int c= i.a+i.b;
+  cout<<"sum is"<<c<<endl;
+ }
+
+int main(){
+  Item t1;
+    f1(t1);    // it is better for utility because we can sent t1, i1, t2 anything and f1 function and add a and b of t1 or i1 or t2 rather than creating new object inside f1
+  return 0;
+} */
+
+//? if friend function is an absolute non member function then you can invoke it like any other function
+//* FunctionName();
+//? if friend function is a member function to same class, then you can invoke it using object of the class
+//* ObjectName.FunctionName();
+//? member function can access properties of current object directly, but friend function need an object to access its properties or method.
+//? a function can be a member to zero or one class and friend to zero or many class.
+
+//! let try to make f1() where it is member of class A and on the same time it is a friend of class B
+
+/* class A
+{
+public:
+  void A::f1();
+};
+void A::f1() {};
+class B
+{
+  // friend void f1();  // if we wrote like this then it means f1 function is not a member of any class which is a friend of class B
+  // No ....we want the same f1() which is a member of class A then we have to use label
+  friend void A::f1();
+};
+void A::f1(){}; */
+
+//! defining friend operator
