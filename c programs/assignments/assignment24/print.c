@@ -293,14 +293,14 @@ void repeatingChar(char str[5][20])
       maxIndex = i;
   }
 
+  // print most repeating character
+  printf("\n%c the most repeating character is :%d times\n\n", 'a' + maxIndex, count[maxIndex]);
+
   // printing the frequency of all letters
   printf("Character frequencies:\n");
   for (i = 1; i < 26; i++)
     if (count[i] > 0)
       printf("%c -%d times\n", 'a' + i, count[i]);
-
-  // print most repeating character
-  printf("\n%c the most repeating character is :%d times\n", 'a' + maxIndex, count[maxIndex]);
 }
 
 int main()
@@ -366,8 +366,52 @@ int main()
 
   checkAnagram(str);
 } */
+// _____________New Approach_____________
+/* #include <stdio.h>
+#include <string.h>
+char *sortingOneD_Arr(char s[])
+{
+  int i, j;
+  char temp;
+  for (i = 0; s[i]; i++)
+  {
+    //  for (j = i + 1; s[j]; j++) {
+    // Problem: Inner loop condition s[j] may access memory beyond the end of the string.
+
+    // Solution: Change inner loop condition to j < strlen(s) or s[j] != '\0'.
+
+    // for (j = i + 1; j<strlen(s); j++) this line is working
+    for (j = i + 1; s[j] != '\0'; j++)  // this line is working
+    {
+      if (s[i] > s[j])
+      {
+        temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+      }
+    }
+  }
+  return s;
+}
+
+int checkAnagram(char s1[], char s2[])
+{
+  return strcmp(sortingOneD_Arr(s1), sortingOneD_Arr(s2)) == 0;
+}
+
+int main()
+{
+  // char s1[] = "silent", s2[] = "listen";
+  char s1[] = "sillent", s2[] = "listen";
+  if (checkAnagram(s1, s2))
+    printf("Anagram");
+  else
+    printf("Not anagram");
+  return 0;
+} */
 
 /* //! 9. Write a function to store all the words in a given string that start with 'a' in a two-dimensional char array.
+//? we can solve this question same as question 6 they both are same
 #include <stdio.h>
 #include <string.h>
 void storeWordsStartingWithA(char str[100])
@@ -458,5 +502,34 @@ int main()
     str[i][strcspn(str[i], "\n")] = '\0';
   }
   gmailFinder(str);
+  return 0;
+} */
+// _____________New Approach_____________[this code is for 1 gmail id.. but we can check by using 2d array]
+/* #include <stdio.h>
+#include <string.h>
+int is_end_with_string(char str[], char pattern[])
+{
+  int i;
+  int l = strlen(pattern);
+  if (strlen(str) > l)
+  {
+    for (i = strlen(str) - 1; i >= strlen(str) - strlen(pattern); i--)
+    {
+      if (str[i] != pattern[--l])
+        return 0;
+    }
+    return 1;
+  }
+  return 0;
+}
+int main()
+{
+  // char s1[] = "silent", s2[] = "listen";
+  char s1[] = "example@yahoo.com";
+  char p[] = "gmail.com";
+  if (is_end_with_string(s1, p))
+    printf("valid gmail");
+  else
+    printf("Not a valid gmail");
   return 0;
 } */
