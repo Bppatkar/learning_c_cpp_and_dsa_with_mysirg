@@ -1726,8 +1726,373 @@ class B
 {
   // friend void f1();  // if we wrote like this then it means f1 function is not a member of any class which is a friend of class B
   // No ....we want the same f1() which is a member of class A then we have to use label
-  friend void A::f1();
+  friend void A::f1();  it means.. a f1() which is in class A is a friend function in class B
 };
 void A::f1(){}; */
+//? it means u have to make class A first because if u make class B first then u r using friend void A::f1(); so if class A is not defined how would u use..?
 
+//*TODO: a single function f1() can be a friend of multiple classes [class A1,A2,A3]
+
+/*
+class A1{ friend void f1();  };
+class A2{ friend void f1();  };
+class A3{ friend void f1();  };
+
+void f1(){};
+ */
+
+//! now we see , how we can make operator as a friend
 //! defining friend operator
+//* friend Complex operator+ (Complex, Complex);
+//* friend Complex operator- (Complex);
+
+// using above Item class [initially we r using operator , which is a function means we are using operator function but we want to use operator as a friend]
+// we will use above code where we are adding 2 Item object [i1 and i2]
+
+/* #include <iostream>
+using namespace std;
+
+class Item
+{
+private:
+  int a, b;
+
+public:
+  void setData(int x, int y)  {    a = x;    b = y;  }
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  friend void f1(Item);
+  // + operator overloading
+  // Item operator+(Item);  // this line means + operator here is a member but we want as a friend function then
+  // friend Item operator+(Item); // here also want two argument
+  friend Item operator+(Item, Item);
+};
+// operator overloading
+// Item Item::operator+(Item i){  // here we are getting 1 argument bcz one is i2 means argument and 2nd is collar object
+Item operator+(Item i, Item j)
+{ // in friend function we don't use membership label and now we want 2 parameter
+  Item temp;
+  temp.a = i.a + j.a;
+  temp.b = i.b + j.b;
+  return temp;
+}
+
+void f1(Item i)
+{
+  int c = i.a + i.b;
+  cout << "sum is " << c << endl;
+}
+int main()
+{
+  Item i1, i2;
+  i1.setData(6, 7);
+  i2.setData(3, 14);
+  // changes made here [we make i3 in which we store i1 and i2]
+  Item i3;
+  i3 = i1 + i2; // i1 is a collar object which is calling + operator and passing i2 as argument and the result stored in i3
+  // if we make friend + operator then i1 and i2 both are argument and result stored in i3 because there is not collar object
+  // that means operator+(i1,i2) means operator + is called and i1 and i2 is passed as an argument and result stored in i3.
+  i3.showData(); // we make that function for printing value
+
+  f1(i1);
+  return 0;
+} */
+
+//! adding (-) operator and yes as a friend function and make it value of i1 negative means if 5 then result is  -5
+// it do not take argument bcz it has collar obj [using above code but without comment]
+
+/* #include <iostream>
+using namespace std;
+
+class Item
+{
+private:
+  int a, b;
+
+public:
+  void setData(int x, int y)
+  {
+    a = x;
+    b = y;
+  }
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  friend void f1(Item);
+  friend Item operator+(Item, Item);
+  // - operator
+  // Item operator-();  // no argument need bcz collar obj is a already calling it
+  friend Item operator-(Item); // making friend function means... now it need one argument
+};
+
+// - operator
+//  Item Item::operator-(){
+Item operator-(Item C)
+{ // no need of membership label
+  Item temp;
+  temp.a = -C.a;
+  temp.b = -C.b;
+  return temp;
+}
+
+Item operator+(Item i, Item j)
+{
+  Item temp;
+  temp.a = i.a + j.a;
+  temp.b = i.b + j.b;
+  return temp;
+}
+
+void f1(Item i)
+{
+  int c = i.a + i.b;
+  cout << "sum is " << c << endl;
+}
+int main()
+{
+  Item i1, i2;
+  i1.setData(6, 7);
+  i2.setData(3, 14);
+  Item i3;
+  i3 = i1 + i2;
+  i3.showData();
+
+  // - operator
+  Item i4;
+  i4 = -i2;
+  i4.showData();
+
+  f1(i1);
+  return 0;
+} */
+//* so basically ... one more argument is needed if we are making a friend function [in binary we take 1 argument then in friend function it takes 2, in unary it takes 0 then in friend function it takes 1]
+
+//! what is the diff between defining operator as a member and as a friend...
+//? A member operator function needs one less argument because the caller object is passed automatically. But in a friend function, we must pass the caller object as an argument
+
+//! Benefit of friend Function
+//* -> function can be a friend to multiple classes, which makes it possible to access, private members
+//* -> with the friend operator it is possible to overload a binary operator in which left operand is not an object.
+//* -> various operator can ''only'' be defined using friends.  [we can overload many operator by only use of friend]
+//* -> [<< & >>] we can overload insertion and exertion operator
+
+//* benefit of function 2nd point explaining
+//? if i want to write like this i3 = i1 + 5; then 5 is int type and function receiving Item class so we have to make new function which receive int
+
+/* #include <iostream>
+using namespace std;
+
+class Item{
+private:  int a, b;
+public:  void setData(int x, int y) {a = x;b = y;}
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  friend void f1(Item);
+  friend Item operator+(Item, Item);
+  friend Item operator-(Item);
+  // int type argument
+  Item operator+(int);
+};
+
+// int type argument
+Item Item::operator+(int k)
+{
+  Item temp;
+  temp.a = a + k;
+  temp.b = b;
+  return temp;
+}
+
+Item operator-(Item C)
+{ // no need of membership label
+  Item temp;
+  temp.a = -C.a;
+  temp.b = -C.b;
+  return temp;
+}
+
+Item operator+(Item i, Item j)
+{
+  Item temp;
+  temp.a = i.a + j.a;
+  temp.b = i.b + j.b;
+  return temp;
+}
+
+void f1(Item i)
+{
+  int c = i.a + i.b;
+  cout << "sum is " << c << endl;
+}
+int main()
+{
+  Item i1, i2;
+  i1.setData(6, 7);
+  i2.setData(3, 14);
+  Item i3;
+  i3 = i1 + i2;
+  i3.showData();
+  Item i4;
+  i4 = -i2;
+  i4.showData();
+  // int type
+  i3 = i1 + 5;
+  i3.showData();  //i1 has a =6 and b =7 so ans is 6+5 =11 and 7 as it is
+
+  f1(i1);
+  return 0;
+} */
+
+//* benefit of function 2nd point explaining
+//? but if we write like i3 = 5 + i1; then (so in this condition 5 is a collar object ,, it means making friend function is necessary)
+
+/* #include <iostream>
+using namespace std;
+
+class Item{
+  private:  int a, b;
+public:  void setData(int x, int y) {a = x; b = y;  }
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  friend void f1(Item);
+  friend Item operator+(Item, Item);
+  friend Item operator-(Item);
+  // int type argument
+  // Item operator+(int);
+  // just changing above line
+  friend Item operator+(int, Item);
+};
+
+// // int type argument
+// Item Item::operator+(int k)
+// {
+//   Item temp;
+//   temp.a = a + k;
+//   temp.b = b;
+//   return temp;
+// }
+
+//? just improving above code
+// friend function for i3 = 5 + i1;
+Item operator+(int k, Item C){
+  Item temp;
+  temp.a = C.a+k;
+  temp.b = C.b;
+  return temp;
+
+}
+
+Item operator-(Item C)
+{ // no need of membership label
+  Item temp;
+  temp.a = -C.a;
+  temp.b = -C.b;
+  return temp;
+}
+
+Item operator+(Item i, Item j)
+{
+  Item temp;
+  temp.a = i.a + j.a;
+  temp.b = i.b + j.b;
+  return temp;
+}
+
+void f1(Item i)
+{
+  int c = i.a + i.b;
+  cout << "sum is " << c << endl;
+}
+int main()
+{
+  Item i1, i2;
+  i1.setData(6, 7);
+  i2.setData(3, 14);
+  Item i3;
+  i3 = i1 + i2;
+  i3.showData();
+  Item i4;
+  i4 = -i2;
+  i4.showData();
+  // int type
+  // i3 = i1 + 5;
+  // i3.showData();  //i1 has a =6 and b =7 so ans is 6+5 =11 and 7 as it is
+
+  i3 = 5+ i1;
+  i3.showData();
+
+  f1(i1);
+  return 0;
+} */
+
+//? now read again 2nd point - [with the friend operator it is possible to overload a binary operator in which left operand is not an object.] it is possible only because of friend operator
+
+//! << & >> operator overloading
+
+/* #include <iostream>
+using namespace std;
+class Item
+{
+private:
+  int a, b;
+
+public:
+  void setData(int x, int y)
+  {
+    a = x;
+    b = y;
+  }
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  // declaring friend of operator >>
+  friend istream &operator>>(istream &, Item &); // return type is also istream bcz we can do cascading of call [pehle call se return hokar jo aaya usko add krke doosra call means cin>>x>>y {cin>>x s x ka result cin>>x ki jagah pr aa jayega fir hi to >>y call hoga this is called cascading of call}]
+};
+// defining friend operator >>
+istream &operator>>(istream &bppin, Item &bin)
+{ // so we can write cin or bppin both will work
+  bppin >> bin.a >> bin.b;
+  return bppin;
+}
+
+int main()
+{
+  Item i1, i2, i3;
+  cout << "Enter an item: " << endl;
+  cin >> i1; // this line will work or not [this line means -[ { cin.operator>>(i1); }]]
+  // cin called exertion operator and reference of i1 is passed because it takes address (&)
+  // cin is a input of istream class [inside c++ programming]
+  // if we are passing address of i1 then where it is receiving so it have to receive Item class right so it means there is no expression in istream class which takes Item type reference so we make it by using friend function
+  // we have to make it a friend of Item class not of istream because we cant change programming of istream and in the left side we want cin that's why we make it Item class so it means  operator >> (cin, i1) [means by making friend we have to pass collar object and the i1 as an argument]  [deep meaning - operator >> (istream type, Item type)]
+  // we can not make object of istream but we can make reference of it
+
+  return 0;
+} */
+//* above code is working we can input values of a and b using cin>>i1 but now we want to display it so i am using again same code for cout but without comment
+
+/* #include <iostream>
+using namespace std;
+class Item
+{
+private:
+  int a, b;
+
+public:
+  void setData(int x, int y){a = x;b = y;}
+  void showData() { cout << "a= " << a << " b= " << b << endl; }
+  friend ostream &operator<<(ostream &, Item &);
+  friend istream &operator>>(istream &, Item &);
+};
+ostream &operator<<(ostream &bppout, Item &bout)
+{
+  bppout << "a = " << bout.a << " b = " << bout.b << endl;
+  return bppout;
+}
+
+istream &operator>>(istream &bppin, Item &bin)
+{
+  bppin >> bin.a >> bin.b;
+  return bppin;
+}
+
+int main()
+{
+  Item i1, i2, i3;
+  cout << "Enter an item: " << endl;
+  cin >> i1;
+  cout << "You entered: " << i1 << endl;
+  return 0;
+} */
