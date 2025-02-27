@@ -127,8 +127,7 @@ int main()
   return 0;
 } */
 
-/* //! 5. Write a function to extract a substring from a given string with specified start index (inclusive) and end index (exclusive),
-// and store the extracted string in another char array.
+/* //! 5. Write a function to extract a substring from a given string with specified start index (inclusive) and end index (exclusive), and store the extracted string in another char array.
 // [void extract_string(char *str, int start_index, int end_index, char *result);]
 #include <stdio.h>
 #include <string.h>
@@ -206,37 +205,55 @@ int main()
 } */
 
 /* //! 7. Write a function to sort an array of int type values.
-// [void sort(int *ptr, int size);]
+// [void sort(int *arr, int size);]
 #include <stdio.h>
-void sort(int *ptr, int size)
-{
-  int i, j, temp;
-//?out-of-bounds access.
-//?Fix: Use nested loops for proper sorting.
+// void sort(int *arr, int size)
+// {
+//   int i, j, temp;
+// //?out-of-bounds access.
+// //?Fix: Use nested loops for proper sorting.
 
-  for (i = 0; i < size; i++)
-    for (j = i + 1; j < size; j++)
-      if (ptr[i] > ptr[j])
+//   for (i = 0; i < size; i++)
+//     for (j = i + 1; j < size; j++)
+//       if (arr[i] > arr[j])
+//       {
+//         temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//       }
+// }
+//? one more way to write this using simple bubble sort
+void sort(int *arr, int size)
+{
+  int r, i, t;
+  for (r = 0; r < size - 1; r++)
+  {
+    for (i = 0; i < size - 1 - r; i++)
+    {
+      if (arr[i] > arr[i + 1])
       {
-        temp = ptr[i];
-        ptr[i] = ptr[j];
-        ptr[j] = temp;
+        t = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = t;
       }
+    }
+  }
 }
+
 int main()
 {
   int size, i;
   printf("Enter a size for array: ");
   scanf("%d", &size);
-  int ptr[size];
+  int arr[size];
   printf("Enter %d value for arr: ", size);
   for (i = 0; i < size; i++)
-    scanf("%d", &ptr[i]);
+    scanf("%d", &arr[i]);
 
-  sort(ptr, size);
+  sort(arr, size);
   printf("\nSorted array: ");
   for (i = 0; i < size; i++)
-    printf("%d ", ptr[i]);
+    printf("%d ", arr[i]);
   return 0;
 } */
 
@@ -280,24 +297,24 @@ int main()
 
 /* //! 9. Write a function to move the first value of the array to the position where all smaller values will be on the left and greater values will be on the right.
 #include <stdio.h>
-void partitionArray(int *ptr, int size)
+void partitionArray(int *arr, int size)
 {
   int i, left = 0, right = size - 1;
   int temp[size]; // temporary arrays
-  int pivot = ptr[0];
+  int pivot = arr[0];
   for (i = 1; i < size; i++)
   {
-    if (ptr[i] < pivot)
-      temp[left++] = ptr[i]; // storing small value first
+    if (arr[i] < pivot)
+      temp[left++] = arr[i]; // storing small value first
     else
-      temp[right--] = ptr[i]; // storing greater at the end
+      temp[right--] = arr[i]; // storing greater at the end
   }
 
   temp[left] = pivot;
 
   // copying back to the original array
   for (i = 0; i < size; i++)
-    ptr[i] = temp[i];
+    arr[i] = temp[i];
 }
 int main()
 {
@@ -366,6 +383,47 @@ int main()
 
     return 0;
 }*/
+//________________New Approach________________
+/* #include <stdio.h>
+int partitionArray(int *a, int size)
+{
+  int left = 0, t;
+  int loc = 0;
+  int right = size - 1;
+
+  while (left < right)
+  {
+    while (left < right && a[loc] <= a[right])
+      right--;
+    if (left == right)
+      break;
+    t = a[loc];
+    a[loc] = a[right];
+    a[right] = t;
+    loc = right;
+
+    while (left < right && a[left] < a[loc])
+      left++;
+    if (left == right)
+      break;
+    t = a[left];
+    a[left] = a[loc];
+    a[loc] = t;
+    loc = left;
+  }
+  return loc;
+}
+
+int main()
+{
+  int A[] = {23, 67, 89, 11, 23, 42, 59, 16, 8, 81};
+  int index;
+  index = partitionArray(A, 10);
+  printf("\nfirst value at the Index of: i= %d\n", index);
+  for (int i = 0; i <= 9; i++)
+    printf("%d ", A[i]);
+  return 0;
+} */
 
 /* //! 10. There are five classes with a different number of students in them. Five arrays contain marks of students of each class. Write a function to receive an address of an array of pointers to access marks of all the students. The job of the function is to find the highest marks among all the classes.
 #include <stdio.h>
@@ -427,5 +485,50 @@ int main()
   }
 
   findHighestMark(arr, num_students, 5);
+  return 0;
+} */
+//________________New Approach________________
+/* #include <stdio.h>
+// we want 2 level pointer bcz we are sending a pointer in highestMark
+int highestMark(int **arr, int n, int size[])
+{
+  int max, i, j;
+  max = arr[0][0];
+  for (i = 0; i < n; i++)
+  {
+    for (j = 0; j < size[i]; j++)
+    {
+      if (max < arr[i][j])
+      {
+        max = arr[i][j];
+      }
+    }
+  }
+  return max;
+}
+
+int main()
+{
+  int A[] = {23, 67, 89, 11, 23, 42, 59, 16, 8, 81};
+  int B[] = {10, 20, 30, 40, 50};
+  int C[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  int D[] = {13, 24, 36, 47, 53, 68, 70, 88, 91};
+  int E[] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65};
+
+  // creating size array to know how many students in array means number of students in a class
+  int size[] = {10, 5, 10, 9, 13};
+
+  // address of an array of pointers
+  int *p[5];
+  p[0] = A;
+  p[1] = B;
+  p[2] = C;
+  p[3] = D;
+  p[4] = E;
+
+  // we store highest mark in variable
+  int hMarks = highestMark(p, 5, size);
+  printf("Highest Mark is: %d", hMarks);
+
   return 0;
 } */
