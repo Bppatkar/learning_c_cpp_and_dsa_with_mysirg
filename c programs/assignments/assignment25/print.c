@@ -64,16 +64,26 @@ int main()
 #include <string.h>
 // void convertUppercase(char str[])
 // or
-void convertUppercase(char *str)
+//  void convertUppercase(char *str)
+// {
+//   int i;
+//   // for (i = 0; str[i]; i++)
+//   //   if (str[i] >= 'a' && str[i] <= 'z')
+//   //     str[i] -= 32;
+//   // ___________________________
+//   for (i = 0; *(str + i); i++)
+//     if (*(str + i) >= 'a' && *(str + i) <= 'z')
+//       *(str + i) -= 32;
+// }
+
+// ___________________________
+char *convertUppercase(char *str)
 {
   int i;
-  // for (i = 0; str[i]; i++)
-  //   if (str[i] >= 'a' && str[i] <= 'z')
-  //     str[i] -= 32;
-  // ___________________________
-  for (i = 0; *(str + i); i++)
-    if (*(str + i) >= 'a' && *(str + i) <= 'z')
-      *(str + i) -= 32;
+  for (i = 0; str[i]; i++)
+    if (str[i] >= 'a' && str[i] <= 'z')
+      str[i] -= 32;
+  return str;
 }
 int main()
 {
@@ -86,8 +96,7 @@ int main()
   printf("\n in uppercase: ");
   printf("%s", str);
   return 0;
-}
- */
+} */
 
 /* //! 4. Write a function to convert a given string into lowercase.
 #include <stdio.h>
