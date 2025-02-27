@@ -2096,3 +2096,8 @@ int main()
   cout << "You entered: " << i1 << endl;
   return 0;
 } */
+
+//! pointer and DMA
+//? Object pointer
+//? this keyword
+//? DMA: new and delete
