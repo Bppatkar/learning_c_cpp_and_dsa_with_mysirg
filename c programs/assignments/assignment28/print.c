@@ -2,11 +2,49 @@
 
 //! 1. Define a function to produce all the combinations of strings that can be made out of characters of a given string, selecting r at a time. Return a dynamically created array of strings holding all combinations.
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// int main()
+// {
+//   char str[30];
+//   printf("Enter a string: ");
+//   fgets(str, 30, stdin);
+//   str[strlen(str) - 1] = '\0';
+//   int n = strlen(str);
+//   int r;
+//   printf("Enter the value of r: ");
+//   scanf("%d", &r);
+
+//   return 0;
+// }
+
 //! 2. Write a function to print all distinct pattern of Os and 1s of a given length.
 
-//! 3. Write a program to print system date.
+/* //! 3. Write a program to print system date.
+#include <stdio.h>
+#include <time.h>
 
-//! 4. Write a program to print system time
+int main()
+{
+  time_t t = time(NULL);
+  struct tm tm = *localtime(&t);
+
+  printf("Current date: %02d-%02d-%04d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+  return 0;
+} */
+
+/* //! 4. Write a program to print system time
+#include <stdio.h>
+#include <time.h>
+int main()
+{
+  time_t timeChecker;
+  time(&timeChecker);
+  printf("Today's date and time: %s", ctime(&timeChecker));
+  return 0;
+} */
 
 //! 5. Given an array of size n, reverse it. Input format - The first line contains an integer n denoting the size of the array. The next line contains n space separated integers denoting the elements of the array. The output should print the array in the desired order, elements separated by spaces.
 
