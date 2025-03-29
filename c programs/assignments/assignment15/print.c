@@ -369,6 +369,37 @@ int main()
   return 0;
 }
  */
+// ________________Simple approach by [Binomial Theorem.](num = num * (i - k) / (k + 1))________________________
+/* #include <stdio.h>
+
+int main()
+{
+  int n;
+  printf("Enter the length you want pascal triangle: ");
+  scanf("%d", &n);
+
+  for (int i = 0; i < n; i++)
+  {
+    int num = 1;
+
+    // Printing spaces for formatting
+    for (int j = 0; j < n - i - 1; j++)
+    {
+      printf(" ");
+    }
+
+    // Printing numbers in Pascal's Triangle
+    for (int k = 0; k <= i; k++)
+    {
+      printf("%d ", num);
+      num = num * (i - k) / (k + 1);
+    }
+
+    printf("\n");
+  }
+
+  return 0;
+} */
 
 /* // ! 9. Write a function to print all Armstrong numbers between two given numbers. (TSRN)
 void printArm(int a, int b)
