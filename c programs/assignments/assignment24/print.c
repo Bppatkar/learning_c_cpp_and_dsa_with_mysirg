@@ -186,7 +186,7 @@ void splitWord(char str[], char word[][50])
 int main()
 {
   char str[] = "mysirg education services private limited";
-  char word[5][50]; // 5 word, each up to 19 character's long
+  char word[5][50]; // 5 word, each up to 49 character's long
   int i;
   splitWord(str, word);
 
